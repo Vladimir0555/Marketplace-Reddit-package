@@ -3989,6 +3989,332 @@ return array(
         ),
     ),
 ),
+'multiRemoveSubreddit' => array(
+    'blockName' => 'multiRemoveSubreddit',
+    'blockUse' => true,
+    'description' => 'Remove the specified subreddit from the specified multireddit.',
+    'vendor' => array(
+        'url' => ' /api/multi/{{multipath}}/r/{{srname}}',
+        'method' => 'DELETE',
+        'showApiType' => false,
+    ),
+    'args' => array(
+        array(
+            'name' => 'multipath',
+            'type' => 'string',
+            'info' => 'Name of multireddit.',
+            'default' => 'none',
+            'required' => true,
+        ),
+        array(
+            'name' => 'srname',
+            'type' => 'string',
+            'info' => 'Name of subreddit to remove.',
+            'default' => 'none',
+            'required' => true,
+        ),
+    ),
+),
+'multiEditDescription' => array(
+    'blockName' => 'multiEditDescription',
+    'blockUse' => true,
+    'description' => 'Edit the description/sidebar for the specified multireddit.',
+    'vendor' => array(
+        'url' => '/api/multi/{{multipath}}/description',
+        'method' => 'PUT',
+        'showApiType' => false,
+    ),
+    'custom' => true,
+    'args' => array(
+        array(
+            'name' => 'multipath',
+            'type' => 'string',
+            'info' => 'Multireddit url path.',
+            'default' => 'none',
+            'required' => true,
+        ),
+        array(
+            'name' => 'model_body_md',
+            'type' => 'string',
+            'info' => 'New description (raw markdown text).',
+            'default' => 'none',
+            'required' => true,
+        ),
+    ),
+),
+'getUserOverview' => array(
+    'blockName' => 'getUserOverview',
+    'blockUse' => true,
+    'description' => 'Obtain posts and comments made by the specified user.',
+    'vendor' => array(
+        'url' => '/user/{{username}}/overview.json',
+        'method' => 'GET',
+        'showApiType' => false,
+    ),
+    'args' => array(
+        array(
+            'name' => 'username',
+            'type' => 'string',
+            'info' => 'Username of user for whom to retrieve records.',
+            'default' => 'null',
+            'required' => true,
+        ),
+        array(
+            'name' => 'sort',
+            'type' => 'string',
+            'info' => 'Sorting method. One of \'hot\', \'new\', \'top\', \'controversial\', or null.',
+            'default' => 'null',
+            'required' => false,
+        ),
+        array(
+            'name' => 'show',
+            'type' => 'string',
+            'info' => 'One of (given).',
+            'default' => 'null',
+            'required' => false,
+        ),
+        array(
+            'name' => 't',
+            'type' => 'string',
+            'info' => 'One of \'hour\', \'day\', \'week\', \'month\', \'year\', \'all\', or null.',
+            'default' => 'null',
+            'required' => false,
+        ),
+        array(
+            'name' => 'after',
+            'type' => 'string',
+            'info' => 'Fullname of a thing.',
+            'default' => 'null',
+            'required' => false,
+        ),
+        array(
+            'name' => 'before',
+            'type' => 'string',
+            'info' => 'Fullname of a thing.',
+            'default' => 'null',
+            'required' => false,
+        ),
+        array(
+            'name' => 'count',
+            'type' => 'int',
+            'info' => 'A positive integer (default: 0).',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'limit',
+            'type' => 'int',
+            'info' => 'Upper limit of number of items to retrieve. Maximum is 100.',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'sr_detail',
+            'type' => 'string',
+            'info' => 'Expand subreddits (optional).',
+            'default' => 'none',
+            'required' => false,
+        ),
+    ),
+),
+'getUser' => array(
+    'blockName' => 'getUser',
+    'blockUse' => true,
+    'description' => 'Retrieve information about the specified user.',
+    'vendor' => array(
+        'url' => '/user/{{username}}/about.json',
+        'method' => 'GET',
+        'showApiType' => false,
+    ),
+    'args' => array(
+        array(
+            'name' => 'username',
+            'type' => 'string',
+            'info' => 'Username of user to retrieve.',
+            'default' => 'none',
+            'required' => true,
+        ),
+    ),
+),
+'getUserTrophies' => array(
+    'blockName' => 'getUserTrophies',
+    'blockUse' => true,
+    'description' => 'Get a user\'s trophies.',
+    'vendor' => array(
+        'url' => '/api/v1/user/{{id}}/trophies',
+        'method' => 'GET',
+        'showApiType' => false,
+    ),
+    'args' => array(
+        array(
+            'name' => 'id',
+            'type' => 'string',
+            'info' => 'Username of user for whom to retrieve trophies.',
+            'default' => 'none',
+            'required' => true,
+        ),
+    ),
+),
+'multiGet' => array(
+    'blockName' => 'multiGet',
+    'blockUse' => true,
+    'description' => 'Fetch a multi\'s data and subreddit list by name.',
+    'vendor' => array(
+        'url' => '/api/multi/{{multipath}}',
+        'method' => 'GET',
+        'showApiType' => false,
+    ),
+    'args' => array(
+        array(
+            'name' => 'multipath',
+            'type' => 'string',
+            'info' => 'Name of multireddit to retrieve.',
+            'default' => 'none',
+            'required' => true,
+        ),
+        array(
+            'name' => 'expand_srs',
+            'type' => 'bool',
+            'info' => 'Expand subreddits.',
+            'default' => 'none',
+            'required' => false,
+        ),
+    ),
+),
+'searchSubreddits' => array(
+    'blockName' => 'searchSubreddits',
+    'blockUse' => true,
+    'description' => 'Search for subreddits by title and description.',
+    'vendor' => array(
+        'url' => '/subreddits/search',
+        'method' => 'GET',
+        'showApiType' => false,
+    ),
+    'custom' => true,
+    'args' => array(
+        array(
+            'name' => 'q',
+            'type' => 'string',
+            'info' => 'Query with which to search',
+            'default' => 'none',
+            'required' => true,
+        ),
+        array(
+            'name' => 'sort',
+            'type' => 'string',
+            'info' => 'Sorting method. One of \'relevance\', \'activity\'',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'after',
+            'type' => 'string',
+            'info' => 'Fullname of a thing.',
+            'default' => 'null',
+            'required' => false,
+        ),
+        array(
+            'name' => 'before',
+            'type' => 'string',
+            'info' => 'Fullname of a thing.',
+            'default' => 'null',
+            'required' => false,
+        ),
+        array(
+            'name' => 'count',
+            'type' => 'int',
+            'info' => 'A positive integer (default: 0).',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'limit',
+            'type' => 'int',
+            'info' => 'Upper limit of number of items to retrieve. Maximum is 100.',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'sr_detail',
+            'type' => 'string',
+            'info' => 'Expand subreddits (optional).',
+            'default' => 'none',
+            'required' => false,
+        ),
+    ),
+),
+'leaveModerator' => array(
+    'blockName' => 'leaveModerator',
+    'blockUse' => true,
+    'description' => 'Abdicate moderator status in a subreddit.',
+    'vendor' => array(
+        'url' => '/api/leavemoderator',
+        'method' => 'POST',
+        'showApiType' => false,
+    ),
+    'args' => array(
+        array(
+            'name' => 'id',
+            'type' => 'string',
+            'info' => 'Name of subreddit to leave.',
+            'default' => 'none',
+            'required' => true,
+        ),
+    ),
+),
+'getStickies' => array(
+    'blockName' => 'getStickies',
+    'blockUse' => true,
+    'description' => 'Retrieve a subreddit\'s stickied posts.',
+    'vendor' => array(
+        'url' => '[[/r/{{subreddit}}]]/sticky.json',
+        'method' => 'GET',
+        'showApiType' => false,
+    ),
+    'args' => array(
+        array(
+            'name' => 'subreddit',
+            'type' => 'string',
+            'info' => 'Subreddit from which to retrieve sticky posts.',
+            'default' => 'none',
+            'required' => true,
+        ),
+        array(
+            'name' => 'num',
+            'type' => 'string',
+            'info' => 'Argument can be used to select a specific sticky (an integer between 1 and 2 (default: 1)).',
+            'default' => 'none',
+            'required' => false,
+        ),
+    ),
+),
+'leaveContributor' => array(
+    'blockName' => 'leaveContributor',
+    'blockUse' => true,
+    'description' => 'Abdicate approved submitter status in a subreddit.',
+    'vendor' => array(
+        'url' => '/api/leavecontributor',
+        'method' => 'POST',
+        'showApiType' => false,
+    ),
+    'args' => array(
+        array(
+            'name' => 'id',
+            'type' => 'string',
+            'info' => 'Name of subreddit to leave.',
+            'default' => 'none',
+            'required' => true,
+        ),
+    ),
+),
+
+
+
+
+
+
+
+
 
 
 
@@ -4741,44 +5067,8 @@ return array(
             ),
         ),
     ),
-    'leaveContributor' => array(
-        'blockName' => 'leaveContributor',
-        'blockUse' => false,
-        'description' => 'Abdicate approved submitter status in a subreddit.',
-        'vendor' => array(
-            'url' => '/api/leavecontributor',
-            'method' => 'POST',
-            'showApiType' => false,
-        ),
-        'args' => array(
-            array(
-                'name' => 'subreddit',
-                'type' => 'string',
-                'info' => 'Name of subreddit to leave.',
-                'default' => 'none',
-                'required' => true,
-            ),
-        ),
-    ),
-    'leaveModerator' => array(
-        'blockName' => 'leaveModerator',
-        'blockUse' => false,
-        'description' => 'Abdicate moderator status in a subreddit.',
-        'vendor' => array(
-            'url' => '/api/leavemoderator',
-            'method' => 'POST',
-            'showApiType' => false,
-        ),
-        'args' => array(
-            array(
-                'name' => 'subreddit',
-                'type' => 'string',
-                'info' => 'Name of subreddit to leave.',
-                'default' => 'none',
-                'required' => true,
-            ),
-        ),
-    ),
+
+
     'ban' => array(
         'blockName' => 'ban',
         'blockUse' => false,
@@ -5492,32 +5782,7 @@ return array(
             ),
         ),
     ),
-    'multiGet' => array(
-        'blockName' => 'multiGet',
-        'blockUse' => false,
-        'description' => 'Retrieves a multireddit.',
-        'vendor' => array(
-            'url' => '/api/multi/user/{{user}}/m/{{name}}',
-            'method' => 'POST',
-            'showApiType' => false,
-        ),
-        'args' => array(
-            array(
-                'name' => 'user',
-                'type' => 'string',
-                'info' => 'Owner of multireddit to retrieve.',
-                'default' => 'none',
-                'required' => true,
-            ),
-            array(
-                'name' => 'name',
-                'type' => 'string',
-                'info' => 'Name of multireddit to retrieve.',
-                'default' => 'none',
-                'required' => true,
-            ),
-        ),
-    ),
+
     'multiCreate' => array(
         'blockName' => 'multiCreate',
         'blockUse' => false,
@@ -5600,60 +5865,10 @@ return array(
         ),
     ),
 
-    'multiEditDescription' => array(
-        'blockName' => 'multiEditDescription',
-        'blockUse' => false,
-        'description' => 'Edit the description/sidebar for the specified multireddit.',
-        'vendor' => array(
-            'url' => '/api/multi/user/{{oauth2_username}}/m/{{name}}/description',
-            'method' => 'POST',
-            'showApiType' => false,
-        ),
-        'args' => array(
-            array(
-                'name' => 'name',
-                'type' => 'string',
-                'info' => 'Name of multireddit.',
-                'default' => 'none',
-                'required' => true,
-            ),
-            array(
-                'name' => 'description',
-                'type' => 'string',
-                'info' => 'New description.',
-                'default' => 'none',
-                'required' => true,
-            ),
-        ),
-    ),
 
 
-    'multiRemoveSubreddit' => array(
-        'blockName' => 'multiRemoveSubreddit',
-        'blockUse' => false,
-        'description' => 'Remove the specified subreddit from the specified multireddit.',
-        'vendor' => array(
-            'url' => '/api/multi/user/{{oauth2_username}}/m/{{name}}[[/r/{{subreddit}}]]',
-            'method' => 'POST',
-            'showApiType' => false,
-        ),
-        'args' => array(
-            array(
-                'name' => 'name',
-                'type' => 'string',
-                'info' => 'Name of multireddit.',
-                'default' => 'none',
-                'required' => true,
-            ),
-            array(
-                'name' => 'subreddit',
-                'type' => 'string',
-                'info' => 'Name of subreddit to remove.',
-                'default' => 'none',
-                'required' => true,
-            ),
-        ),
-    ),
+
+
 
 
 
@@ -5881,72 +6096,8 @@ return array(
             ),
         ),
     ),
-    'getStickies' => array(
-        'blockName' => 'getStickies',
-        'blockUse' => false,
-        'description' => 'Retrieve a subreddit\'s stickied posts.',
-        'vendor' => array(
-            'url' => '[[/r/{{subreddit}}]]/hot.json',
-            'method' => 'POST',
-            'showApiType' => false,
-        ),
-        'args' => array(
-            array(
-                'name' => 'subreddit',
-                'type' => 'string',
-                'info' => 'Subreddit from which to retrieve sticky posts.',
-                'default' => 'none',
-                'required' => true,
-            ),
-        ),
-    ),
-    'searchSubreddits' => array(
-        'blockName' => 'searchSubreddits',
-        'blockUse' => false,
-        'description' => 'Search for subreddits by title and description.',
-        'vendor' => array(
-            'url' => '/subreddits/search',
-            'method' => 'POST',
-            'showApiType' => false,
-        ),
-        'args' => array(
-            array(
-                'name' => 'query',
-                'type' => 'string',
-                'info' => 'Query with which to search',
-                'default' => 'none',
-                'required' => true,
-            ),
-            array(
-                'name' => 'sort',
-                'type' => 'string',
-                'info' => 'Sorting method. One of \'relevance\', \'activity\'',
-                'default' => '\'relevance\'',
-                'required' => false,
-            ),
-            array(
-                'name' => 'limit',
-                'type' => 'int',
-                'info' => 'Upper limit of number of items to retrieve. Maximum is 100.',
-                'default' => '25',
-                'required' => false,
-            ),
-            array(
-                'name' => 'after',
-                'type' => 'string|null',
-                'info' => 'Get items lower on list than this entry. Does not mean chronologically.',
-                'default' => 'null',
-                'required' => false,
-            ),
-            array(
-                'name' => 'before',
-                'type' => 'string|null',
-                'info' => 'Get items higher on list than this entry. Does not mean chronologically.',
-                'default' => 'null',
-                'required' => false,
-            ),
-        ),
-    ),
+
+
     'getMySubscribedSubreddits' => array(
         'blockName' => 'getMySubscribedSubreddits',
         'blockUse' => false,
@@ -6307,98 +6458,9 @@ return array(
             ),
         ),
     ),
-    'getUserTrophies' => array(
-        'blockName' => 'getUserTrophies',
-        'blockUse' => false,
-        'description' => 'Get a user\'s trophies.',
-        'vendor' => array(
-            'url' => '/api/v1/user/{{user}}/trophies',
-            'method' => 'POST',
-            'showApiType' => false,
-        ),
-        'args' => array(
-            array(
-                'name' => 'user',
-                'type' => 'string',
-                'info' => 'Username of user for whom to retrieve trophies.',
-                'default' => 'none',
-                'required' => true,
-            ),
-        ),
-    ),
-    'getUser' => array(
-        'blockName' => 'getUser',
-        'blockUse' => false,
-        'description' => 'Retrieve information about the specified user.',
-        'vendor' => array(
-            'url' => '/user/{{user}}/about.json',
-            'method' => 'POST',
-            'showApiType' => false,
-        ),
-        'args' => array(
-            array(
-                'name' => 'user',
-                'type' => 'string',
-                'info' => 'Username of user to retrieve.',
-                'default' => 'none',
-                'required' => true,
-            ),
-        ),
-    ),
-    'getUserOverview' => array(
-        'blockName' => 'getUserOverview',
-        'blockUse' => false,
-        'description' => 'Obtain posts and comments made by the specified user.',
-        'vendor' => array(
-            'url' => '/user/{{user}}/overview.json',
-            'method' => 'POST',
-            'showApiType' => false,
-        ),
-        'args' => array(
-            array(
-                'name' => 'user',
-                'type' => 'string',
-                'info' => 'Username of user for whom to retrieve records. Defaults to the current user.',
-                'default' => 'null',
-                'required' => false,
-            ),
-            array(
-                'name' => 'sort',
-                'type' => 'string|null',
-                'info' => 'Sorting method. One of \'hot\', \'new\', \'top\', \'controversial\', or null.',
-                'default' => 'null',
-                'required' => false,
-            ),
-            array(
-                'name' => 'time',
-                'type' => 'string|null',
-                'info' => 'One of \'hour\', \'day\', \'week\', \'month\', \'year\', \'all\', or null.',
-                'default' => 'null',
-                'required' => false,
-            ),
-            array(
-                'name' => 'limit',
-                'type' => 'int',
-                'info' => 'Upper limit of number of items to retrieve. Maximum is 100.',
-                'default' => '25',
-                'required' => false,
-            ),
-            array(
-                'name' => 'after',
-                'type' => 'string|null',
-                'info' => 'Get items lower on list than this entry. Does not mean chronologically.',
-                'default' => 'null',
-                'required' => false,
-            ),
-            array(
-                'name' => 'before',
-                'type' => 'string|null',
-                'info' => 'Get items higher on list than this entry. Does not mean chronologically.',
-                'default' => 'null',
-                'required' => false,
-            ),
-        ),
-    ),
+
+
+
 
 
 
