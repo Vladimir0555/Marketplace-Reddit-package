@@ -1,0 +1,3717 @@
+{
+    "package": "Reddit",
+    "tagline": "Reddit is a social news aggregation, web content rating, and discussion website.",
+    "description": "Reddit is a social news aggregation, web content rating, and discussion website.",
+    "image": "https://logo.clearbit.com/reddit.com?s=128",
+    "repo": "https://github.com/RapidSoftwareSolutions/Marketplace-Reddit-package",
+    "keywords": [
+        "API",
+        "social",
+        "news",
+        "aggregation",
+        "Reddit"
+    ],
+    "accounts": {
+        "domain": "reddit.com",
+        "credentials": [
+            "appClientId",
+            "appClientSecret"
+        ]
+    },
+    "blocks": [
+        {
+            "name": "getAccessToken",
+            "description": "Get access token from code provided in the redirect described.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "appClientSecret",
+                    "type": "credentials",
+                    "info": "Secret of your app.",
+                    "required": true
+                },
+                {
+                    "name": "code",
+                    "type": "String",
+                    "info": "A one-time use code that may be exchanged for a bearer token.",
+                    "required": true
+                },
+                {
+                    "name": "redirectUri",
+                    "type": "String",
+                    "info": "Redirect Uri from your app settings.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "refreshAccessToken",
+            "description": "Refresh access token.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "appClientSecret",
+                    "type": "credentials",
+                    "info": "Secret of your app.",
+                    "required": true
+                },
+                {
+                    "name": "refreshToken",
+                    "type": "String",
+                    "info": "The refresh token retrieved during the initial request for an access token.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "revokeAccessToken",
+            "description": "Manually revoking a token.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "appClientSecret",
+                    "type": "credentials",
+                    "info": "Secret of your app.",
+                    "required": true
+                },
+                {
+                    "name": "token",
+                    "type": "String",
+                    "info": "The access token or refresh token that the client wishes to revoke.",
+                    "required": true
+                },
+                {
+                    "name": "tokenTypeHint",
+                    "type": "String",
+                    "info": "The type of token being revoked (refresh_token or access_token).",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getMe",
+            "description": "Gets information about the current user's account.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getMyBlockedUsers",
+            "description": "Gets a list of the current user's blocked users.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "after",
+                    "type": "String",
+                    "info": "Get items lower on list than this entry. Does not mean chronologically.",
+                    "required": false
+                },
+                {
+                    "name": "before",
+                    "type": "String",
+                    "info": "Get items higher on list than this entry. Does not mean chronologically.",
+                    "required": false
+                },
+                {
+                    "name": "limit",
+                    "type": "Number",
+                    "info": "Limit of duplicate links to retrieve (default: 25, maximum: 100).",
+                    "required": false
+                },
+                {
+                    "name": "count",
+                    "type": "Number",
+                    "info": "A positive integer (default: 0).",
+                    "required": false
+                },
+                {
+                    "name": "srDetail",
+                    "type": "String",
+                    "info": "Expand subreddits.",
+                    "required": false
+                },
+                {
+                    "name": "show",
+                    "type": "String",
+                    "info": "(optional) the string all.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getMyFriends",
+            "description": "Gets a list of the current user's friends.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "after",
+                    "type": "String",
+                    "info": "Get items lower on list than this entry. Does not mean chronologically.",
+                    "required": false
+                },
+                {
+                    "name": "before",
+                    "type": "String",
+                    "info": "Get items higher on list than this entry. Does not mean chronologically.",
+                    "required": false
+                },
+                {
+                    "name": "limit",
+                    "type": "Number",
+                    "info": "Limit of duplicate links to retrieve (default: 25, maximum: 100).",
+                    "required": false
+                },
+                {
+                    "name": "count",
+                    "type": "Number",
+                    "info": "A positive integer (default: 0).",
+                    "required": false
+                },
+                {
+                    "name": "srDetail",
+                    "type": "String",
+                    "info": "Expand subreddits.",
+                    "required": false
+                },
+                {
+                    "name": "show",
+                    "type": "String",
+                    "info": "(optional) the string all.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getMyKarmaBreakdown",
+            "description": "Gets karma breakdown of current user.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getMyPrefs",
+            "description": "Gets current user's site preferences.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getMyTrophies",
+            "description": "Gets current user's trophies.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "clearFlairTemplates",
+            "description": "Deletes all flair templates of the selected type from the selected subreddit.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "subreddit",
+                    "type": "String",
+                    "info": "Subreddit of flairs to clear.",
+                    "required": true
+                },
+                {
+                    "name": "flairType",
+                    "type": "String",
+                    "info": "One of (USER_FLAIR, LINK_FLAIR).",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "deleteUserFlair",
+            "description": "Deletes a user's flair from the specified subreddit.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "subreddit",
+                    "type": "String",
+                    "info": "Subreddit in which to delete user flair.",
+                    "required": true
+                },
+                {
+                    "name": "name",
+                    "type": "String",
+                    "info": "Username of user whose flair to delete.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "deleteFlairTemplate",
+            "description": "Deletes the selected flair template from the specified subreddit.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "subreddit",
+                    "type": "String",
+                    "info": "Subreddit from which to delete flair template.",
+                    "required": true
+                },
+                {
+                    "name": "flairTemplateId",
+                    "type": "String",
+                    "info": "ID of template to delete.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "assignUserFlair",
+            "description": "Assigns the selected user custom flair text and CSS class in the specified subreddit. Mods only.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "subreddit",
+                    "type": "String",
+                    "info": "Subreddit in which to assign flair.",
+                    "required": true
+                },
+                {
+                    "name": "name",
+                    "type": "String",
+                    "info": "Username of user to assign flair.",
+                    "required": true
+                },
+                {
+                    "name": "text",
+                    "type": "String",
+                    "info": "Custom flair text (no longer than 64 characters).",
+                    "required": false
+                },
+                {
+                    "name": "link",
+                    "type": "String",
+                    "info": "A fullname of a link.",
+                    "required": false
+                },
+                {
+                    "name": "cssClass",
+                    "type": "String",
+                    "info": "A valid subreddit image name.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "configureSubredditFlair",
+            "description": "Updates all options in a subreddit's flair configuration.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "subreddit",
+                    "type": "String",
+                    "info": "Subreddit in which to configure flair.",
+                    "required": true
+                },
+                {
+                    "name": "flairEnabled",
+                    "type": "Boolean",
+                    "info": "Whether or not user flair is displayed.",
+                    "required": true
+                },
+                {
+                    "name": "flairPosition",
+                    "type": "String",
+                    "info": "On which side to display user flair. One of 'left' or 'right'.",
+                    "required": true
+                },
+                {
+                    "name": "flairSelfAssignEnabled",
+                    "type": "Boolean",
+                    "info": "Whether or not users can select their own user flair.",
+                    "required": true
+                },
+                {
+                    "name": "linkFlairPosition",
+                    "type": "String",
+                    "info": "On which side to display links' flair. One of 'left', 'right', or 'none'.",
+                    "required": true
+                },
+                {
+                    "name": "linkFlairSelfAssignEnabled",
+                    "type": "Boolean",
+                    "info": "Whether or not users can select their own links' flair.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getUserFlairList",
+            "description": "Retrieves a list of all assigned user flair in the specified subreddit. Must be a mod of that subreddit.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "subreddit",
+                    "type": "String",
+                    "info": "Name of subreddit from which to retrieve flair list.",
+                    "required": true
+                },
+                {
+                    "name": "name",
+                    "type": "String",
+                    "info": "A user by name.",
+                    "required": false
+                },
+                {
+                    "name": "limit",
+                    "type": "Number",
+                    "info": "Upper limit of number of items to retrieve. Maximum is 1000.",
+                    "required": false
+                },
+                {
+                    "name": "after",
+                    "type": "String",
+                    "info": "Use 'next' attribute of previous call to retrieve next page.",
+                    "required": false
+                },
+                {
+                    "name": "before",
+                    "type": "String",
+                    "info": "Retrieve only flairs that are higher than this user ID on the list.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getUserFlairSelector",
+            "description": "Gets current flair and a list of possible flairs for the specified user in the specified subreddit. Also useful for obtaining flair ID's.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "subreddit",
+                    "type": "String",
+                    "info": "Subreddit in which to view flair options.",
+                    "required": true
+                },
+                {
+                    "name": "link",
+                    "type": "String",
+                    "info": "A fullname of a link.",
+                    "required": false
+                },
+                {
+                    "name": "name",
+                    "type": "String",
+                    "info": "Username for whom to view selection. Defaults to current user.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "addFlairTemplate",
+            "description": "Adds or modifies a flair template in a subreddit.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "subreddit",
+                    "type": "String",
+                    "info": "Name of subreddit to add flair template.",
+                    "required": true
+                },
+                {
+                    "name": "apiType",
+                    "type": "String",
+                    "info": "Specifies user or link flair template. One of 'link' or 'user'.",
+                    "required": true
+                },
+                {
+                    "name": "text",
+                    "type": "String",
+                    "info": "Flair text (no longer than 64 characters).",
+                    "required": false
+                },
+                {
+                    "name": "flairTemplateId",
+                    "type": "String",
+                    "info": "The template ID of an existing flair to modify. If null, will add a new one.",
+                    "required": false
+                },
+                {
+                    "name": "cssClass",
+                    "type": "String",
+                    "info": "Flair CSS class.",
+                    "required": false
+                },
+                {
+                    "name": "textEditable",
+                    "type": "Boolean",
+                    "info": "Whether or not to allow users to edit the flair's text when assigning it.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "selectUserFlair",
+            "description": "Selects a user flair to use from the flair selection list.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "subreddit",
+                    "type": "String",
+                    "info": "Subreddit in which to select flair.",
+                    "required": true
+                },
+                {
+                    "name": "name",
+                    "type": "String",
+                    "info": "Username of user to whom to apply flair.",
+                    "required": true
+                },
+                {
+                    "name": "flairTemplateId",
+                    "type": "String",
+                    "info": "Template ID of template to select. Null will remove the user's flair.",
+                    "required": false
+                },
+                {
+                    "name": "text",
+                    "type": "String",
+                    "info": "Modified flair text, if allowed (no longer than 64 characters).",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "showMyFlair",
+            "description": "Selects whether or not to show the current user's flair in the selected subreddit.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "subreddit",
+                    "type": "String",
+                    "info": "Subreddit in which to enable or disable flair.",
+                    "required": true
+                },
+                {
+                    "name": "flairEnabled",
+                    "type": "Boolean",
+                    "info": "True to show flair. False to hide flair.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "gild",
+            "description": "Gild a link or comment, which gives the author reddit gold. Must have sufficient gold creddits. Reddit's documentation is odd, indicating that the thing ID is required both in the URL and the POST parameters.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "fullname",
+                    "type": "String",
+                    "info": "Fullname of a thing.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "giveGold",
+            "description": "Give the specified user the specified months of reddit gold. Must have sufficient gold creddits. Reddit's documentation is odd, indicating that the username is required both in the URL and the POST parameters.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "username",
+                    "type": "String",
+                    "info": "Username of user to whom to give gold.",
+                    "required": true
+                },
+                {
+                    "name": "months",
+                    "type": "Number",
+                    "info": "Number of months to give reddit gold (between 1 and 36).",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "createComment",
+            "description": "Submit a new comment or reply to a message..",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "thingId",
+                    "type": "String",
+                    "info": "Thing ID of parent object on which to comment. Could be link, text post, or comment.",
+                    "required": true
+                },
+                {
+                    "name": "text",
+                    "type": "String",
+                    "info": "Comment, raw markdown text.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "delete",
+            "description": "Deletes a post or comment.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "id",
+                    "type": "String",
+                    "info": "Thing ID of object to delete. Could be link, text post, or comment.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "editText",
+            "description": "Edits the text of a comment or text post.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "thingId",
+                    "type": "String",
+                    "info": "Thing ID of text object to edit. Could be text post or comment.",
+                    "required": true
+                },
+                {
+                    "name": "text",
+                    "type": "String",
+                    "info": "New text to replace the old (raw markdown).",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "hidePost",
+            "description": "Hides a post from user's listings.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "id",
+                    "type": "String",
+                    "info": "A comma-separated list of link fullnames.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getInfo",
+            "description": "Gives a listing of information on objects.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "id",
+                    "type": "String",
+                    "info": "A comma-separated list of thing.",
+                    "required": true
+                },
+                {
+                    "name": "url",
+                    "type": "String",
+                    "info": "A valid URL.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "lockThread",
+            "description": "Lock a post and prevent any new comments by non-moderators.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "id",
+                    "type": "String",
+                    "info": "Thing ID of post to lock. Must be a post, not a comment.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "markNSFW",
+            "description": "Marks a post as NSFW.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "id",
+                    "type": "String",
+                    "info": "Thing ID of post to mark as NSFW.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getCommentChildren",
+            "description": "Get comments in a tree that are hidden by \"load more comments\". NOTE: Only make one request for this at a time. Higher concurrency will result in an error.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "linkId",
+                    "type": "String",
+                    "info": "Fullname (thing ID) of link/post of the comment tree.",
+                    "required": true
+                },
+                {
+                    "name": "children",
+                    "type": "String",
+                    "info": "A comma-delimited list of comment ID36s for which to retrieve children.",
+                    "required": true
+                },
+                {
+                    "name": "sort",
+                    "type": "String",
+                    "info": "One of (confidence, top, new, controversial, old, random, qa, live).",
+                    "required": false
+                },
+                {
+                    "name": "id",
+                    "type": "String",
+                    "info": "Id of the associated MoreChildren object.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "report",
+            "description": "Report a link, comment or message.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "thingId",
+                    "type": "String",
+                    "info": "Thing ID of object to report.",
+                    "required": true
+                },
+                {
+                    "name": "reason",
+                    "type": "String",
+                    "info": "The reason for the report. Must be <100 characters.",
+                    "required": false
+                },
+                {
+                    "name": "otherReason",
+                    "type": "String",
+                    "info": "The other reason for the report. Must be <100 characters.",
+                    "required": false
+                },
+                {
+                    "name": "siteReason",
+                    "type": "String",
+                    "info": "The site reason for the report. Must be <100 characters.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "save",
+            "description": "Save a link or comment. Saved things are kept in the user's saved listing for later perusal.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "id",
+                    "type": "String",
+                    "info": "Thing ID of object to save. Can be post or comment.",
+                    "required": true
+                },
+                {
+                    "name": "category",
+                    "type": "String",
+                    "info": "Category in which to save object. Defaults to none.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getSavedCategories",
+            "description": "Get a list of categories in which things are currently saved.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "sendInboxReplies",
+            "description": "Toggles whether or not the current user should receive replies to a specific post or comment to their inbox.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "id",
+                    "type": "String",
+                    "info": "Thing ID of object to toggle.",
+                    "required": true
+                },
+                {
+                    "name": "state",
+                    "type": "Boolean",
+                    "info": "State of inbox replies. True to receive, false for not.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "setContestMode",
+            "description": "Toggles contest mode on a post.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "id",
+                    "type": "String",
+                    "info": "Thing ID of post to toggle contest mode.",
+                    "required": true
+                },
+                {
+                    "name": "state",
+                    "type": "Boolean",
+                    "info": "True to enable contest mode, false to disable.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "stickyPost",
+            "description": "Stickies a post at the top of the subreddit.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "id",
+                    "type": "String",
+                    "info": "Thing ID of post to sticky.",
+                    "required": true
+                },
+                {
+                    "name": "num",
+                    "type": "Number",
+                    "info": "Position of new sticky. 1 for top, 2 for bottom. Defaults to 2.",
+                    "required": false
+                },
+                {
+                    "name": "state",
+                    "type": "Boolean",
+                    "info": "State boolean value.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "setSuggestedSort",
+            "description": "Sets the default sort of a link's comments.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "thing",
+                    "type": "String",
+                    "info": "Thing ID of link to set suggested sort.",
+                    "required": true
+                },
+                {
+                    "name": "sort",
+                    "type": "String",
+                    "info": "Sort method. One of: 'confidence', 'top', 'new', 'hot', 'controversial', 'old', 'random', 'qa'",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "submitLinkPost",
+            "description": "Submits a new link post.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "sr",
+                    "type": "String",
+                    "info": "Subreddit in which to post link.",
+                    "required": true
+                },
+                {
+                    "name": "title",
+                    "type": "String",
+                    "info": "Title of the submission. up to 300 characters long.",
+                    "required": true
+                },
+                {
+                    "name": "text",
+                    "type": "String",
+                    "info": "Raw markdown text of the submission.",
+                    "required": true
+                },
+                {
+                    "name": "url",
+                    "type": "String",
+                    "info": "Link to post.",
+                    "required": true
+                },
+                {
+                    "name": "sendreplies",
+                    "type": "Boolean",
+                    "info": "Send comment replies to the current user's inbox. True to enable, false to disable.",
+                    "required": false
+                },
+                {
+                    "name": "kind",
+                    "type": "String",
+                    "info": "One of (link, self, image).",
+                    "required": false
+                },
+                {
+                    "name": "resubmit",
+                    "type": "Boolean",
+                    "info": "Boolean value.",
+                    "required": false
+                },
+                {
+                    "name": "extension",
+                    "type": "String",
+                    "info": "Extension used for redirects.",
+                    "required": false
+                },
+                {
+                    "name": "g-recaptcha-response",
+                    "type": "String",
+                    "info": "Recaptcha response.",
+                    "required": false
+                },
+                {
+                    "name": "app",
+                    "type": "String",
+                    "info": "App.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "unhidePost",
+            "description": "Unhides a post from user's hidden posts.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "id",
+                    "type": "String",
+                    "info": "A comma-separated list of link fullnames to unhide.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "unlockThread",
+            "description": "Unlock a post and allow any new comments.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "id",
+                    "type": "String",
+                    "info": "Thing ID of post to unlock.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "unmarkNSFW",
+            "description": "Unmarks a post as NSFW.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "id",
+                    "type": "String",
+                    "info": "Thing ID of post to unmark as NSFW.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "unsave",
+            "description": "Unsaves a post or comment from the current user's saved posts.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "id",
+                    "type": "String",
+                    "info": "Thing ID of object to unsave. Can be post or comment.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "upVote",
+            "description": "Cast a vote on a thing.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "id",
+                    "type": "String",
+                    "info": "Thing ID of object to upvote.",
+                    "required": true
+                },
+                {
+                    "name": "rank",
+                    "type": "Number",
+                    "info": "Upvote rank, an integer greater than 1.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "downVote",
+            "description": "Downvotes a post or comment.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "id",
+                    "type": "String",
+                    "info": "Thing ID of object to downvote.",
+                    "required": true
+                },
+                {
+                    "name": "rank",
+                    "type": "Number",
+                    "info": "Downvote rank, an integer greater than 1.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "unVote",
+            "description": "Resets the current user's vote on a post or comment.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "id",
+                    "type": "String",
+                    "info": "Thing ID of object to unvote.",
+                    "required": true
+                },
+                {
+                    "name": "rank",
+                    "type": "Number",
+                    "info": "Unvote rank, an integer greater than 1.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getLinksById",
+            "description": "Retrieves a listing of links by their specified thing ID.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "names",
+                    "type": "String",
+                    "info": "A comma-separated list thing ID's of links to retrieve.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getComments",
+            "description": "Retrieves a listing of comments and children for a link and optionally a specific comment",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "subreddit",
+                    "type": "String",
+                    "info": "Subreddit in which to assign comments.",
+                    "required": false
+                },
+                {
+                    "name": "article",
+                    "type": "String",
+                    "info": "ID36 or fullname of link for comments to fetch.",
+                    "required": true
+                },
+                {
+                    "name": "comment",
+                    "type": "String",
+                    "info": "Optional, ID36 or fullname of a single comment to fetch with children, much like permalink.",
+                    "required": false
+                },
+                {
+                    "name": "context",
+                    "type": "Number",
+                    "info": "Number of levels up of parent comments to retrieve. Only applicable to child comments (between 0 and 8).",
+                    "required": false
+                },
+                {
+                    "name": "depth",
+                    "type": "Number",
+                    "info": "Depth of child comments to retrieve.",
+                    "required": false
+                },
+                {
+                    "name": "limit",
+                    "type": "Number",
+                    "info": "Limit of comments to retrieve.",
+                    "required": false
+                },
+                {
+                    "name": "sort",
+                    "type": "String",
+                    "info": "How to sort the comments, one of 'confidence', 'top', 'new', 'hot', 'controversial', 'old', 'random', 'qa'",
+                    "required": false
+                },
+                {
+                    "name": "showedits",
+                    "type": "Boolean",
+                    "info": "Show edited comments, perhaps? Not well documented by reddit.",
+                    "required": false
+                },
+                {
+                    "name": "showmore",
+                    "type": "Boolean",
+                    "info": "Include links to show more comments, maybe? Not well documented by reddit.",
+                    "required": false
+                },
+                {
+                    "name": "srDetail",
+                    "type": "String",
+                    "info": "Expand subreddits.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getDuplicateLinks",
+            "description": "Retrieves the specified link and a listing of other links that are to duplicate destinations.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "article",
+                    "type": "String",
+                    "info": "ID36 or fullname of link to check for duplicates.",
+                    "required": true
+                },
+                {
+                    "name": "after",
+                    "type": "String",
+                    "info": "Get items lower on list than this entry. Does not mean chronologically.",
+                    "required": false
+                },
+                {
+                    "name": "before",
+                    "type": "String",
+                    "info": "Get items higher on list than this entry. Does not mean chronologically.",
+                    "required": false
+                },
+                {
+                    "name": "limit",
+                    "type": "Number",
+                    "info": "Limit of duplicate links to retrieve (default: 25, maximum: 100).",
+                    "required": false
+                },
+                {
+                    "name": "count",
+                    "type": "Number",
+                    "info": "A positive integer (default: 0).",
+                    "required": false
+                },
+                {
+                    "name": "srDetail",
+                    "type": "String",
+                    "info": "Expand subreddits.",
+                    "required": false
+                },
+                {
+                    "name": "show",
+                    "type": "String",
+                    "info": "(optional) the string all.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getHot",
+            "description": "Retrieves the hot listing for the optionally specified subreddit.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "subreddit",
+                    "type": "String",
+                    "info": "Subreddit of listing to retrieve. If none, defaults to front page.",
+                    "required": false
+                },
+                {
+                    "name": "after",
+                    "type": "String",
+                    "info": "Get items lower on list than this entry. Does not mean chronologically.",
+                    "required": false
+                },
+                {
+                    "name": "before",
+                    "type": "String",
+                    "info": "Get items higher on list than this entry. Does not mean chronologically.",
+                    "required": false
+                },
+                {
+                    "name": "limit",
+                    "type": "Number",
+                    "info": "Upper limit of number of items to retrieve. Maximum is 100.",
+                    "required": false
+                },
+                {
+                    "name": "count",
+                    "type": "Number",
+                    "info": "A positive integer (default: 0).",
+                    "required": false
+                },
+                {
+                    "name": "srDetail",
+                    "type": "String",
+                    "info": "Expand subreddits.",
+                    "required": false
+                },
+                {
+                    "name": "show",
+                    "type": "String",
+                    "info": "(optional) the string all.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getControversial",
+            "description": "Retrieves the controversial listing for the optionally specified subreddit.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "subreddit",
+                    "type": "String",
+                    "info": "Subreddit of listing to retrieve. If none, defaults to front page.",
+                    "required": false
+                },
+                {
+                    "name": "t",
+                    "type": "String",
+                    "info": "Time constraint for age of items on list. One of hour, day, week, month, year, all.",
+                    "required": false
+                },
+                {
+                    "name": "after",
+                    "type": "String",
+                    "info": "Get items lower on list than this entry. Does not mean chronologically.",
+                    "required": false
+                },
+                {
+                    "name": "before",
+                    "type": "String",
+                    "info": "Get items higher on list than this entry. Does not mean chronologically.",
+                    "required": false
+                },
+                {
+                    "name": "count",
+                    "type": "Number",
+                    "info": "A positive integer (default: 0).",
+                    "required": false
+                },
+                {
+                    "name": "limit",
+                    "type": "Number",
+                    "info": "Upper limit of number of items to retrieve. Maximum is 100.",
+                    "required": false
+                },
+                {
+                    "name": "srDetail",
+                    "type": "String",
+                    "info": "Expand subreddits.",
+                    "required": false
+                },
+                {
+                    "name": "show",
+                    "type": "String",
+                    "info": "(optional) the string all.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getNew",
+            "description": "Retrieves the new listing for the optionally specified subreddit.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "subreddit",
+                    "type": "String",
+                    "info": "Subreddit of listing to retrieve. If none, defaults to front page.",
+                    "required": false
+                },
+                {
+                    "name": "after",
+                    "type": "String",
+                    "info": "Get items lower on list than this entry. Does not mean chronologically.",
+                    "required": false
+                },
+                {
+                    "name": "before",
+                    "type": "String",
+                    "info": "Get items higher on list than this entry. Does not mean chronologically.",
+                    "required": false
+                },
+                {
+                    "name": "count",
+                    "type": "Number",
+                    "info": "A positive integer (default: 0).",
+                    "required": false
+                },
+                {
+                    "name": "limit",
+                    "type": "Number",
+                    "info": "Upper limit of number of items to retrieve. Maximum is 100.",
+                    "required": false
+                },
+                {
+                    "name": "srDetail",
+                    "type": "String",
+                    "info": "Expand subreddits.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getRandom",
+            "description": "Retrieves a random link from the optionally specified subreddit. If none, choose from any subreddit.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "subreddit",
+                    "type": "String",
+                    "info": "Subreddit from which to retrieve a random link.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getTop",
+            "description": "Retrieves the top listing for the optionally specified subreddit.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "subreddit",
+                    "type": "String",
+                    "info": "Subreddit of listing to retrieve. If none, defaults to front page.",
+                    "required": false
+                },
+                {
+                    "name": "t",
+                    "type": "String",
+                    "info": "Time constraint for age of items on list. One of 'hour', 'day', 'week', 'month', 'year', 'all'.",
+                    "required": false
+                },
+                {
+                    "name": "after",
+                    "type": "String",
+                    "info": "Get items lower on list than this entry. Does not mean chronologically.",
+                    "required": false
+                },
+                {
+                    "name": "before",
+                    "type": "String",
+                    "info": "Get items higher on list than this entry. Does not mean chronologically.",
+                    "required": false
+                },
+                {
+                    "name": "count",
+                    "type": "Number",
+                    "info": "A positive integer (default: 0).",
+                    "required": false
+                },
+                {
+                    "name": "limit",
+                    "type": "Number",
+                    "info": "Upper limit of number of items to retrieve. Maximum is 100.",
+                    "required": false
+                },
+                {
+                    "name": "srDetail",
+                    "type": "String",
+                    "info": "Expand subreddits.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getRising",
+            "description": "Retrieves the rising listing for the optionally specified subreddit.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "subreddit",
+                    "type": "String",
+                    "info": "Subreddit of listing to retrieve. If none, defaults to front page.",
+                    "required": false
+                },
+                {
+                    "name": "after",
+                    "type": "String",
+                    "info": "Get items lower on list than this entry. Does not mean chronologically.",
+                    "required": false
+                },
+                {
+                    "name": "before",
+                    "type": "String",
+                    "info": "Get items higher on list than this entry. Does not mean chronologically.",
+                    "required": false
+                },
+                {
+                    "name": "count",
+                    "type": "Number",
+                    "info": "A positive integer (default: 0).",
+                    "required": false
+                },
+                {
+                    "name": "limit",
+                    "type": "Number",
+                    "info": "Upper limit of number of items to retrieve. Maximum is 100.",
+                    "required": false
+                },
+                {
+                    "name": "srDetail",
+                    "type": "String",
+                    "info": "Expand subreddits.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "checkNeedsCaptcha",
+            "description": "Check whether ReCAPTCHAs are needed for API methods.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getLiveThread",
+            "description": "Get a listing of live events by id.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "names",
+                    "type": "String",
+                    "info": "A comma-separated list of ids.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "createLiveThread",
+            "description": "Creates a new live thread.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "title",
+                    "type": "String",
+                    "info": "The thread's title (no longer than 120 characters).",
+                    "required": true
+                },
+                {
+                    "name": "description",
+                    "type": "String",
+                    "info": "The thread's description (raw markdown text).",
+                    "required": false
+                },
+                {
+                    "name": "resources",
+                    "type": "String",
+                    "info": "The thread's resources section in the sidebar (raw markdown text).",
+                    "required": false
+                },
+                {
+                    "name": "nsfw",
+                    "type": "Boolean",
+                    "info": "Whether or not the thread is NSFW. Prompts guests to continue when visiting.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getCurrentlyFeaturedLiveThread",
+            "description": "Get some basic information about the currently featured live thread.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "acceptInvitationToThread",
+            "description": "Accept a pending invitation to contribute to the thread.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "thread",
+                    "type": "String",
+                    "info": "The thread's name.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "closeThread",
+            "description": "Permanently close the thread, disallowing future updates.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "thread",
+                    "type": "String",
+                    "info": "The thread's name.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "deleteUpdateFromThread",
+            "description": "Delete an update from the thread.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "thread",
+                    "type": "String",
+                    "info": "The thread's name.",
+                    "required": true
+                },
+                {
+                    "name": "id",
+                    "type": "String",
+                    "info": "the ID of a single update. e.g. LiveUpdate_ff87068e-a126-11e3-9f93-12313b0b3603.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "editThread",
+            "description": "Configure the thread.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "thread",
+                    "type": "String",
+                    "info": "The thread's name.",
+                    "required": true
+                },
+                {
+                    "name": "title",
+                    "type": "String",
+                    "info": "The thread's title (no longer than 120 characters).",
+                    "required": false
+                },
+                {
+                    "name": "description",
+                    "type": "String",
+                    "info": "The thread's description (raw markdown text).",
+                    "required": false
+                },
+                {
+                    "name": "resources",
+                    "type": "String",
+                    "info": "The thread's resources section in the sidebar (raw markdown text).",
+                    "required": false
+                },
+                {
+                    "name": "nsfw",
+                    "type": "Boolean",
+                    "info": "Whether or not the thread is NSFW. Prompts guests to continue when visiting.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "inviteContributerToThread",
+            "description": "Invite another user to contribute to the thread.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "thread",
+                    "type": "String",
+                    "info": "The thread's name.",
+                    "required": true
+                },
+                {
+                    "name": "name",
+                    "type": "String",
+                    "info": "The the name of an existing user.",
+                    "required": true
+                },
+                {
+                    "name": "permissions",
+                    "type": "String",
+                    "info": "Permission description e.g. +update,+edit,-manage.",
+                    "required": true
+                },
+                {
+                    "name": "type",
+                    "type": "String",
+                    "info": "One of (liveupdate_contributor_invite, liveupdate_contributor).",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "leaveContributerFromThread",
+            "description": "Abdicate contributorship of the thread.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "thread",
+                    "type": "String",
+                    "info": "The thread's name.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "reportThread",
+            "description": "Report the thread for violating the rules of reddit.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "thread",
+                    "type": "String",
+                    "info": "The thread's name.",
+                    "required": true
+                },
+                {
+                    "name": "type",
+                    "type": "String",
+                    "info": "One of (spam, vote-manipulation, personal-information, sexualizing-minors, site-breaking).",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "revokeUserContributorship",
+            "description": "Revoke another user's contributorship.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "thread",
+                    "type": "String",
+                    "info": "The thread's name.",
+                    "required": true
+                },
+                {
+                    "name": "id",
+                    "type": "String",
+                    "info": "Fullname of a account.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "revokeContributorInvite",
+            "description": "Revoke an outstanding contributor invite.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "thread",
+                    "type": "String",
+                    "info": "The thread's name.",
+                    "required": true
+                },
+                {
+                    "name": "id",
+                    "type": "String",
+                    "info": "Fullname of a account.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "changeContributorPermissions",
+            "description": "Change a contributor or contributor invite's permissions.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "thread",
+                    "type": "String",
+                    "info": "The thread's name.",
+                    "required": true
+                },
+                {
+                    "name": "name",
+                    "type": "String",
+                    "info": "The the name of an existing user.",
+                    "required": true
+                },
+                {
+                    "name": "permissions",
+                    "type": "String",
+                    "info": "Permission description e.g. +update,+edit,-manage.",
+                    "required": true
+                },
+                {
+                    "name": "type",
+                    "type": "String",
+                    "info": "One of (liveupdate_contributor_invite, liveupdate_contributor).",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "postUpdateToThread",
+            "description": "Post an update to the thread.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "thread",
+                    "type": "String",
+                    "info": "The thread's name.",
+                    "required": true
+                },
+                {
+                    "name": "body",
+                    "type": "String",
+                    "info": "Raw markdown text.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getThreadUpdates",
+            "description": "Get a list of updates posted in this thread.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "thread",
+                    "type": "String",
+                    "info": "The thread's name.",
+                    "required": true
+                },
+                {
+                    "name": "after",
+                    "type": "String",
+                    "info": "The ID of a single update. e.g. LiveUpdate_ff87068e-a126-11e3-9f93-12313b0b3603.",
+                    "required": false
+                },
+                {
+                    "name": "before",
+                    "type": "String",
+                    "info": "The ID of a single update. e.g. LiveUpdate_ff87068e-a126-11e3-9f93-12313b0b3603.",
+                    "required": false
+                },
+                {
+                    "name": "count",
+                    "type": "Number",
+                    "info": "A positive integer (default: 0).",
+                    "required": false
+                },
+                {
+                    "name": "limit",
+                    "type": "Number",
+                    "info": "The maximum number of items desired (default: 25, maximum: 100.",
+                    "required": false
+                },
+                {
+                    "name": "stylesr",
+                    "type": "String",
+                    "info": "Subreddit name.",
+                    "required": false
+                },
+                {
+                    "name": "isEmbed",
+                    "type": "Boolean",
+                    "info": "Is embed, internal use only.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getThreadContributers",
+            "description": "Get a list of users that contribute to this thread.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "thread",
+                    "type": "String",
+                    "info": "The thread's name.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getThreadSubmissions",
+            "description": "Get a list of reddit submissions linking to this thread.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "thread",
+                    "type": "String",
+                    "info": "The thread's name.",
+                    "required": true
+                },
+                {
+                    "name": "after",
+                    "type": "String",
+                    "info": "Fullname of a thing.",
+                    "required": false
+                },
+                {
+                    "name": "before",
+                    "type": "String",
+                    "info": "Fullname of a thing.",
+                    "required": false
+                },
+                {
+                    "name": "count",
+                    "type": "Number",
+                    "info": "A positive integer (default: 0).",
+                    "required": false
+                },
+                {
+                    "name": "limit",
+                    "type": "Number",
+                    "info": "The maximum number of items desired (default: 25, maximum: 100.",
+                    "required": false
+                },
+                {
+                    "name": "srDetail",
+                    "type": "String",
+                    "info": "Expand subreddits.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "collapseMessage",
+            "description": "Collapse one or more messages in modmail.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "id",
+                    "type": "String",
+                    "info": "Comma-separated thing ID's of messages to collapse.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "composeMessage",
+            "description": "Sends a message to a user or subreddit.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "to",
+                    "type": "String",
+                    "info": "Username or subreddit to send to.",
+                    "required": true
+                },
+                {
+                    "name": "subject",
+                    "type": "String",
+                    "info": "Subject of message (no longer than 100 characters).",
+                    "required": true
+                },
+                {
+                    "name": "text",
+                    "type": "String",
+                    "info": "Body of message (raw markdown text).",
+                    "required": true
+                },
+                {
+                    "name": "fromSr",
+                    "type": "String",
+                    "info": "Optionally the name of the subreddit from which to send the message.",
+                    "required": false
+                },
+                {
+                    "name": "g-recaptcha-response",
+                    "type": "String",
+                    "info": "Recaptcha response.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "deleteMessage",
+            "description": "Deletes a message from the recipient's inbox. Be aware that messages sent both from and to yourself cannot be deleted.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "id",
+                    "type": "String",
+                    "info": "String Thing ID of message to delete.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "markAllMessagesAsRead",
+            "description": "Queues a job for all of your messages to be marked as read.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "markMessageRead",
+            "description": "Marks one or more messages as read.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "id",
+                    "type": "String",
+                    "info": "A comma-separated string of one or more message thing ID's (t4_).",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "unblockSubredditByMessage",
+            "description": "Unblock a subreddit using a message they sent you.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "id",
+                    "type": "String",
+                    "info": "Thing ID of a message sent by the subreddit to unblock.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "uncollapseMessage",
+            "description": "Uncollapse one or more messages in modmail.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "id",
+                    "type": "String",
+                    "info": "Comma-separated thing ID's of messages to uncollapse.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "markMessageUnread",
+            "description": "Marks one or more messages as unread.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "id",
+                    "type": "String",
+                    "info": "A comma-separated string of one or more message thing ID's (t4_).",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getInbox",
+            "description": "Retrieves the current user's personal message inbox.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "mark",
+                    "type": "Boolean",
+                    "info": "One of (true, false).",
+                    "required": true
+                },
+                {
+                    "name": "after",
+                    "type": "String",
+                    "info": "Get items lower on list than this entry. Does not mean chronologically.",
+                    "required": false
+                },
+                {
+                    "name": "before",
+                    "type": "String",
+                    "info": "Get items higher on list than this entry. Does not mean chronologically.",
+                    "required": false
+                },
+                {
+                    "name": "count",
+                    "type": "Number",
+                    "info": "A positive integer (default: 0).",
+                    "required": false
+                },
+                {
+                    "name": "limit",
+                    "type": "Number",
+                    "info": "Upper limit of the number of links to retrieve. Maximum is 100.",
+                    "required": false
+                },
+                {
+                    "name": "srDetail",
+                    "type": "String",
+                    "info": "Expand subreddits.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getUnread",
+            "description": "Retrieves the current user's unread personal messages.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "mark",
+                    "type": "Boolean",
+                    "info": "One of (true, false).",
+                    "required": true
+                },
+                {
+                    "name": "after",
+                    "type": "String",
+                    "info": "Get items lower on list than this entry. Does not mean chronologically.",
+                    "required": false
+                },
+                {
+                    "name": "before",
+                    "type": "String",
+                    "info": "Get items higher on list than this entry. Does not mean chronologically.",
+                    "required": false
+                },
+                {
+                    "name": "count",
+                    "type": "Number",
+                    "info": "A positive integer (default: 0).",
+                    "required": false
+                },
+                {
+                    "name": "limit",
+                    "type": "Number",
+                    "info": "Upper limit of the number of links to retrieve. Maximum is 100.",
+                    "required": false
+                },
+                {
+                    "name": "srDetail",
+                    "type": "String",
+                    "info": "Expand subreddits.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getSent",
+            "description": "Retrieves the current user's sent personal messages.",
+            "args": [
+                {
+                    "name": "appClientId",
+                    "type": "credentials",
+                    "info": "Id of your app.",
+                    "required": true
+                },
+                {
+                    "name": "accessToken",
+                    "type": "String",
+                    "info": "Access token.",
+                    "required": true
+                },
+                {
+                    "name": "mark",
+                    "type": "Boolean",
+                    "info": "One of (true, false).",
+                    "required": true
+                },
+                {
+                    "name": "after",
+                    "type": "String",
+                    "info": "Get items lower on list than this entry. Does not mean chronologically.",
+                    "required": false
+                },
+                {
+                    "name": "before",
+                    "type": "String",
+                    "info": "Get items higher on list than this entry. Does not mean chronologically.",
+                    "required": false
+                },
+                {
+                    "name": "count",
+                    "type": "Number",
+                    "info": "A positive integer (default: 0).",
+                    "required": false
+                },
+                {
+                    "name": "limit",
+                    "type": "Number",
+                    "info": "Upper limit of the number of links to retrieve. Maximum is 100.",
+                    "required": false
+                },
+                {
+                    "name": "srDetail",
+                    "type": "String",
+                    "info": "Expand subreddits.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        }
+    ]
+}
