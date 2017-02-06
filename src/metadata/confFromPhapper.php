@@ -4609,6 +4609,607 @@ return array(
         ),
     ),
 ),
+'getMySubscribedSubreddits' => array(
+    'blockName' => 'getMySubscribedSubreddits',
+    'blockUse' => false,
+    'description' => 'Retrieve a list of the current user\'s subscribed subreddits.',
+    'vendor' => array(
+        'url' => '/subreddits/mine/subscriber',
+        'method' => 'GET',
+        'showApiType' => false,
+    ),
+    'args' => array(
+        array(
+            'name' => 'after',
+            'type' => 'string',
+            'info' => 'Fullname of a thing.',
+            'default' => 'null',
+            'required' => false,
+        ),
+        array(
+            'name' => 'before',
+            'type' => 'string',
+            'info' => 'Fullname of a thing.',
+            'default' => 'null',
+            'required' => false,
+        ),
+        array(
+            'name' => 'count',
+            'type' => 'int',
+            'info' => 'A positive integer (default: 0).',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'limit',
+            'type' => 'int',
+            'info' => 'Upper limit of number of items to retrieve. Maximum is 100.',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'sr_detail',
+            'type' => 'string',
+            'info' => 'Expand subreddits (optional).',
+            'default' => 'none',
+            'required' => false,
+        ),
+    ),
+),
+'multiCreate' => array(
+    'blockName' => 'multiCreate',
+    'blockUse' => true,
+    'description' => 'Create a multi. Responds with 409 Conflict if it already exists.',
+    'vendor' => array(
+        'url' => '/api/multi/{{multipath}}',
+        'method' => 'POST',
+        'showApiType' => false,
+    ),
+    'custom' => true,
+    'args' => array(
+        array(
+            'name' => 'multipath',
+            'type' => 'string',
+            'info' => 'Multireddit url path.',
+            'default' => 'none',
+            'required' => true,
+        ),
+        array(
+            'name' => 'display_name',
+            'type' => 'string',
+            'info' => 'A string no longer than 50 characters.',
+            'default' => 'null',
+            'required' => true,
+        ),
+        array(
+            'name' => 'description_md',
+            'type' => 'string',
+            'info' => 'Multireddit sidebar text (raw markdown text).',
+            'default' => 'null',
+            'required' => false,
+        ),
+        array(
+            'name' => 'icon_name',
+            'type' => 'string',
+            'info' => 'One of(\'art and design\', \'ask\', \'books\', \'business\', \'cars\', \'comics\', \'cute animals\', \'diy\', \'entertainment\', \'food and drink\', \'funny\', \'games\', \'grooming\', \'health\', \'life advice\', \'military\', \'models pinup\', \'music\', \'news\', \'philosophy\', \'pictures and gifs\', \'science\', \'shopping\', \'sports\', \'style\', \'tech\', \'travel\', \'unusual stories\', \'video\', \'\', \'None\').',
+            'default' => 'null',
+            'required' => false,
+        ),
+        array(
+            'name' => 'key_color',
+            'type' => 'string',
+            'info' => 'A 6 - digit rgb hex color, e.g. \'#AABBCC\'.',
+            'default' => 'null',
+            'required' => false,
+        ),
+        array(
+            'name' => 'subreddits_name',
+            'type' => 'string',
+            'info' => 'Comma-separated string of subreddits name.',
+            'default' => 'null',
+            'required' => false,
+        ),
+        array(
+            'name' => 'visibility',
+            'type' => 'string',
+            'info' => 'One of \'public\', \'private\', \'hidden\'. Hidden multireddits will not be visible to you except through the API.',
+            'default' => 'null',
+            'required' => false,
+        ),
+        array(
+            'name' => 'weighting_scheme',
+            'type' => 'string|null',
+            'info' => 'One of \'classic\', \'fresh\'.',
+            'default' => 'null',
+            'required' => false,
+        ),
+        array(
+            'name' => 'expand_srs',
+            'type' => 'bool',
+            'info' => 'Expand subreddits.',
+            'default' => 'null',
+            'required' => false,
+        ),
+    ),
+),
+'muteUserByMessage' => array(
+    'blockName' => 'muteUserByMessage',
+    'blockUse' => true,
+    'description' => 'Mute a user from a subreddit based on the thing ID of a message they sent.',
+    'vendor' => array(
+        'url' => '/api/mute_message_author',
+        'method' => 'POST',
+        'showApiType' => false,
+    ),
+    'args' => array(
+        array(
+            'name' => 'id',
+            'type' => 'string',
+            'info' => 'Thing ID of the message author to be muted.',
+            'default' => 'none',
+            'required' => true,
+        ),
+    ),
+),
+'multiGetMine' => array(
+    'blockName' => 'multiGetMine',
+    'blockUse' => true,
+    'description' => 'Retrieves a list of multireddits that are owned by the current user.',
+    'vendor' => array(
+        'url' => '/api/multi/mine',
+        'method' => 'GET',
+        'showApiType' => false,
+    ),
+    'args' => array(
+        array(
+            'name' => 'expand_srs',
+            'type' => 'bool',
+            'info' => 'Expand subreddits.',
+            'default' => 'null',
+            'required' => false,
+        ),
+    ),
+),
+'multiCopy' => array(
+    'blockName' => 'multiCopy',
+    'blockUse' => true,
+    'description' => 'Copy an existing multireddit to your own set.',
+    'vendor' => array(
+        'url' => '/api/multi/copy',
+        'method' => 'POST',
+        'showApiType' => false,
+    ),
+    'args' => array(
+        array(
+            'name' => 'display_name',
+            'type' => 'string',
+            'info' => 'A string no longer than 50 characters.',
+            'default' => 'none',
+            'required' => true,
+        ),
+        array(
+            'name' => 'from',
+            'type' => 'string',
+            'info' => 'Name of multireddit to copy.',
+            'default' => 'none',
+            'required' => true,
+        ),
+        array(
+            'name' => 'to',
+            'type' => 'string',
+            'info' => 'Name of destination multireddit.',
+            'default' => 'none',
+            'required' => true,
+        ),
+    ),
+),
+'editSubreddit' => array(
+    'blockName' => 'editSubreddit',
+    'blockUse' => true,
+    'description' => 'Change a subreddit\'s configuration.',
+    'vendor' => array(
+        'url' => '/api/site_admin',
+        'method' => 'POST',
+        'showApiType' => false,
+    ),
+    'args' => array(
+        array(
+            'name' => 'name',
+            'type' => 'string',
+            'info' => 'Subreddit name.',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'public_description',
+            'type' => 'string',
+            'info' => 'Public description (raw markdown text).',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'description',
+            'type' => 'string',
+            'info' => 'Raw markdown text.',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'title',
+            'type' => 'string',
+            'info' => 'A string no longer than 100 characters.',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'header-title',
+            'type' => 'string',
+            'info' => 'A string no longer than 500 characters.',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'sr',
+            'type' => 'string',
+            'info' => 'Name of subreddit to change.',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'theme_sr',
+            'type' => 'string',
+            'info' => 'Subreddit name.',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'lang',
+            'type' => 'string',
+            'info' => 'A valid IETF language tag (underscore separated).',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'comment_score_hide_mins',
+            'type' => 'int',
+            'info' => 'An integer between 0 and 1440 (default: 0).',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'exclude_banned_modqueue',
+            'type' => 'bool',
+            'info' => 'Exclude banned modqueue, boolean value.',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'submit_link_label',
+            'type' => 'string',
+            'info' => 'A string no longer than 60 characters.',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'submit_text',
+            'type' => 'string',
+            'info' => 'Raw markdown text.',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'submit_text_label',
+            'type' => 'string',
+            'info' => 'A string no longer than 60 characters.',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'suggested_comment_sort',
+            'type' => 'string',
+            'info' => 'One of (confidence, top, new, controversial, old, random, qa, live).',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'link_type',
+            'type' => 'string',
+            'info' => 'One of (any, link, self).',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'spam_comments',
+            'type' => 'string',
+            'info' => 'One of (low, high, all).',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'spam_links',
+            'type' => 'string',
+            'info' => 'One of (low, high, all).',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'spam_selfposts',
+            'type' => 'string',
+            'info' => 'One of (low, high, all).',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'spoilers_enabled',
+            'type' => 'bool',
+            'info' => 'Spoilers enabled, boolean value.',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'type',
+            'type' => 'string',
+            'info' => 'One of (gold_restricted, archived, restricted, gold_only, employees_only, private, public).',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'wiki_edit_age',
+            'type' => 'int',
+            'info' => 'An integer greater than 0 (default: 0).',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'wiki_edit_karma',
+            'type' => 'int',
+            'info' => 'An integer greater than 0 (default: 0).',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'wikimode',
+            'type' => 'string',
+            'info' => 'One of (disabled, modonly, anyone).',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'allow_images',
+            'type' => 'bool',
+            'info' => 'Allow images, boolean value.',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'allow_top',
+            'type' => 'bool',
+            'info' => 'Allow top, boolean value.',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'hide_ads',
+            'type' => 'bool',
+            'info' => 'Hide ads, boolean value.',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'over_18',
+            'type' => 'bool',
+            'info' => 'Is over 18, boolean value.',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'public_traffic',
+            'type' => 'bool',
+            'info' => 'Public traffic, boolean value.',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'show_media',
+            'type' => 'bool',
+            'info' => 'Show media, boolean value.',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'show_media_preview',
+            'type' => 'bool',
+            'info' => 'Show media preview, boolean value.',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'collapse_deleted_comments',
+            'type' => 'bool',
+            'info' => 'Collapse deleted comments, boolean value.',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'theme_sr_update',
+            'type' => 'bool',
+            'info' => 'Theme subreddit update, boolean value.',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'g-recaptcha-response',
+            'type' => 'string',
+            'info' => 'Recaptcha response.',
+            'default' => 'none',
+            'required' => false,
+        ),
+    ),
+),
+'getDefaultSubreddits' => array(
+    'blockName' => 'getDefaultSubreddits',
+    'blockUse' => true,
+    'description' => 'Retrieves a list of default subreddits.',
+    'vendor' => array(
+        'url' => '/subreddits/default',
+        'method' => 'GET',
+        'showApiType' => false,
+    ),
+    'args' => array(
+        array(
+            'name' => 'after',
+            'type' => 'string',
+            'info' => 'Fullname of a thing.',
+            'default' => 'null',
+            'required' => false,
+        ),
+        array(
+            'name' => 'before',
+            'type' => 'string',
+            'info' => 'Fullname of a thing.',
+            'default' => 'null',
+            'required' => false,
+        ),
+        array(
+            'name' => 'count',
+            'type' => 'int',
+            'info' => 'A positive integer (default: 0).',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'limit',
+            'type' => 'int',
+            'info' => 'Upper limit of number of items to retrieve. Maximum is 100.',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'sr_detail',
+            'type' => 'string',
+            'info' => 'Expand subreddits (optional).',
+            'default' => 'none',
+            'required' => false,
+        ),
+    ),
+),
+'getGoldOnlySubreddits' => array(
+    'blockName' => 'getGoldOnlySubreddits',
+    'blockUse' => true,
+    'description' => 'Retrieves a list of gold-only subreddits.',
+    'vendor' => array(
+        'url' => '/subreddits/gold',
+        'method' => 'GET',
+        'showApiType' => false,
+    ),
+    'args' => array(
+        array(
+            'name' => 'after',
+            'type' => 'string',
+            'info' => 'Fullname of a thing.',
+            'default' => 'null',
+            'required' => false,
+        ),
+        array(
+            'name' => 'before',
+            'type' => 'string',
+            'info' => 'Fullname of a thing.',
+            'default' => 'null',
+            'required' => false,
+        ),
+        array(
+            'name' => 'count',
+            'type' => 'int',
+            'info' => 'A positive integer (default: 0).',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'limit',
+            'type' => 'int',
+            'info' => 'Upper limit of number of items to retrieve. Maximum is 100.',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'sr_detail',
+            'type' => 'string',
+            'info' => 'Expand subreddits (optional).',
+            'default' => 'none',
+            'required' => false,
+        ),
+    ),
+),
+'getNewSubreddits' => array(
+    'blockName' => 'getNewSubreddits',
+    'blockUse' => true,
+    'description' => 'Retrieves a list of new subreddits.',
+    'vendor' => array(
+        'url' => '/subreddits/new',
+        'method' => 'GET',
+        'showApiType' => false,
+    ),
+    'args' => array(
+        array(
+            'name' => 'after',
+            'type' => 'string',
+            'info' => 'Fullname of a thing.',
+            'default' => 'null',
+            'required' => false,
+        ),
+        array(
+            'name' => 'before',
+            'type' => 'string',
+            'info' => 'Fullname of a thing.',
+            'default' => 'null',
+            'required' => false,
+        ),
+        array(
+            'name' => 'count',
+            'type' => 'int',
+            'info' => 'A positive integer (default: 0).',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'limit',
+            'type' => 'int',
+            'info' => 'Upper limit of number of items to retrieve. Maximum is 100.',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'sr_detail',
+            'type' => 'string',
+            'info' => 'Expand subreddits (optional).',
+            'default' => 'none',
+            'required' => false,
+        ),
+    ),
+),
+'getSubredditSidebar' => array(
+    'blockName' => 'getSubredditSidebar',
+    'blockUse' => true,
+    'description' => 'Get a subreddit\'s sidebar contents.',
+    'vendor' => array(
+        'url' => '[[/r/{{subreddit}}]]/wiki/config/sidebar.json',
+        'method' => 'GET',
+        'showApiType' => false,
+    ),
+    'args' => array(
+        array(
+            'name' => 'subreddit',
+            'type' => 'string',
+            'info' => 'Subreddit of which to retrieve sidebar.',
+            'default' => 'none',
+            'required' => true,
+        ),
+    ),
+),
+
+
+
+
 
 
 /*- Not use in sprint 19 -* /
@@ -5886,134 +6487,14 @@ return array(
             ),
         ),
     ),
-    'muteUserByMessage' => array(
-        'blockName' => 'muteUserByMessage',
-        'blockUse' => false,
-        'description' => 'Mute a user from a subreddit based on the thing ID of a message they sent.',
-        'vendor' => array(
-            'url' => '/api/mute_message_author',
-            'method' => 'POST',
-            'showApiType' => false,
-        ),
-        'args' => array(
-            array(
-                'name' => 'thing_id',
-                'type' => 'string',
-                'info' => 'Thing ID of the message author to be muted.',
-                'default' => 'none',
-                'required' => true,
-            ),
-        ),
-    ),
-
-    'multiCopy' => array(
-        'blockName' => 'multiCopy',
-        'blockUse' => false,
-        'description' => 'Copy an existing multireddit to your own set.',
-        'vendor' => array(
-            'url' => '/api/multi/copy',
-            'method' => 'POST',
-            'showApiType' => false,
-        ),
-        'args' => array(
-            array(
-                'name' => 'from_user',
-                'type' => 'string',
-                'info' => 'Owner of multireddit to copy.',
-                'default' => 'none',
-                'required' => true,
-            ),
-            array(
-                'name' => 'from_name',
-                'type' => 'string',
-                'info' => 'Name of multireddit to copy.',
-                'default' => 'none',
-                'required' => true,
-            ),
-            array(
-                'name' => 'to_name',
-                'type' => 'string',
-                'info' => 'Name of destination multireddit.',
-                'default' => 'none',
-                'required' => true,
-            ),
-        ),
-    ),
-    'multiGetMine' => array(
-        'blockName' => 'multiGetMine',
-        'blockUse' => false,
-        'description' => 'Retrieves a list of multireddits that are owned by the current user.',
-        'vendor' => array(
-            'url' => '/api/multi/mine',
-            'method' => 'POST',
-            'showApiType' => false,
-        ),
-        'args' => array(),
-    ),
 
 
 
-    'multiCreate' => array(
-        'blockName' => 'multiCreate',
-        'blockUse' => false,
-        'description' => 'Create a multireddit. If multireddit of name already exists, an incremented number is appended to the end.',
-        'vendor' => array(
-            'url' => '/api/multi/user/{{oauth2_username}}/m/{{name}}',
-            'method' => 'POST',
-            'showApiType' => false,
-        ),
-        'args' => array(
-            array(
-                'name' => 'name',
-                'type' => 'string',
-                'info' => 'Name (and URL) of new multireddit.',
-                'default' => 'none',
-                'required' => true,
-            ),
-            array(
-                'name' => 'subreddits',
-                'type' => 'string|array',
-                'info' => 'Array or comma-delimited string of one or more subreddits that should go in the multireddit.',
-                'default' => 'array()',
-                'required' => false,
-            ),
-            array(
-                'name' => 'description',
-                'type' => 'string|null',
-                'info' => 'Multireddit sidebar text.',
-                'default' => 'null',
-                'required' => false,
-            ),
-            array(
-                'name' => 'visibility',
-                'type' => 'string',
-                'info' => 'One of \'public\', \'private\', \'hidden\'. Hidden multireddits will not be visible to you except through the API.',
-                'default' => '\'private\'',
-                'required' => false,
-            ),
-            array(
-                'name' => 'weighting_scheme',
-                'type' => 'string',
-                'info' => 'One of \'classic\', \'fresh\'.',
-                'default' => '\'classic\'',
-                'required' => false,
-            ),
-            array(
-                'name' => 'icon',
-                'type' => 'string|null',
-                'info' => 'Not really used, but see https://www.reddit.com/dev/api#POST_api_multi_{multipath} for possible values.',
-                'default' => 'null',
-                'required' => false,
-            ),
-            array(
-                'name' => 'key_color',
-                'type' => 'string',
-                'info' => 'Not really used, but can be hex color.',
-                'default' => '\'#cee3f8\'',
-                'required' => false,
-            ),
-        ),
-    ),
+
+
+
+
+
 
 
 
@@ -6229,162 +6710,16 @@ return array(
             ),
         ),
     ),
-    'getSubredditSidebar' => array(
-        'blockName' => 'getSubredditSidebar',
-        'blockUse' => false,
-        'description' => 'Get a subreddit\'s sidebar contents.',
-        'vendor' => array(
-            'url' => '[[/r/{{subreddit}}]]/wiki/config/sidebar.json',
-            'method' => 'POST',
-            'showApiType' => false,
-        ),
-        'args' => array(
-            array(
-                'name' => 'subreddit',
-                'type' => 'string',
-                'info' => 'Subreddit of which to retrieve sidebar.',
-                'default' => 'none',
-                'required' => true,
-            ),
-        ),
-    ),
-
-
-    'getMySubscribedSubreddits' => array(
-        'blockName' => 'getMySubscribedSubreddits',
-        'blockUse' => false,
-        'description' => 'Retrieve a list of the current user\'s subscribed subreddits.',
-        'vendor' => array(
-            'url' => '/subreddits/mine/subscriber',
-            'method' => 'POST',
-            'showApiType' => false,
-        ),
-        'args' => array(
-            array(
-                'name' => 'limit',
-                'type' => 'int',
-                'info' => 'Upper limit of number of items to retrieve. Maximum is 100.',
-                'default' => '25',
-                'required' => false,
-            ),
-            array(
-                'name' => 'after',
-                'type' => 'string|null',
-                'info' => 'Get items lower on list than this entry. Does not mean chronologically.',
-                'default' => 'null',
-                'required' => false,
-            ),
-            array(
-                'name' => 'before',
-                'type' => 'string|null',
-                'info' => 'Get items higher on list than this entry. Does not mean chronologically.',
-                'default' => 'null',
-                'required' => false,
-            ),
-        ),
-    ),
 
 
 
-    'getNewSubreddits' => array(
-        'blockName' => 'getNewSubreddits',
-        'blockUse' => false,
-        'description' => 'Retrieves a list of new subreddits.',
-        'vendor' => array(
-            'url' => '/subreddits/new',
-            'method' => 'POST',
-            'showApiType' => false,
-        ),
-        'args' => array(
-            array(
-                'name' => 'limit',
-                'type' => 'int',
-                'info' => 'Upper limit of number of items to retrieve. Maximum is 100.',
-                'default' => '25',
-                'required' => false,
-            ),
-            array(
-                'name' => 'after',
-                'type' => 'string|null',
-                'info' => 'Get items lower on list than this entry. Does not mean chronologically.',
-                'default' => 'null',
-                'required' => false,
-            ),
-            array(
-                'name' => 'before',
-                'type' => 'string|null',
-                'info' => 'Get items higher on list than this entry. Does not mean chronologically.',
-                'default' => 'null',
-                'required' => false,
-            ),
-        ),
-    ),
-    'getGoldOnlySubreddits' => array(
-        'blockName' => 'getGoldOnlySubreddits',
-        'blockUse' => false,
-        'description' => 'Retrieves a list of gold-only subreddits.',
-        'vendor' => array(
-            'url' => '/subreddits/gold',
-            'method' => 'POST',
-            'showApiType' => false,
-        ),
-        'args' => array(
-            array(
-                'name' => 'limit',
-                'type' => 'int',
-                'info' => 'Upper limit of number of items to retrieve. Maximum is 100.',
-                'default' => '25',
-                'required' => false,
-            ),
-            array(
-                'name' => 'after',
-                'type' => 'string|null',
-                'info' => 'Get items lower on list than this entry. Does not mean chronologically.',
-                'default' => 'null',
-                'required' => false,
-            ),
-            array(
-                'name' => 'before',
-                'type' => 'string|null',
-                'info' => 'Get items higher on list than this entry. Does not mean chronologically.',
-                'default' => 'null',
-                'required' => false,
-            ),
-        ),
-    ),
-    'getDefaultSubreddits' => array(
-        'blockName' => 'getDefaultSubreddits',
-        'blockUse' => false,
-        'description' => 'Retrieves a list of default subreddits.',
-        'vendor' => array(
-            'url' => '/subreddits/default',
-            'method' => 'POST',
-            'showApiType' => false,
-        ),
-        'args' => array(
-            array(
-                'name' => 'limit',
-                'type' => 'int',
-                'info' => 'Upper limit of number of items to retrieve. Maximum is 100.',
-                'default' => '25',
-                'required' => false,
-            ),
-            array(
-                'name' => 'after',
-                'type' => 'string|null',
-                'info' => 'Get items lower on list than this entry. Does not mean chronologically.',
-                'default' => 'null',
-                'required' => false,
-            ),
-            array(
-                'name' => 'before',
-                'type' => 'string|null',
-                'info' => 'Get items higher on list than this entry. Does not mean chronologically.',
-                'default' => 'null',
-                'required' => false,
-            ),
-        ),
-    ),
+
+
+
+
+
+
+
     'createSubreddit' => array(
         'blockName' => 'createSubreddit',
         'blockUse' => false,
@@ -6418,39 +6753,7 @@ return array(
             ),
         ),
     ),
-    'editSubreddit' => array(
-        'blockName' => 'editSubreddit',
-        'blockUse' => false,
-        'description' => 'Change a subreddit\'s configuration.',
-        'vendor' => array(
-            'url' => '/api/site_admin',
-            'method' => 'POST',
-            'showApiType' => false,
-        ),
-        'args' => array(
-            array(
-                'name' => 'subreddit',
-                'type' => 'string',
-                'info' => 'Name of subreddit to change.',
-                'default' => 'none',
-                'required' => true,
-            ),
-            array(
-                'name' => 'settings',
-                'type' => 'array',
-                'info' => 'An array containing a key-value pair for each option you want to change: \'allow_top\' , \'collapse_deleted_comments\' , \'comment_score_hide_mins\' , \'description\' , \'exclude_banned_modqueue\' , \'header-title\' , \'hide_ads\' , \'lang\' , \'link_type\' , \'over_18\' , \'public_description\' , \'public_traffic\' , \'show_media\' , \'spam_comments\' , \'spam_links\' , \'spam_selfposts\' , \'submit_link_label\' , \'submit_text\' , \'submit_text_label\' , \'suggested_comment_sort\' , \'title\' , \'type\' , \'wiki_edit_age\' , \'wiki_edit_karma\' , \'wikimode\'',
-                'default' => 'none',
-                'required' => true,
-            ),
-            array(
-                'name' => 'i_read_the_documentation',
-                'type' => 'bool',
-                'info' => 'Must be set to true to show that you\'ve read this.',
-                'default' => 'false',
-                'required' => false,
-            ),
-        ),
-    ),
+
 
 
 
