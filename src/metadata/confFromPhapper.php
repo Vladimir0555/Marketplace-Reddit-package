@@ -4307,16 +4307,308 @@ return array(
         ),
     ),
 ),
-
-
-
-
-
-
-
-
-
-
+'multiDelete' => array(
+    'blockName' => 'multiDelete',
+    'blockUse' => true,
+    'description' => 'Deletes the specified multireddit.',
+    'vendor' => array(
+        'url' => '/api/multi/{{multipath}}',
+        'method' => 'DELETE',
+        'showApiType' => false,
+    ),
+    'args' => array(
+        array(
+            'name' => 'multipath',
+            'type' => 'string',
+            'info' => 'Name of multireddit to delete.',
+            'default' => 'none',
+            'required' => true,
+        ),
+    ),
+),
+'multiGetUser' => array(
+    'blockName' => 'multiGetUser',
+    'blockUse' => true,
+    'description' => 'Retrieves a list of multireddits owned by the specified user.',
+    'vendor' => array(
+        'url' => '/api/multi/user/{{username}}',
+        'method' => 'GET',
+        'showApiType' => false,
+    ),
+    'args' => array(
+        array(
+            'name' => 'username',
+            'type' => 'string',
+            'info' => 'Username of user for which to retrieve owned multireddits.',
+            'default' => 'none',
+            'required' => true,
+        ),
+        array(
+            'name' => 'expand_srs',
+            'type' => 'bool',
+            'info' => 'Obtain extra details about the subreddits of each multireddit.',
+            'default' => 'false',
+            'required' => false,
+        ),
+    ),
+),
+'ignoreReports' => array(
+    'blockName' => 'ignoreReports',
+    'blockUse' => true,
+    'description' => 'Ignores reports for the specified thing.',
+    'vendor' => array(
+        'url' => '/api/ignore_reports',
+        'method' => 'POST',
+        'showApiType' => false,
+    ),
+    'args' => array(
+        array(
+            'name' => 'id',
+            'type' => 'string',
+            'info' => 'Thing ID of object to be ignored.',
+            'default' => 'none',
+            'required' => true,
+        ),
+    ),
+),
+'multiRename' => array(
+    'blockName' => 'multiRename',
+    'blockUse' => true,
+    'description' => 'Renames a multireddit.',
+    'vendor' => array(
+        'url' => '/api/multi/rename',
+        'method' => 'POST',
+        'showApiType' => false,
+    ),
+    'args' => array(
+        array(
+            'name' => 'display_name',
+            'type' => 'string',
+            'info' => 'A string no longer than 50 characters.',
+            'default' => 'none',
+            'required' => true,
+        ),
+        array(
+            'name' => 'from',
+            'type' => 'string',
+            'info' => 'Name of multireddit to rename.',
+            'default' => 'none',
+            'required' => true,
+        ),
+        array(
+            'name' => 'to',
+            'type' => 'string',
+            'info' => 'Destination name.',
+            'default' => 'none',
+            'required' => true,
+        ),
+    ),
+),
+'unmuteUserByMessage' => array(
+    'blockName' => 'unmuteUserByMessage',
+    'blockUse' => true,
+    'description' => 'Unmute a user from a subreddit based on the thing ID of a message they sent.',
+    'vendor' => array(
+        'url' => '/api/unmute_message_author',
+        'method' => 'POST',
+        'showApiType' => false,
+    ),
+    'args' => array(
+        array(
+            'name' => 'id',
+            'type' => 'string',
+            'info' => 'Thing ID of the message author to be unmuted.',
+            'default' => 'none',
+            'required' => true,
+        ),
+    ),
+),
+'getPopularSubreddits' => array(
+    'blockName' => 'getPopularSubreddits',
+    'blockUse' => true,
+    'description' => 'Retrieves a list of popular subreddits.',
+    'vendor' => array(
+        'url' => '/subreddits/popular',
+        'method' => 'GET',
+        'showApiType' => false,
+    ),
+    'args' => array(
+        array(
+            'name' => 'after',
+            'type' => 'string',
+            'info' => 'Fullname of a thing.',
+            'default' => 'null',
+            'required' => false,
+        ),
+        array(
+            'name' => 'before',
+            'type' => 'string',
+            'info' => 'Fullname of a thing.',
+            'default' => 'null',
+            'required' => false,
+        ),
+        array(
+            'name' => 'count',
+            'type' => 'int',
+            'info' => 'A positive integer (default: 0).',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'limit',
+            'type' => 'int',
+            'info' => 'Upper limit of number of items to retrieve. Maximum is 100.',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'sr_detail',
+            'type' => 'string',
+            'info' => 'Expand subreddits (optional).',
+            'default' => 'none',
+            'required' => false,
+        ),
+    ),
+),
+'getMyModeratedSubreddits' => array(
+    'blockName' => 'getMyModeratedSubreddits',
+    'blockUse' => true,
+    'description' => 'Retrieve a list of the current user\'s subreddits in which they are a moderator.',
+    'vendor' => array(
+        'url' => '/subreddits/mine/moderator',
+        'method' => 'GET',
+        'showApiType' => false,
+    ),
+    'args' => array(
+        array(
+            'name' => 'after',
+            'type' => 'string',
+            'info' => 'Fullname of a thing.',
+            'default' => 'null',
+            'required' => false,
+        ),
+        array(
+            'name' => 'before',
+            'type' => 'string',
+            'info' => 'Fullname of a thing.',
+            'default' => 'null',
+            'required' => false,
+        ),
+        array(
+            'name' => 'count',
+            'type' => 'int',
+            'info' => 'A positive integer (default: 0).',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'limit',
+            'type' => 'int',
+            'info' => 'Upper limit of number of items to retrieve. Maximum is 100.',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'sr_detail',
+            'type' => 'string',
+            'info' => 'Expand subreddits (optional).',
+            'default' => 'none',
+            'required' => false,
+        ),
+    ),
+),
+'unignoreReports' => array(
+    'blockName' => 'unignoreReports',
+    'blockUse' => true,
+    'description' => 'Allow future reports on a thing to cause notifications.',
+    'vendor' => array(
+        'url' => '/api/unignore_reports',
+        'method' => 'POST',
+        'showApiType' => false,
+    ),
+    'args' => array(
+        array(
+            'name' => 'id',
+            'type' => 'string',
+            'info' => 'Thing ID of object to be unignored.',
+            'default' => 'none',
+            'required' => true,
+        ),
+    ),
+),
+'remove' => array(
+    'blockName' => 'remove',
+    'blockUse' => true,
+    'description' => 'Remove a link, comment, or modmail message.',
+    'vendor' => array(
+        'url' => '/api/remove',
+        'method' => 'POST',
+        'showApiType' => false,
+    ),
+    'args' => array(
+        array(
+            'name' => 'id',
+            'type' => 'string',
+            'info' => 'Thing ID of object to remove.',
+            'default' => 'none',
+            'required' => true,
+        ),
+        array(
+            'name' => 'spam',
+            'type' => 'bool',
+            'info' => 'Mark as spam.',
+            'default' => 'none',
+            'required' => false,
+        ),
+    ),
+),
+'getMyContributedSubreddits' => array(
+    'blockName' => 'getMyContributedSubreddits',
+    'blockUse' => true,
+    'description' => 'Retrieve a list of the current user\'s subreddits in which they are an approved submitter.',
+    'vendor' => array(
+        'url' => '/subreddits/mine/contributor',
+        'method' => 'GET',
+        'showApiType' => false,
+    ),
+    'args' => array(
+        array(
+            'name' => 'after',
+            'type' => 'string',
+            'info' => 'Fullname of a thing.',
+            'default' => 'null',
+            'required' => false,
+        ),
+        array(
+            'name' => 'before',
+            'type' => 'string',
+            'info' => 'Fullname of a thing.',
+            'default' => 'null',
+            'required' => false,
+        ),
+        array(
+            'name' => 'count',
+            'type' => 'int',
+            'info' => 'A positive integer (default: 0).',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'limit',
+            'type' => 'int',
+            'info' => 'Upper limit of number of items to retrieve. Maximum is 100.',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'sr_detail',
+            'type' => 'string',
+            'info' => 'Expand subreddits (optional).',
+            'default' => 'none',
+            'required' => false,
+        ),
+    ),
+),
 
 
 /*- Not use in sprint 19 -* /
@@ -4991,25 +5283,7 @@ return array(
             ),
         ),
     ),
-    'remove' => array(
-        'blockName' => 'remove',
-        'blockUse' => false,
-        'description' => 'Removes a post or comment from a subreddit.',
-        'vendor' => array(
-            'url' => '/api/remove',
-            'method' => 'POST',
-            'showApiType' => false,
-        ),
-        'args' => array(
-            array(
-                'name' => 'thing_id',
-                'type' => 'string',
-                'info' => 'Thing ID of object to remove.',
-                'default' => 'none',
-                'required' => true,
-            ),
-        ),
-    ),
+
     'spam' => array(
         'blockName' => 'spam',
         'blockUse' => false,
@@ -5029,44 +5303,8 @@ return array(
             ),
         ),
     ),
-    'ignoreReports' => array(
-        'blockName' => 'ignoreReports',
-        'blockUse' => false,
-        'description' => 'Ignores reports for the specified thing.',
-        'vendor' => array(
-            'url' => '/api/ignore_reports',
-            'method' => 'POST',
-            'showApiType' => false,
-        ),
-        'args' => array(
-            array(
-                'name' => 'thing_id',
-                'type' => 'string',
-                'info' => 'Thing ID of object to be ignored.',
-                'default' => 'none',
-                'required' => true,
-            ),
-        ),
-    ),
-    'unignoreReports' => array(
-        'blockName' => 'unignoreReports',
-        'blockUse' => false,
-        'description' => 'Unignores reports for the specified thing.',
-        'vendor' => array(
-            'url' => '/api/unignore_reports',
-            'method' => 'POST',
-            'showApiType' => false,
-        ),
-        'args' => array(
-            array(
-                'name' => 'thing_id',
-                'type' => 'string',
-                'info' => 'Thing ID of object to be unignored.',
-                'default' => 'none',
-                'required' => true,
-            ),
-        ),
-    ),
+
+
 
 
     'ban' => array(
@@ -5667,25 +5905,7 @@ return array(
             ),
         ),
     ),
-    'unmuteUserByMessage' => array(
-        'blockName' => 'unmuteUserByMessage',
-        'blockUse' => false,
-        'description' => 'Unmute a user from a subreddit based on the thing ID of a message they sent.',
-        'vendor' => array(
-            'url' => '/api/unmute_message_author',
-            'method' => 'POST',
-            'showApiType' => false,
-        ),
-        'args' => array(
-            array(
-                'name' => 'thing_id',
-                'type' => 'string',
-                'info' => 'Thing ID of the message author to be unmuted.',
-                'default' => 'none',
-                'required' => true,
-            ),
-        ),
-    ),
+
     'multiCopy' => array(
         'blockName' => 'multiCopy',
         'blockUse' => false,
@@ -5730,58 +5950,8 @@ return array(
         ),
         'args' => array(),
     ),
-    'multiGetUser' => array(
-        'blockName' => 'multiGetUser',
-        'blockUse' => false,
-        'description' => 'Retrieves a list of multireddits owned by the specified user.',
-        'vendor' => array(
-            'url' => '/api/multi/user/{{user}}',
-            'method' => 'POST',
-            'showApiType' => false,
-        ),
-        'args' => array(
-            array(
-                'name' => 'user',
-                'type' => 'string',
-                'info' => 'Username of user for which to retrieve owned multireddits.',
-                'default' => 'none',
-                'required' => true,
-            ),
-            array(
-                'name' => 'expand_srs',
-                'type' => 'bool',
-                'info' => 'Obtain extra details about the subreddits of each multireddit.',
-                'default' => 'false',
-                'required' => false,
-            ),
-        ),
-    ),
-    'multiRename' => array(
-        'blockName' => 'multiRename',
-        'blockUse' => false,
-        'description' => 'Renames a subreddit. Functions like copying the existing subreddit then deleting the old one.',
-        'vendor' => array(
-            'url' => '/api/multi/rename',
-            'method' => 'POST',
-            'showApiType' => false,
-        ),
-        'args' => array(
-            array(
-                'name' => 'from_name',
-                'type' => 'string',
-                'info' => 'Name of multireddit to rename.',
-                'default' => 'none',
-                'required' => true,
-            ),
-            array(
-                'name' => 'to_name',
-                'type' => 'string',
-                'info' => 'Destination name.',
-                'default' => 'none',
-                'required' => true,
-            ),
-        ),
-    ),
+
+
 
     'multiCreate' => array(
         'blockName' => 'multiCreate',
@@ -5845,25 +6015,7 @@ return array(
         ),
     ),
 
-    'multiDelete' => array(
-        'blockName' => 'multiDelete',
-        'blockUse' => false,
-        'description' => 'Deletes the specified multireddit.',
-        'vendor' => array(
-            'url' => '/api/multi/user/{{oauth2_username}}/m/{{name}}',
-            'method' => 'POST',
-            'showApiType' => false,
-        ),
-        'args' => array(
-            array(
-                'name' => 'name',
-                'type' => 'string',
-                'info' => 'Name of multireddit to delete.',
-                'default' => 'none',
-                'required' => true,
-            ),
-        ),
-    ),
+
 
 
 
@@ -6131,105 +6283,9 @@ return array(
             ),
         ),
     ),
-    'getMyContributedSubreddits' => array(
-        'blockName' => 'getMyContributedSubreddits',
-        'blockUse' => false,
-        'description' => 'Retrieve a list of the current user\'s subreddits in which they are an approved submitter.',
-        'vendor' => array(
-            'url' => '/subreddits/mine/contributor',
-            'method' => 'POST',
-            'showApiType' => false,
-        ),
-        'args' => array(
-            array(
-                'name' => 'limit',
-                'type' => 'int',
-                'info' => 'Upper limit of number of items to retrieve. Maximum is 100.',
-                'default' => '25',
-                'required' => false,
-            ),
-            array(
-                'name' => 'after',
-                'type' => 'string|null',
-                'info' => 'Get items lower on list than this entry. Does not mean chronologically.',
-                'default' => 'null',
-                'required' => false,
-            ),
-            array(
-                'name' => 'before',
-                'type' => 'string|null',
-                'info' => 'Get items higher on list than this entry. Does not mean chronologically.',
-                'default' => 'null',
-                'required' => false,
-            ),
-        ),
-    ),
-    'getMyModeratedSubreddits' => array(
-        'blockName' => 'getMyModeratedSubreddits',
-        'blockUse' => false,
-        'description' => 'Retrieve a list of the current user\'s subreddits in which they are a moderator.',
-        'vendor' => array(
-            'url' => '/subreddits/mine/moderator',
-            'method' => 'POST',
-            'showApiType' => false,
-        ),
-        'args' => array(
-            array(
-                'name' => 'limit',
-                'type' => 'int',
-                'info' => 'Upper limit of number of items to retrieve. Maximum is 100.',
-                'default' => '25',
-                'required' => false,
-            ),
-            array(
-                'name' => 'after',
-                'type' => 'string|null',
-                'info' => 'Get items lower on list than this entry. Does not mean chronologically.',
-                'default' => 'null',
-                'required' => false,
-            ),
-            array(
-                'name' => 'before',
-                'type' => 'string|null',
-                'info' => 'Get items higher on list than this entry. Does not mean chronologically.',
-                'default' => 'null',
-                'required' => false,
-            ),
-        ),
-    ),
-    'getPopularSubreddits' => array(
-        'blockName' => 'getPopularSubreddits',
-        'blockUse' => false,
-        'description' => 'Retrieves a list of popular subreddits.',
-        'vendor' => array(
-            'url' => '/subreddits/popular',
-            'method' => 'POST',
-            'showApiType' => false,
-        ),
-        'args' => array(
-            array(
-                'name' => 'limit',
-                'type' => 'int',
-                'info' => 'Upper limit of number of items to retrieve. Maximum is 100.',
-                'default' => '25',
-                'required' => false,
-            ),
-            array(
-                'name' => 'after',
-                'type' => 'string|null',
-                'info' => 'Get items lower on list than this entry. Does not mean chronologically.',
-                'default' => 'null',
-                'required' => false,
-            ),
-            array(
-                'name' => 'before',
-                'type' => 'string|null',
-                'info' => 'Get items higher on list than this entry. Does not mean chronologically.',
-                'default' => 'null',
-                'required' => false,
-            ),
-        ),
-    ),
+
+
+
     'getNewSubreddits' => array(
         'blockName' => 'getNewSubreddits',
         'blockUse' => false,
