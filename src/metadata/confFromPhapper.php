@@ -5206,6 +5206,515 @@ return array(
         ),
     ),
 ),
+'getSubredditSettings' => array(
+    'blockName' => 'getSubredditSettings',
+    'blockUse' => true,
+    'description' => 'Retrieve a list of the subreddit\'s settings. Must be a moderator.',
+    'vendor' => array(
+        'url' => '[[/r/{{subreddit}}]]/about/edit.json',
+        'method' => 'GET',
+        'showApiType' => false,
+    ),
+    'args' => array(
+        array(
+            'name' => 'subreddit',
+            'type' => 'string',
+            'info' => 'The subreddit to retrieve.',
+            'default' => 'none',
+            'required' => true,
+        ),
+    ),
+),
+'getModerationLog' => array(
+    'blockName' => 'getModerationLog',
+    'blockUse' => true,
+    'description' => 'Retrieves recent entries from the moderation log for the specified subreddit.',
+    'vendor' => array(
+        'url' => '[[/r/{{subreddit}}]]/about/log.json',
+        'method' => 'GET',
+        'showApiType' => false,
+    ),
+    'args' => array(
+        array(
+            'name' => 'subreddit',
+            'type' => 'string',
+            'info' => 'Subreddit of log to retrieve. All moderated subreddits by default.',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'mod',
+            'type' => 'string',
+            'info' => 'Filter by moderator.',
+            'default' => 'null',
+            'required' => false,
+        ),
+        array(
+            'name' => 'type',
+            'type' => 'string',
+            'info' => 'Filter by mod action, one of (banuser, unbanuser, removelink, approvelink, removecomment, approvecomment, addmoderator, invitemoderator, uninvitemoderator, acceptmoderatorinvite, removemoderator, addcontributor, removecontributor, editsettings, editflair, distinguish, marknsfw, wikibanned, wikicontributor, wikiunbanned, wikipagelisted, removewikicontributor, wikirevise, wikipermlevel, ignorereports, unignorereports, setpermissions, setsuggestedsort, sticky, unsticky, setcontestmode, unsetcontestmode, lock, unlock, muteuser, unmuteuser, createrule, editrule, deleterule, spoiler, unspoiler, modmail_enrollment).',
+            'default' => 'null',
+            'required' => false,
+        ),
+        array(
+            'name' => 'after',
+            'type' => 'string',
+            'info' => 'Fullname of a thing.',
+            'default' => 'null',
+            'required' => false,
+        ),
+        array(
+            'name' => 'before',
+            'type' => 'string',
+            'info' => 'Fullname of a thing.',
+            'default' => 'null',
+            'required' => false,
+        ),
+        array(
+            'name' => 'count',
+            'type' => 'int',
+            'info' => 'A positive integer (default: 0).',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'limit',
+            'type' => 'int',
+            'info' => 'Upper limit of number of items to retrieve. Maximum is 100.',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'sr_detail',
+            'type' => 'string',
+            'info' => 'Expand subreddits (optional).',
+            'default' => 'none',
+            'required' => false,
+        ),
+    ),
+),
+'searchSubredditsByTopic' => array(
+    'blockName' => 'searchSubredditsByTopic',
+    'blockUse' => false,
+    'description' => 'Search for subreddits by topic keywords.',
+    'vendor' => array(
+        'url' => '/api/subreddits_by_topic',
+        'method' => 'GET',
+        'showApiType' => false,
+    ),
+    'args' => array(
+        array(
+            'name' => 'query',
+            'type' => 'string',
+            'info' => 'Query with which to search.',
+            'default' => 'none',
+            'required' => true,
+        ),
+    ),
+),
+'setSubredditStylesheet' => array(
+    'blockName' => 'setSubredditStylesheet',
+    'blockUse' => true,
+    'description' => 'Set a subreddit\'s stylesheet.',
+    'vendor' => array(
+        'url' => '[[/r/{{subreddit}}]]/api/subreddit_stylesheet',
+        'method' => 'POST',
+        'showApiType' => true,
+    ),
+    'custom' => true,
+    'args' => array(
+        array(
+            'name' => 'subreddit',
+            'type' => 'string',
+            'info' => 'Subreddit of which to set stylesheet.',
+            'default' => 'none',
+            'required' => true,
+        ),
+        array(
+            'name' => 'stylesheet_contents',
+            'type' => 'string',
+            'info' => 'Contents of stylesheet, probably pretty long.',
+            'default' => 'none',
+            'required' => true,
+        ),
+        array(
+            'name' => 'reason',
+            'type' => 'string',
+            'info' => 'Since the stylesheet is a wiki page, optionally provide a reason for editing.',
+            'default' => 'null',
+            'required' => false,
+        ),
+    ),
+),
+'getSubmitText' => array(
+    'blockName' => 'getSubmitText',
+    'blockUse' => true,
+    'description' => 'Retrieves the "submitting to /r/&subreddit" text for the selected subreddit.',
+    'vendor' => array(
+        'url' => '[[/r/{{subreddit}}]]/api/submit_text',
+        'method' => 'GET',
+        'showApiType' => false,
+    ),
+    'args' => array(
+        array(
+            'name' => 'subreddit',
+            'type' => 'string',
+            'info' => 'Name of subreddit from which to obtain submit text.',
+            'default' => 'none',
+            'required' => true,
+        ),
+    ),
+),
+'createSubreddit' => array(
+    'blockName' => 'createSubreddit',
+    'blockUse' => true,
+    'description' => 'Create a new subreddit.',
+    'vendor' => array(
+        'url' => '/api/site_admin',
+        'method' => 'POST',
+        'showApiType' => true,
+    ),
+    'args' => array(
+        array(
+            'name' => 'sr',
+            'type' => 'string',
+            'info' => 'Name of subreddit to change.',
+            'default' => 'none',
+            'required' => true,
+        ),
+        array(
+            'name' => 'name',
+            'type' => 'string',
+            'info' => 'Subreddit name.',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'public_description',
+            'type' => 'string',
+            'info' => 'Public description (raw markdown text).',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'description',
+            'type' => 'string',
+            'info' => 'Raw markdown text.',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'title',
+            'type' => 'string',
+            'info' => 'A string no longer than 100 characters.',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'header-title',
+            'type' => 'string',
+            'info' => 'A string no longer than 500 characters.',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'theme_sr',
+            'type' => 'string',
+            'info' => 'Subreddit name.',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'lang',
+            'type' => 'string',
+            'info' => 'A valid IETF language tag (underscore separated).',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'comment_score_hide_mins',
+            'type' => 'int',
+            'info' => 'An integer between 0 and 1440 (default: 0).',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'exclude_banned_modqueue',
+            'type' => 'bool',
+            'info' => 'Exclude banned modqueue, boolean value.',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'submit_link_label',
+            'type' => 'string',
+            'info' => 'A string no longer than 60 characters.',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'submit_text',
+            'type' => 'string',
+            'info' => 'Raw markdown text.',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'submit_text_label',
+            'type' => 'string',
+            'info' => 'A string no longer than 60 characters.',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'suggested_comment_sort',
+            'type' => 'string',
+            'info' => 'One of (confidence, top, new, controversial, old, random, qa, live).',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'link_type',
+            'type' => 'string',
+            'info' => 'One of (any, link, self).',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'spam_comments',
+            'type' => 'string',
+            'info' => 'One of (low, high, all).',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'spam_links',
+            'type' => 'string',
+            'info' => 'One of (low, high, all).',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'spam_selfposts',
+            'type' => 'string',
+            'info' => 'One of (low, high, all).',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'spoilers_enabled',
+            'type' => 'bool',
+            'info' => 'Spoilers enabled, boolean value.',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'type',
+            'type' => 'string',
+            'info' => 'One of (gold_restricted, archived, restricted, gold_only, employees_only, private, public).',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'wiki_edit_age',
+            'type' => 'int',
+            'info' => 'An integer greater than 0 (default: 0).',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'wiki_edit_karma',
+            'type' => 'int',
+            'info' => 'An integer greater than 0 (default: 0).',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'wikimode',
+            'type' => 'string',
+            'info' => 'One of (disabled, modonly, anyone).',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'allow_images',
+            'type' => 'bool',
+            'info' => 'Allow images, boolean value.',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'allow_top',
+            'type' => 'bool',
+            'info' => 'Allow top, boolean value.',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'hide_ads',
+            'type' => 'bool',
+            'info' => 'Hide ads, boolean value.',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'over_18',
+            'type' => 'bool',
+            'info' => 'Is over 18, boolean value.',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'public_traffic',
+            'type' => 'bool',
+            'info' => 'Public traffic, boolean value.',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'show_media',
+            'type' => 'bool',
+            'info' => 'Show media, boolean value.',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'show_media_preview',
+            'type' => 'bool',
+            'info' => 'Show media preview, boolean value.',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'collapse_deleted_comments',
+            'type' => 'bool',
+            'info' => 'Collapse deleted comments, boolean value.',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'theme_sr_update',
+            'type' => 'bool',
+            'info' => 'Theme subreddit update, boolean value.',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'g-recaptcha-response',
+            'type' => 'string',
+            'info' => 'Recaptcha response.',
+            'default' => 'none',
+            'required' => false,
+        ),
+    ),
+),
+'getSubredditStylesheet' => array(
+    'blockName' => 'getSubredditStylesheet',
+    'blockUse' => true,
+    'description' => 'Get a subreddit\'s stylesheet.',
+    'vendor' => array(
+        'url' => '[[/r/{{subreddit}}]]/wiki/config/stylesheet.json',
+        'method' => 'GET',
+        'showApiType' => false,
+    ),
+    'args' => array(
+        array(
+            'name' => 'subreddit',
+            'type' => 'string',
+            'info' => 'Subreddit of which to retrieve stylesheet.',
+            'default' => 'none',
+            'required' => true,
+        ),
+    ),
+),
+'subscribe' => array(
+    'blockName' => 'subscribe',
+    'blockUse' => true,
+    'description' => 'Subscribe to a subreddit. Must have read access to the subreddit.',
+    'vendor' => array(
+        'url' => '/api/subscribe',
+        'method' => 'POST',
+        'showApiType' => false,
+    ),
+    'custom' => true,
+    'args' => array(
+        array(
+            'name' => 'subreddit',
+            'type' => 'string',
+            'info' => 'Subreddit to which to subscribe.',
+            'default' => 'none',
+            'required' => true,
+        ),
+    ),
+),
+'unsubscribe' => array(
+    'blockName' => 'unsubscribe',
+    'blockUse' => true,
+    'description' => 'Unsubscribe from a subreddit.',
+    'vendor' => array(
+        'url' => '/api/subscribe',
+        'method' => 'POST',
+        'showApiType' => false,
+    ),
+    'custom' => true,
+    'args' => array(
+        array(
+            'name' => 'subreddit',
+            'type' => 'string',
+            'info' => 'Subreddit from which to unsubscribe.',
+            'default' => 'none',
+            'required' => true,
+        ),
+    ),
+),
+'uploadSubredditImage' => array(
+    'blockName' => 'uploadSubredditImage',
+    'blockUse' => true,
+    'description' => 'Upload an image to the specified subreddit.',
+    'vendor' => array(
+        'url' => '[[/r/{{subreddit}}]]/api/upload_sr_img',
+        'method' => 'POST',
+        'showApiType' => false,
+    ),
+    'args' => array(
+        array(
+            'name' => 'subreddit',
+            'type' => 'string',
+            'info' => 'Subreddit to which to upload image.',
+            'default' => 'none',
+            'required' => true,
+        ),
+        array(
+            'name' => 'file',
+            'type' => 'string',
+            'info' => 'Relative or absolute path of file (maximum size of 500 KiB).',
+            'default' => 'none',
+            'required' => true,
+        ),
+        array(
+            'name' => 'name',
+            'type' => 'string',
+            'info' => 'If &upload_type is \'img\', assign the image this name. Ignored otherwise.',
+            'default' => 'none',
+            'required' => true,
+        ),
+        array(
+            'name' => 'upload_type',
+            'type' => 'string',
+            'info' => 'One of \'img\', \'header\', \'icon\', \'banner\'.',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'image_type',
+            'type' => 'string',
+            'info' => 'One of \'png\' or \'jpg\'.',
+            'default' => 'none',
+            'required' => false,
+        ),
+    ),
+),
+
 
 
 
@@ -5571,60 +6080,7 @@ return array(
             ),
         ),
     ),
-    'getModerationLog' => array(
-        'blockName' => 'getModerationLog',
-        'blockUse' => false,
-        'description' => 'Retrieves recent entries from the moderation log for the specified subreddit.',
-        'vendor' => array(
-            'url' => '[[/r/{{subreddit}}]]/about/log.json',
-            'method' => 'POST',
-            'showApiType' => false,
-        ),
-        'args' => array(
-            array(
-                'name' => 'subreddit',
-                'type' => 'string',
-                'info' => 'Subreddit of log to retrieve. All moderated subreddits by default.',
-                'default' => '\'mod\'',
-                'required' => false,
-            ),
-            array(
-                'name' => 'limit',
-                'type' => 'int',
-                'info' => 'Upper limit of number of items to retrieve. Maximum is 500.',
-                'default' => '25',
-                'required' => false,
-            ),
-            array(
-                'name' => 'after',
-                'type' => 'string|null',
-                'info' => 'Obtain the page of the results that come after the specified ModAction.',
-                'default' => 'null',
-                'required' => false,
-            ),
-            array(
-                'name' => 'mod',
-                'type' => 'string|null',
-                'info' => 'Filter by moderator.',
-                'default' => 'null',
-                'required' => false,
-            ),
-            array(
-                'name' => 'action',
-                'type' => 'string|null',
-                'info' => 'Filter by mod action.',
-                'default' => 'null',
-                'required' => false,
-            ),
-            array(
-                'name' => 'before',
-                'type' => 'string|null',
-                'info' => 'Obtain the page of the results that come before the specified ModAction.',
-                'default' => 'null',
-                'required' => false,
-            ),
-        ),
-    ),
+
     'getReports' => array(
         'blockName' => 'getReports',
         'blockUse' => false,
@@ -6510,206 +6966,6 @@ return array(
 
 
 
-    'uploadSubredditImage' => array(
-        'blockName' => 'uploadSubredditImage',
-        'blockUse' => false,
-        'description' => 'Upload an image to the specified subreddit.',
-        'vendor' => array(
-            'url' => '[[/r/{{subreddit}}]]/api/upload_sr_img',
-            'method' => 'POST',
-            'showApiType' => false,
-        ),
-        'args' => array(
-            array(
-                'name' => 'subreddit',
-                'type' => 'string',
-                'info' => 'Subreddit to which to upload image.',
-                'default' => 'none',
-                'required' => true,
-            ),
-            array(
-                'name' => 'file',
-                'type' => 'string',
-                'info' => 'Relative or absolute path of file to upload from local machine.',
-                'default' => 'none',
-                'required' => true,
-            ),
-            array(
-                'name' => 'name',
-                'type' => 'string',
-                'info' => 'If &upload_type is \'img\', assign the image this name. Ignored otherwise.',
-                'default' => 'none',
-                'required' => true,
-            ),
-            array(
-                'name' => 'upload_type',
-                'type' => 'string',
-                'info' => 'One of \'img\', \'header\', \'icon\', \'banner\'. As of now, \'icon\' and \'banner\' will result in an error.',
-                'default' => '\'img\'',
-                'required' => false,
-            ),
-            array(
-                'name' => 'image_type',
-                'type' => 'string',
-                'info' => 'One of \'png\' or \'jpg\'.',
-                'default' => '\'png\'',
-                'required' => false,
-            ),
-        ),
-    ),
-
-
-
-
-
-
-    'getSubmitText' => array(
-        'blockName' => 'getSubmitText',
-        'blockUse' => false,
-        'description' => 'Retrieves the "submitting to /r/&subreddit" text for the selected subreddit.',
-        'vendor' => array(
-            'url' => '[[/r/{{subreddit}}]]/api/submit_text',
-            'method' => 'POST',
-            'showApiType' => false,
-        ),
-        'args' => array(
-            array(
-                'name' => 'subreddit',
-                'type' => 'string',
-                'info' => 'Name of subreddit from which to obtain submit text.',
-                'default' => 'none',
-                'required' => true,
-            ),
-        ),
-    ),
-    'getSubredditStylesheet' => array(
-        'blockName' => 'getSubredditStylesheet',
-        'blockUse' => false,
-        'description' => 'Get a subreddit\'s stylesheet.',
-        'vendor' => array(
-            'url' => '[[/r/{{subreddit}}]]/wiki/config/stylesheet.json',
-            'method' => 'POST',
-            'showApiType' => false,
-        ),
-        'args' => array(
-            array(
-                'name' => 'subreddit',
-                'type' => 'string',
-                'info' => 'Subreddit of which to retrieve stylesheet.',
-                'default' => 'none',
-                'required' => true,
-            ),
-        ),
-    ),
-    'setSubredditStylesheet' => array(
-        'blockName' => 'setSubredditStylesheet',
-        'blockUse' => false,
-        'description' => 'Set a subreddit\'s stylesheet.',
-        'vendor' => array(
-            'url' => '[[/r/{{subreddit}}]]/api/subreddit_stylesheet',
-            'method' => 'POST',
-            'showApiType' => false,
-        ),
-        'args' => array(
-            array(
-                'name' => 'subreddit',
-                'type' => 'string',
-                'info' => 'Subreddit of which to set stylesheet.',
-                'default' => 'none',
-                'required' => true,
-            ),
-            array(
-                'name' => 'contents',
-                'type' => 'string',
-                'info' => 'Contents of stylesheet, probably pretty long.',
-                'default' => 'none',
-                'required' => true,
-            ),
-            array(
-                'name' => 'reason',
-                'type' => 'string|null',
-                'info' => 'Since the stylesheet is a wiki page, optionally provide a reason for editing.',
-                'default' => 'null',
-                'required' => false,
-            ),
-        ),
-    ),
-    'searchSubredditsByTopic' => array(
-        'blockName' => 'searchSubredditsByTopic',
-        'blockUse' => false,
-        'description' => 'Search for subreddits by topic keywords.',
-        'vendor' => array(
-            'url' => '/api/subreddits_by_topic',
-            'method' => 'POST',
-            'showApiType' => false,
-        ),
-        'args' => array(
-            array(
-                'name' => 'query',
-                'type' => 'string',
-                'info' => 'Query with which to search.',
-                'default' => 'none',
-                'required' => true,
-            ),
-        ),
-    ),
-    'subscribe' => array(
-        'blockName' => 'subscribe',
-        'blockUse' => false,
-        'description' => 'Subscribe to a subreddit. Must have read access to the subreddit.',
-        'vendor' => array(
-            'url' => '/api/subscribe',
-            'method' => 'POST',
-            'showApiType' => false,
-        ),
-        'args' => array(
-            array(
-                'name' => 'subreddit',
-                'type' => 'string',
-                'info' => 'Subreddit to which to subscribe.',
-                'default' => 'none',
-                'required' => true,
-            ),
-        ),
-    ),
-    'unsubscribe' => array(
-        'blockName' => 'unsubscribe',
-        'blockUse' => false,
-        'description' => 'Unsubscribe from a subreddit.',
-        'vendor' => array(
-            'url' => '/api/subscribe',
-            'method' => 'POST',
-            'showApiType' => false,
-        ),
-        'args' => array(
-            array(
-                'name' => 'subreddit',
-                'type' => 'string',
-                'info' => 'Subreddit from which to unsubscribe.',
-                'default' => 'none',
-                'required' => true,
-            ),
-        ),
-    ),
-    'getSubredditSettings' => array(
-        'blockName' => 'getSubredditSettings',
-        'blockUse' => false,
-        'description' => 'Retrieve a list of the subreddit\'s settings. Must be a moderator.',
-        'vendor' => array(
-            'url' => '[[/r/{{subreddit}}]]/about/edit.json',
-            'method' => 'POST',
-            'showApiType' => false,
-        ),
-        'args' => array(
-            array(
-                'name' => 'subreddit',
-                'type' => 'string',
-                'info' => 'The subreddit to retrieve.',
-                'default' => 'none',
-                'required' => true,
-            ),
-        ),
-    ),
 
 
 
@@ -6720,39 +6976,21 @@ return array(
 
 
 
-    'createSubreddit' => array(
-        'blockName' => 'createSubreddit',
-        'blockUse' => false,
-        'description' => 'Create a new subreddit.',
-        'vendor' => array(
-            'url' => '/api/site_admin',
-            'method' => 'POST',
-            'showApiType' => false,
-        ),
-        'args' => array(
-            array(
-                'name' => 'subreddit',
-                'type' => 'string',
-                'info' => 'Name of subreddit to create.',
-                'default' => 'none',
-                'required' => true,
-            ),
-            array(
-                'name' => 'settings',
-                'type' => 'array',
-                'info' => 'An array containing a key-value pair for each option you want to set \'allow_top\', \'collapse_deleted_comments\', \'comment_score_hide_mins\', \'description\', \'exclude_banned_modqueue\', \'header-title\', \'hide_ads\', \'lang\', \'link_type\', \'over_18\', \'public_description\', \'public_traffic\', \'show_media\', \'spam_comments\', \'spam_links\', \'spam_selfposts\', \'submit_link_label\', \'submit_text\', \'submit_text_label\', \'suggested_comment_sort\', \'title\', \'type\', \'wiki_edit_age\', \'wiki_edit_karma\', \'wikimode\'',
-                'default' => 'none',
-                'required' => true,
-            ),
-            array(
-                'name' => 'i_read_the_documentation',
-                'type' => 'bool',
-                'info' => 'Must be set to true to show that you\'ve read this.',
-                'default' => 'false',
-                'required' => false,
-            ),
-        ),
-    ),
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
