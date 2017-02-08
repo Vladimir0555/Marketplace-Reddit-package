@@ -3712,6 +3712,3794 @@
                     "info": "Success"
                 }
             ]
+        },
+        {
+            "name": "getUserUpvoted",
+            "description": "Obtain posts and comments upvoted by the specified user.",
+            "args": [
+                {
+                    "name": "username",
+                    "type": "String",
+                    "info": "Username of user for whom to retrieve records. Defaults to the current user.",
+                    "required": true
+                },
+                {
+                    "name": "show",
+                    "type": "String",
+                    "info": "One of (given).",
+                    "required": false
+                },
+                {
+                    "name": "sort",
+                    "type": "String",
+                    "info": "One of (hot, new, top, controversial).",
+                    "required": false
+                },
+                {
+                    "name": "t",
+                    "type": "String",
+                    "info": "One of (hour, day, week, month, year, all).",
+                    "required": false
+                },
+                {
+                    "name": "after",
+                    "type": "String",
+                    "info": "Get items lower on list than this entry. Does not mean chronologically.",
+                    "required": false
+                },
+                {
+                    "name": "before",
+                    "type": "String",
+                    "info": "Get items higher on list than this entry. Does not mean chronologically.",
+                    "required": false
+                },
+                {
+                    "name": "count",
+                    "type": "Number",
+                    "info": "A positive integer (default: 0).",
+                    "required": false
+                },
+                {
+                    "name": "limit",
+                    "type": "Number",
+                    "info": "Upper limit of number of items to retrieve. Maximum is 100.",
+                    "required": false
+                },
+                {
+                    "name": "srDetail",
+                    "type": "String",
+                    "info": "Expand subreddits (optional).",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getUserDownvoted",
+            "description": "Obtain posts and comments downvoted by the specified user.",
+            "args": [
+                {
+                    "name": "username",
+                    "type": "String",
+                    "info": "Username of user for whom to retrieve records. Defaults to the current user.",
+                    "required": true
+                },
+                {
+                    "name": "show",
+                    "type": "String",
+                    "info": "One of (given).",
+                    "required": false
+                },
+                {
+                    "name": "sort",
+                    "type": "String",
+                    "info": "One of (hot, new, top, controversial).",
+                    "required": false
+                },
+                {
+                    "name": "t",
+                    "type": "String",
+                    "info": "One of (hour, day, week, month, year, all).",
+                    "required": false
+                },
+                {
+                    "name": "after",
+                    "type": "String",
+                    "info": "Get items lower on list than this entry. Does not mean chronologically.",
+                    "required": false
+                },
+                {
+                    "name": "before",
+                    "type": "String",
+                    "info": "Get items higher on list than this entry. Does not mean chronologically.",
+                    "required": false
+                },
+                {
+                    "name": "count",
+                    "type": "Number",
+                    "info": "A positive integer (default: 0).",
+                    "required": false
+                },
+                {
+                    "name": "limit",
+                    "type": "Number",
+                    "info": "Upper limit of number of items to retrieve. Maximum is 100.",
+                    "required": false
+                },
+                {
+                    "name": "srDetail",
+                    "type": "String",
+                    "info": "Expand subreddits (optional).",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getUserComments",
+            "description": "Obtain only comments made by the specified user.",
+            "args": [
+                {
+                    "name": "username",
+                    "type": "String",
+                    "info": "Username of user for whom to retrieve records. Defaults to the current user.",
+                    "required": true
+                },
+                {
+                    "name": "show",
+                    "type": "String",
+                    "info": "One of (given).",
+                    "required": false
+                },
+                {
+                    "name": "sort",
+                    "type": "String",
+                    "info": "One of (hot, new, top, controversial).",
+                    "required": false
+                },
+                {
+                    "name": "t",
+                    "type": "String",
+                    "info": "One of (hour, day, week, month, year, all).",
+                    "required": false
+                },
+                {
+                    "name": "after",
+                    "type": "String",
+                    "info": "Get items lower on list than this entry. Does not mean chronologically.",
+                    "required": false
+                },
+                {
+                    "name": "before",
+                    "type": "String",
+                    "info": "Get items higher on list than this entry. Does not mean chronologically.",
+                    "required": false
+                },
+                {
+                    "name": "count",
+                    "type": "Number",
+                    "info": "A positive integer (default: 0).",
+                    "required": false
+                },
+                {
+                    "name": "limit",
+                    "type": "Number",
+                    "info": "Upper limit of number of items to retrieve. Maximum is 100.",
+                    "required": false
+                },
+                {
+                    "name": "srDetail",
+                    "type": "String",
+                    "info": "Expand subreddits (optional).",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getUserSubmitted",
+            "description": "Obtain only posts made by the specified user.",
+            "args": [
+                {
+                    "name": "username",
+                    "type": "String",
+                    "info": "Username of user for whom to retrieve records. Defaults to the current user.",
+                    "required": true
+                },
+                {
+                    "name": "show",
+                    "type": "String",
+                    "info": "One of (given).",
+                    "required": false
+                },
+                {
+                    "name": "sort",
+                    "type": "String",
+                    "info": "One of (hot, new, top, controversial).",
+                    "required": false
+                },
+                {
+                    "name": "t",
+                    "type": "String",
+                    "info": "One of (hour, day, week, month, year, all).",
+                    "required": false
+                },
+                {
+                    "name": "after",
+                    "type": "String",
+                    "info": "Get items lower on list than this entry. Does not mean chronologically.",
+                    "required": false
+                },
+                {
+                    "name": "before",
+                    "type": "String",
+                    "info": "Get items higher on list than this entry. Does not mean chronologically.",
+                    "required": false
+                },
+                {
+                    "name": "count",
+                    "type": "Number",
+                    "info": "A positive integer (default: 0).",
+                    "required": false
+                },
+                {
+                    "name": "limit",
+                    "type": "Number",
+                    "info": "Upper limit of number of items to retrieve. Maximum is 100.",
+                    "required": false
+                },
+                {
+                    "name": "srDetail",
+                    "type": "String",
+                    "info": "Expand subreddits (optional).",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getUserGildingsGiven",
+            "description": "Obtain posts and comments gilded (given) by the specified user.",
+            "args": [
+                {
+                    "name": "username",
+                    "type": "String",
+                    "info": "Username of user for whom to retrieve records. Defaults to the current user.",
+                    "required": true
+                },
+                {
+                    "name": "show",
+                    "type": "String",
+                    "info": "One of (given).",
+                    "required": false
+                },
+                {
+                    "name": "sort",
+                    "type": "String",
+                    "info": "One of (hot, new, top, controversial).",
+                    "required": false
+                },
+                {
+                    "name": "t",
+                    "type": "String",
+                    "info": "One of (hour, day, week, month, year, all).",
+                    "required": false
+                },
+                {
+                    "name": "after",
+                    "type": "String",
+                    "info": "Get items lower on list than this entry. Does not mean chronologically.",
+                    "required": false
+                },
+                {
+                    "name": "before",
+                    "type": "String",
+                    "info": "Get items higher on list than this entry. Does not mean chronologically.",
+                    "required": false
+                },
+                {
+                    "name": "count",
+                    "type": "Number",
+                    "info": "A positive integer (default: 0).",
+                    "required": false
+                },
+                {
+                    "name": "limit",
+                    "type": "Number",
+                    "info": "Upper limit of number of items to retrieve. Maximum is 100.",
+                    "required": false
+                },
+                {
+                    "name": "srDetail",
+                    "type": "String",
+                    "info": "Expand subreddits (optional).",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getUserGildingsReceived",
+            "description": "Obtain posts and comments gilded (received) by the specified user.",
+            "args": [
+                {
+                    "name": "username",
+                    "type": "String",
+                    "info": "Username of user for whom to retrieve records. Defaults to the current user.",
+                    "required": true
+                },
+                {
+                    "name": "show",
+                    "type": "String",
+                    "info": "One of (given).",
+                    "required": false
+                },
+                {
+                    "name": "sort",
+                    "type": "String",
+                    "info": "One of (hot, new, top, controversial).",
+                    "required": false
+                },
+                {
+                    "name": "t",
+                    "type": "String",
+                    "info": "One of (hour, day, week, month, year, all).",
+                    "required": false
+                },
+                {
+                    "name": "after",
+                    "type": "String",
+                    "info": "Get items lower on list than this entry. Does not mean chronologically.",
+                    "required": false
+                },
+                {
+                    "name": "before",
+                    "type": "String",
+                    "info": "Get items higher on list than this entry. Does not mean chronologically.",
+                    "required": false
+                },
+                {
+                    "name": "count",
+                    "type": "Number",
+                    "info": "A positive integer (default: 0).",
+                    "required": false
+                },
+                {
+                    "name": "limit",
+                    "type": "Number",
+                    "info": "Upper limit of number of items to retrieve. Maximum is 100.",
+                    "required": false
+                },
+                {
+                    "name": "srDetail",
+                    "type": "String",
+                    "info": "Expand subreddits (optional).",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getUserSaved",
+            "description": "Obtain posts and comments saved by the specified user.",
+            "args": [
+                {
+                    "name": "username",
+                    "type": "String",
+                    "info": "Username of user for whom to retrieve records. Defaults to the current user.",
+                    "required": true
+                },
+                {
+                    "name": "show",
+                    "type": "String",
+                    "info": "One of (given).",
+                    "required": false
+                },
+                {
+                    "name": "sort",
+                    "type": "String",
+                    "info": "One of (hot, new, top, controversial).",
+                    "required": false
+                },
+                {
+                    "name": "t",
+                    "type": "String",
+                    "info": "One of (hour, day, week, month, year, all).",
+                    "required": false
+                },
+                {
+                    "name": "after",
+                    "type": "String",
+                    "info": "Get items lower on list than this entry. Does not mean chronologically.",
+                    "required": false
+                },
+                {
+                    "name": "before",
+                    "type": "String",
+                    "info": "Get items higher on list than this entry. Does not mean chronologically.",
+                    "required": false
+                },
+                {
+                    "name": "count",
+                    "type": "Number",
+                    "info": "A positive integer (default: 0).",
+                    "required": false
+                },
+                {
+                    "name": "limit",
+                    "type": "Number",
+                    "info": "Upper limit of number of items to retrieve. Maximum is 100.",
+                    "required": false
+                },
+                {
+                    "name": "srDetail",
+                    "type": "String",
+                    "info": "Expand subreddits (optional).",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getUserHidden",
+            "description": "Obtain posts and comments hidden by the specified user.",
+            "args": [
+                {
+                    "name": "username",
+                    "type": "String",
+                    "info": "Username of user for whom to retrieve records. Defaults to the current user.",
+                    "required": true
+                },
+                {
+                    "name": "show",
+                    "type": "String",
+                    "info": "One of (given).",
+                    "required": false
+                },
+                {
+                    "name": "sort",
+                    "type": "String",
+                    "info": "One of (hot, new, top, controversial).",
+                    "required": false
+                },
+                {
+                    "name": "t",
+                    "type": "String",
+                    "info": "One of (hour, day, week, month, year, all).",
+                    "required": false
+                },
+                {
+                    "name": "after",
+                    "type": "String",
+                    "info": "Get items lower on list than this entry. Does not mean chronologically.",
+                    "required": false
+                },
+                {
+                    "name": "before",
+                    "type": "String",
+                    "info": "Get items higher on list than this entry. Does not mean chronologically.",
+                    "required": false
+                },
+                {
+                    "name": "count",
+                    "type": "Number",
+                    "info": "A positive integer (default: 0).",
+                    "required": false
+                },
+                {
+                    "name": "limit",
+                    "type": "Number",
+                    "info": "Upper limit of number of items to retrieve. Maximum is 100.",
+                    "required": false
+                },
+                {
+                    "name": "srDetail",
+                    "type": "String",
+                    "info": "Expand subreddits (optional).",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "searchSubredditsByName",
+            "description": "List subreddit names that begin with a query string.",
+            "args": [
+                {
+                    "name": "query",
+                    "type": "String",
+                    "info": "Search for subreddits that start with this. Maximum 50 characters, all printable.",
+                    "required": true
+                },
+                {
+                    "name": "includeOver_18",
+                    "type": "Boolean",
+                    "info": "Include subreddits that are set as NSFW (over_18).",
+                    "required": false
+                },
+                {
+                    "name": "exact",
+                    "type": "Boolean",
+                    "info": "Only return exact match.",
+                    "required": false
+                },
+                {
+                    "name": "includeUnadvertisable",
+                    "type": "Boolean",
+                    "info": "Only return subreddits that have hide_ads set to True or are on the anti_ads_subreddits list.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getRecommendedSubreddits",
+            "description": "Retrieve a list of recommended subreddits based on the names of existing ones.",
+            "args": [
+                {
+                    "name": "srnames",
+                    "type": "String",
+                    "info": "Comma-delimited list of subreddits on which to base recommendations.",
+                    "required": true
+                },
+                {
+                    "name": "omit",
+                    "type": "String",
+                    "info": "Omit these specific subreddits from results (comma-delimited list of subreddit names).",
+                    "required": false
+                },
+                {
+                    "name": "over_18",
+                    "type": "Boolean",
+                    "info": "Include subreddits that are set as NSFW (over_18).",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "deleteSubredditImage",
+            "description": "Remove an image from the subreddit's custom image set.",
+            "args": [
+                {
+                    "name": "subreddit",
+                    "type": "String",
+                    "info": "Subreddit from which to remove the image.",
+                    "required": true
+                },
+                {
+                    "name": "imageName",
+                    "type": "String",
+                    "info": "The name of the image to delete.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getWikiContributors",
+            "description": "Retrieve a list of approved wiki contributors from the specified subreddit. Must be a mod or approved wiki contributor in subreddit. Using pagination will result in the last item of the previous page appearing as the first item of the next page.",
+            "args": [
+                {
+                    "name": "subreddit",
+                    "type": "String",
+                    "info": "Subreddit for which to retrieve approved wiki contributors.",
+                    "required": true
+                },
+                {
+                    "name": "user",
+                    "type": "String",
+                    "info": "Jump to a specific user. Will return an empty list if user is not on list.",
+                    "required": false
+                },
+                {
+                    "name": "show",
+                    "type": "String",
+                    "info": "One of (given).",
+                    "required": false
+                },
+                {
+                    "name": "after",
+                    "type": "String",
+                    "info": "Get items lower on list than this entry. Does not mean chronologically.",
+                    "required": false
+                },
+                {
+                    "name": "before",
+                    "type": "String",
+                    "info": "Get items higher on list than this entry. Does not mean chronologically.",
+                    "required": false
+                },
+                {
+                    "name": "count",
+                    "type": "Number",
+                    "info": "A positive integer (default: 0).",
+                    "required": false
+                },
+                {
+                    "name": "limit",
+                    "type": "Number",
+                    "info": "Upper limit of number of items to retrieve. Maximum is 100.",
+                    "required": false
+                },
+                {
+                    "name": "srDetail",
+                    "type": "String",
+                    "info": "Expand subreddits (optional).",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getContributors",
+            "description": "Retrieve a list of approved submitters from the specified subreddit. Must be a mod or approved submitter in subreddit. Using pagination will result in the last item of the previous page appearing as the first item of the next page.",
+            "args": [
+                {
+                    "name": "subreddit",
+                    "type": "String",
+                    "info": "Subreddit for which to retrieve approved wiki contributors.",
+                    "required": true
+                },
+                {
+                    "name": "user",
+                    "type": "String",
+                    "info": "Jump to a specific user. Will return an empty list if user is not on list.",
+                    "required": false
+                },
+                {
+                    "name": "show",
+                    "type": "String",
+                    "info": "One of (given).",
+                    "required": false
+                },
+                {
+                    "name": "after",
+                    "type": "String",
+                    "info": "Get items lower on list than this entry. Does not mean chronologically.",
+                    "required": false
+                },
+                {
+                    "name": "before",
+                    "type": "String",
+                    "info": "Get items higher on list than this entry. Does not mean chronologically.",
+                    "required": false
+                },
+                {
+                    "name": "count",
+                    "type": "Number",
+                    "info": "A positive integer (default: 0).",
+                    "required": false
+                },
+                {
+                    "name": "limit",
+                    "type": "Number",
+                    "info": "Upper limit of number of items to retrieve. Maximum is 100.",
+                    "required": false
+                },
+                {
+                    "name": "srDetail",
+                    "type": "String",
+                    "info": "Expand subreddits (optional).",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getWikiBanned",
+            "description": "Retrieve a list of wiki banned users from the specified subreddit. Must be a mod with access permissions. Using pagination will result in the last item of the previous page appearing as the first item of the next page.",
+            "args": [
+                {
+                    "name": "subreddit",
+                    "type": "String",
+                    "info": "Subreddit for which to retrieve wiki banned.",
+                    "required": true
+                },
+                {
+                    "name": "user",
+                    "type": "String",
+                    "info": "Jump to a specific user. Will return an empty list if user is not on list.",
+                    "required": false
+                },
+                {
+                    "name": "show",
+                    "type": "String",
+                    "info": "One of (given).",
+                    "required": false
+                },
+                {
+                    "name": "after",
+                    "type": "String",
+                    "info": "Get items lower on list than this entry. Does not mean chronologically.",
+                    "required": false
+                },
+                {
+                    "name": "before",
+                    "type": "String",
+                    "info": "Get items higher on list than this entry. Does not mean chronologically.",
+                    "required": false
+                },
+                {
+                    "name": "count",
+                    "type": "Number",
+                    "info": "A positive integer (default: 0).",
+                    "required": false
+                },
+                {
+                    "name": "limit",
+                    "type": "Number",
+                    "info": "Upper limit of number of items to retrieve. Maximum is 100.",
+                    "required": false
+                },
+                {
+                    "name": "srDetail",
+                    "type": "String",
+                    "info": "Expand subreddits (optional).",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getModerators",
+            "description": "Retrieve a list of moderators from the specified subreddit. Must have read access to subreddit. This function does not use pagination, but it's here anyway in case that's changed in the future.",
+            "args": [
+                {
+                    "name": "subreddit",
+                    "type": "String",
+                    "info": "Subreddit for which to retrieve moderators.",
+                    "required": true
+                },
+                {
+                    "name": "user",
+                    "type": "String",
+                    "info": "Jump to a specific user. Will return an empty list if user is not on list.",
+                    "required": false
+                },
+                {
+                    "name": "show",
+                    "type": "String",
+                    "info": "One of (given).",
+                    "required": false
+                },
+                {
+                    "name": "after",
+                    "type": "String",
+                    "info": "Get items lower on list than this entry. Does not mean chronologically.",
+                    "required": false
+                },
+                {
+                    "name": "before",
+                    "type": "String",
+                    "info": "Get items higher on list than this entry. Does not mean chronologically.",
+                    "required": false
+                },
+                {
+                    "name": "count",
+                    "type": "Number",
+                    "info": "A positive integer (default: 0).",
+                    "required": false
+                },
+                {
+                    "name": "limit",
+                    "type": "Number",
+                    "info": "Upper limit of number of items to retrieve. Maximum is 100.",
+                    "required": false
+                },
+                {
+                    "name": "srDetail",
+                    "type": "String",
+                    "info": "Expand subreddits (optional).",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getMuted",
+            "description": "Retrieve a list of muted users from the specified subreddit. Must be a mod with access permissions. Using pagination will result in the last item of the previous page appearing as the first item of the next page.",
+            "args": [
+                {
+                    "name": "subreddit",
+                    "type": "String",
+                    "info": "Subreddit for which to retrieve mute.",
+                    "required": true
+                },
+                {
+                    "name": "user",
+                    "type": "String",
+                    "info": "Jump to a specific user. Will return an empty list if user is not on list.",
+                    "required": false
+                },
+                {
+                    "name": "show",
+                    "type": "String",
+                    "info": "One of (given).",
+                    "required": false
+                },
+                {
+                    "name": "after",
+                    "type": "String",
+                    "info": "Get items lower on list than this entry. Does not mean chronologically.",
+                    "required": false
+                },
+                {
+                    "name": "before",
+                    "type": "String",
+                    "info": "Get items higher on list than this entry. Does not mean chronologically.",
+                    "required": false
+                },
+                {
+                    "name": "count",
+                    "type": "Number",
+                    "info": "A positive integer (default: 0).",
+                    "required": false
+                },
+                {
+                    "name": "limit",
+                    "type": "Number",
+                    "info": "Upper limit of number of items to retrieve. Maximum is 100.",
+                    "required": false
+                },
+                {
+                    "name": "srDetail",
+                    "type": "String",
+                    "info": "Expand subreddits (optional).",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getBanned",
+            "description": "Retrieve a list of banned users from the specified subreddit. Must be a mod with access permissions. Using pagination will result in the last item of the previous page appearing as the first item of the next page.",
+            "args": [
+                {
+                    "name": "subreddit",
+                    "type": "String",
+                    "info": "Subreddit for which to retrieve banned.",
+                    "required": true
+                },
+                {
+                    "name": "user",
+                    "type": "String",
+                    "info": "Jump to a specific user. Will return an empty list if user is not on list.",
+                    "required": false
+                },
+                {
+                    "name": "show",
+                    "type": "String",
+                    "info": "One of (given).",
+                    "required": false
+                },
+                {
+                    "name": "after",
+                    "type": "String",
+                    "info": "Get items lower on list than this entry. Does not mean chronologically.",
+                    "required": false
+                },
+                {
+                    "name": "before",
+                    "type": "String",
+                    "info": "Get items higher on list than this entry. Does not mean chronologically.",
+                    "required": false
+                },
+                {
+                    "name": "count",
+                    "type": "Number",
+                    "info": "A positive integer (default: 0).",
+                    "required": false
+                },
+                {
+                    "name": "limit",
+                    "type": "Number",
+                    "info": "Upper limit of number of items to retrieve. Maximum is 100.",
+                    "required": false
+                },
+                {
+                    "name": "srDetail",
+                    "type": "String",
+                    "info": "Expand subreddits (optional).",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "aboutSubreddit",
+            "description": "Retrieves information about the specified subreddit, including subreddit ID.",
+            "args": [
+                {
+                    "name": "subreddit",
+                    "type": "String",
+                    "info": "Subreddit for which to retrieve information.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "deleteSubredditIcon",
+            "description": "Remove the subreddit's custom mobile icon.",
+            "args": [
+                {
+                    "name": "subreddit",
+                    "type": "String",
+                    "info": "Subreddit from which to remove the icon.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "deleteSubredditHeaderImage",
+            "description": "Remove the subreddit's custom header image.",
+            "args": [
+                {
+                    "name": "subreddit",
+                    "type": "String",
+                    "info": "Subreddit from which to remove the header image.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "deleteSubredditBanner",
+            "description": "Remove the subreddit's custom mobile banner.",
+            "args": [
+                {
+                    "name": "subreddit",
+                    "type": "String",
+                    "info": "Subreddit from which to remove the banner.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "unblockUser",
+            "description": "Unblock a user by username.",
+            "args": [
+                {
+                    "name": "name",
+                    "type": "String",
+                    "info": "Username of user to unblock.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "removeFriend",
+            "description": "Removes the specified user as a friend.",
+            "args": [
+                {
+                    "name": "id",
+                    "type": "String",
+                    "info": "Username of user to remove.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "addFriend",
+            "description": "Adds the specified user as a friend.",
+            "args": [
+                {
+                    "name": "name",
+                    "type": "String",
+                    "info": "Username of friend to add.",
+                    "required": true
+                },
+                {
+                    "name": "note",
+                    "type": "String",
+                    "info": "Note to add to friend record. Currently only available to those with reddit gold.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "search",
+            "description": "Perform a search query. Somewhat untested due to the complexity of and possible combinations to use in the search function.",
+            "args": [
+                {
+                    "name": "q",
+                    "type": "String",
+                    "info": "Query of which to search.",
+                    "required": true
+                },
+                {
+                    "name": "subreddit",
+                    "type": "String",
+                    "info": "Subreddit to which to restrict search.",
+                    "required": false
+                },
+                {
+                    "name": "sort",
+                    "type": "String",
+                    "info": "Sort results by one of 'relevance', 'hot', 'top', 'new', 'comments'. Defaults to 'relevance'.",
+                    "required": false
+                },
+                {
+                    "name": "t",
+                    "type": "String",
+                    "info": "One of 'hour', 'day', 'week', 'month', 'year', 'all'. Defaults to all.",
+                    "required": false
+                },
+                {
+                    "name": "type",
+                    "type": "String",
+                    "info": "Comma-delimited list of result types: 'sr', 'link', or null.",
+                    "required": false
+                },
+                {
+                    "name": "includeFacets",
+                    "type": "Boolean",
+                    "info": "Include facets.",
+                    "required": false
+                },
+                {
+                    "name": "restrictSr",
+                    "type": "Boolean",
+                    "info": "Restrict subreddit.",
+                    "required": false
+                },
+                {
+                    "name": "syntax",
+                    "type": "String",
+                    "info": "One of (cloudsearch, lucene, plain).",
+                    "required": false
+                },
+                {
+                    "name": "after",
+                    "type": "String",
+                    "info": "Fullname of a thing.",
+                    "required": false
+                },
+                {
+                    "name": "before",
+                    "type": "String",
+                    "info": "Fullname of a thing.",
+                    "required": false
+                },
+                {
+                    "name": "count",
+                    "type": "Number",
+                    "info": "A positive integer (default: 0).",
+                    "required": false
+                },
+                {
+                    "name": "limit",
+                    "type": "Number",
+                    "info": "The maximum number of items desired (default: 25, maximum: 100).",
+                    "required": false
+                },
+                {
+                    "name": "srDetail",
+                    "type": "String",
+                    "info": "Expand subreddits (optional).",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "usernameAvailable",
+            "description": "Presumably checks whether the specified username is available, but endpoint is not working at this time.",
+            "args": [
+                {
+                    "name": "user",
+                    "type": "String",
+                    "info": "Username to check for availability.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "multiGetDescription",
+            "description": "Get a multi's description.",
+            "args": [
+                {
+                    "name": "multipath",
+                    "type": "String",
+                    "info": "Multireddit url path.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "multiEdit",
+            "description": "Create or update a multireddit.",
+            "args": [
+                {
+                    "name": "multipath",
+                    "type": "String",
+                    "info": "Multireddit url path.",
+                    "required": true
+                },
+                {
+                    "name": "displayName",
+                    "type": "String",
+                    "info": "A string no longer than 50 characters.",
+                    "required": false
+                },
+                {
+                    "name": "descriptionMd",
+                    "type": "String",
+                    "info": "Multireddit sidebar text (raw markdown text).",
+                    "required": false
+                },
+                {
+                    "name": "iconName",
+                    "type": "String",
+                    "info": "One of('art and design', 'ask', 'books', 'business', 'cars', 'comics', 'cute animals', 'diy', 'entertainment', 'food and drink', 'funny', 'games', 'grooming', 'health', 'life advice', 'military', 'models pinup', 'music', 'news', 'philosophy', 'pictures and gifs', 'science', 'shopping', 'sports', 'style', 'tech', 'travel', 'unusual stories', 'video', '', 'None').",
+                    "required": false
+                },
+                {
+                    "name": "keyColor",
+                    "type": "String",
+                    "info": "A 6 - digit rgb hex color, e.g. '#AABBCC'.",
+                    "required": false
+                },
+                {
+                    "name": "subredditsName",
+                    "type": "String",
+                    "info": "Comma-separated string of subreddits name.",
+                    "required": false
+                },
+                {
+                    "name": "visibility",
+                    "type": "String",
+                    "info": "One of 'public', 'private', 'hidden'. Hidden multireddits will not be visible to you except through the API.",
+                    "required": false
+                },
+                {
+                    "name": "weightingScheme",
+                    "type": "String",
+                    "info": "One of 'classic', 'fresh'.",
+                    "required": false
+                },
+                {
+                    "name": "expandSrs",
+                    "type": "Boolean",
+                    "info": "Expand subreddits.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "multiAddSubreddit",
+            "description": "Add the specified subreddit to the specified multireddit.",
+            "args": [
+                {
+                    "name": "multipath",
+                    "type": "String",
+                    "info": "Multireddit url path.",
+                    "required": true
+                },
+                {
+                    "name": "srname",
+                    "type": "String",
+                    "info": "Name of subreddit to add.",
+                    "required": true
+                },
+                {
+                    "name": "modelName",
+                    "type": "String",
+                    "info": "Name of subreddit.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "multiGetSubreddit",
+            "description": "Get information about the specified subreddit in the specified multireddit.",
+            "args": [
+                {
+                    "name": "multipath",
+                    "type": "String",
+                    "info": "Name of multireddit.",
+                    "required": true
+                },
+                {
+                    "name": "srname",
+                    "type": "String",
+                    "info": "Subreddit for which to obtain information.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "multiRemoveSubreddit",
+            "description": "Remove the specified subreddit from the specified multireddit.",
+            "args": [
+                {
+                    "name": "multipath",
+                    "type": "String",
+                    "info": "Name of multireddit.",
+                    "required": true
+                },
+                {
+                    "name": "srname",
+                    "type": "String",
+                    "info": "Name of subreddit to remove.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "multiEditDescription",
+            "description": "Edit the description/sidebar for the specified multireddit.",
+            "args": [
+                {
+                    "name": "multipath",
+                    "type": "String",
+                    "info": "Multireddit url path.",
+                    "required": true
+                },
+                {
+                    "name": "modelBodyMd",
+                    "type": "String",
+                    "info": "New description (raw markdown text).",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getUserOverview",
+            "description": "Obtain posts and comments made by the specified user.",
+            "args": [
+                {
+                    "name": "username",
+                    "type": "String",
+                    "info": "Username of user for whom to retrieve records.",
+                    "required": true
+                },
+                {
+                    "name": "sort",
+                    "type": "String",
+                    "info": "Sorting method. One of 'hot', 'new', 'top', 'controversial', or null.",
+                    "required": false
+                },
+                {
+                    "name": "show",
+                    "type": "String",
+                    "info": "One of (given).",
+                    "required": false
+                },
+                {
+                    "name": "t",
+                    "type": "String",
+                    "info": "One of 'hour', 'day', 'week', 'month', 'year', 'all', or null.",
+                    "required": false
+                },
+                {
+                    "name": "after",
+                    "type": "String",
+                    "info": "Fullname of a thing.",
+                    "required": false
+                },
+                {
+                    "name": "before",
+                    "type": "String",
+                    "info": "Fullname of a thing.",
+                    "required": false
+                },
+                {
+                    "name": "count",
+                    "type": "Number",
+                    "info": "A positive integer (default: 0).",
+                    "required": false
+                },
+                {
+                    "name": "limit",
+                    "type": "Number",
+                    "info": "Upper limit of number of items to retrieve. Maximum is 100.",
+                    "required": false
+                },
+                {
+                    "name": "srDetail",
+                    "type": "String",
+                    "info": "Expand subreddits (optional).",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getUser",
+            "description": "Retrieve information about the specified user.",
+            "args": [
+                {
+                    "name": "username",
+                    "type": "String",
+                    "info": "Username of user to retrieve.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getUserTrophies",
+            "description": "Get a user's trophies.",
+            "args": [
+                {
+                    "name": "id",
+                    "type": "String",
+                    "info": "Username of user for whom to retrieve trophies.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "multiGet",
+            "description": "Fetch a multi's data and subreddit list by name.",
+            "args": [
+                {
+                    "name": "multipath",
+                    "type": "String",
+                    "info": "Name of multireddit to retrieve.",
+                    "required": true
+                },
+                {
+                    "name": "expandSrs",
+                    "type": "Boolean",
+                    "info": "Expand subreddits.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "searchSubreddits",
+            "description": "Search for subreddits by title and description.",
+            "args": [
+                {
+                    "name": "q",
+                    "type": "String",
+                    "info": "Query with which to search",
+                    "required": true
+                },
+                {
+                    "name": "sort",
+                    "type": "String",
+                    "info": "Sorting method. One of 'relevance', 'activity'",
+                    "required": false
+                },
+                {
+                    "name": "after",
+                    "type": "String",
+                    "info": "Fullname of a thing.",
+                    "required": false
+                },
+                {
+                    "name": "before",
+                    "type": "String",
+                    "info": "Fullname of a thing.",
+                    "required": false
+                },
+                {
+                    "name": "count",
+                    "type": "Number",
+                    "info": "A positive integer (default: 0).",
+                    "required": false
+                },
+                {
+                    "name": "limit",
+                    "type": "Number",
+                    "info": "Upper limit of number of items to retrieve. Maximum is 100.",
+                    "required": false
+                },
+                {
+                    "name": "srDetail",
+                    "type": "String",
+                    "info": "Expand subreddits (optional).",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "leaveModerator",
+            "description": "Abdicate moderator status in a subreddit.",
+            "args": [
+                {
+                    "name": "id",
+                    "type": "String",
+                    "info": "Name of subreddit to leave.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getStickies",
+            "description": "Retrieve a subreddit's stickied posts.",
+            "args": [
+                {
+                    "name": "subreddit",
+                    "type": "String",
+                    "info": "Subreddit from which to retrieve sticky posts.",
+                    "required": true
+                },
+                {
+                    "name": "num",
+                    "type": "String",
+                    "info": "Argument can be used to select a specific sticky (an integer between 1 and 2 (default: 1)).",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "leaveContributor",
+            "description": "Abdicate approved submitter status in a subreddit.",
+            "args": [
+                {
+                    "name": "id",
+                    "type": "String",
+                    "info": "Name of subreddit to leave.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "multiDelete",
+            "description": "Deletes the specified multireddit.",
+            "args": [
+                {
+                    "name": "multipath",
+                    "type": "String",
+                    "info": "Name of multireddit to delete.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "multiGetUser",
+            "description": "Retrieves a list of multireddits owned by the specified user.",
+            "args": [
+                {
+                    "name": "username",
+                    "type": "String",
+                    "info": "Username of user for which to retrieve owned multireddits.",
+                    "required": true
+                },
+                {
+                    "name": "expandSrs",
+                    "type": "Boolean",
+                    "info": "Obtain extra details about the subreddits of each multireddit.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "ignoreReports",
+            "description": "Ignores reports for the specified thing.",
+            "args": [
+                {
+                    "name": "id",
+                    "type": "String",
+                    "info": "Thing ID of object to be ignored.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "multiRename",
+            "description": "Renames a multireddit.",
+            "args": [
+                {
+                    "name": "displayName",
+                    "type": "String",
+                    "info": "A string no longer than 50 characters.",
+                    "required": true
+                },
+                {
+                    "name": "from",
+                    "type": "String",
+                    "info": "Name of multireddit to rename.",
+                    "required": true
+                },
+                {
+                    "name": "to",
+                    "type": "String",
+                    "info": "Destination name.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "unmuteUserByMessage",
+            "description": "Unmute a user from a subreddit based on the thing ID of a message they sent.",
+            "args": [
+                {
+                    "name": "id",
+                    "type": "String",
+                    "info": "Thing ID of the message author to be unmuted.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getPopularSubreddits",
+            "description": "Retrieves a list of popular subreddits.",
+            "args": [
+                {
+                    "name": "after",
+                    "type": "String",
+                    "info": "Fullname of a thing.",
+                    "required": false
+                },
+                {
+                    "name": "before",
+                    "type": "String",
+                    "info": "Fullname of a thing.",
+                    "required": false
+                },
+                {
+                    "name": "count",
+                    "type": "Number",
+                    "info": "A positive integer (default: 0).",
+                    "required": false
+                },
+                {
+                    "name": "limit",
+                    "type": "Number",
+                    "info": "Upper limit of number of items to retrieve. Maximum is 100.",
+                    "required": false
+                },
+                {
+                    "name": "srDetail",
+                    "type": "String",
+                    "info": "Expand subreddits (optional).",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getMyModeratedSubreddits",
+            "description": "Retrieve a list of the current user's subreddits in which they are a moderator.",
+            "args": [
+                {
+                    "name": "after",
+                    "type": "String",
+                    "info": "Fullname of a thing.",
+                    "required": false
+                },
+                {
+                    "name": "before",
+                    "type": "String",
+                    "info": "Fullname of a thing.",
+                    "required": false
+                },
+                {
+                    "name": "count",
+                    "type": "Number",
+                    "info": "A positive integer (default: 0).",
+                    "required": false
+                },
+                {
+                    "name": "limit",
+                    "type": "Number",
+                    "info": "Upper limit of number of items to retrieve. Maximum is 100.",
+                    "required": false
+                },
+                {
+                    "name": "srDetail",
+                    "type": "String",
+                    "info": "Expand subreddits (optional).",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "unignoreReports",
+            "description": "Allow future reports on a thing to cause notifications.",
+            "args": [
+                {
+                    "name": "id",
+                    "type": "String",
+                    "info": "Thing ID of object to be unignored.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "remove",
+            "description": "Remove a link, comment, or modmail message.",
+            "args": [
+                {
+                    "name": "id",
+                    "type": "String",
+                    "info": "Thing ID of object to remove.",
+                    "required": true
+                },
+                {
+                    "name": "spam",
+                    "type": "Boolean",
+                    "info": "Mark as spam.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getMyContributedSubreddits",
+            "description": "Retrieve a list of the current user's subreddits in which they are an approved submitter.",
+            "args": [
+                {
+                    "name": "after",
+                    "type": "String",
+                    "info": "Fullname of a thing.",
+                    "required": false
+                },
+                {
+                    "name": "before",
+                    "type": "String",
+                    "info": "Fullname of a thing.",
+                    "required": false
+                },
+                {
+                    "name": "count",
+                    "type": "Number",
+                    "info": "A positive integer (default: 0).",
+                    "required": false
+                },
+                {
+                    "name": "limit",
+                    "type": "Number",
+                    "info": "Upper limit of number of items to retrieve. Maximum is 100.",
+                    "required": false
+                },
+                {
+                    "name": "srDetail",
+                    "type": "String",
+                    "info": "Expand subreddits (optional).",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getMySubscribedSubreddits",
+            "description": "Retrieve a list of the current user's subscribed subreddits.",
+            "args": [
+                {
+                    "name": "after",
+                    "type": "String",
+                    "info": "Fullname of a thing.",
+                    "required": false
+                },
+                {
+                    "name": "before",
+                    "type": "String",
+                    "info": "Fullname of a thing.",
+                    "required": false
+                },
+                {
+                    "name": "count",
+                    "type": "Number",
+                    "info": "A positive integer (default: 0).",
+                    "required": false
+                },
+                {
+                    "name": "limit",
+                    "type": "Number",
+                    "info": "Upper limit of number of items to retrieve. Maximum is 100.",
+                    "required": false
+                },
+                {
+                    "name": "srDetail",
+                    "type": "String",
+                    "info": "Expand subreddits (optional).",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "multiCreate",
+            "description": "Create a multi. Responds with 409 Conflict if it already exists.",
+            "args": [
+                {
+                    "name": "multipath",
+                    "type": "String",
+                    "info": "Multireddit url path.",
+                    "required": true
+                },
+                {
+                    "name": "displayName",
+                    "type": "String",
+                    "info": "A string no longer than 50 characters.",
+                    "required": true
+                },
+                {
+                    "name": "descriptionMd",
+                    "type": "String",
+                    "info": "Multireddit sidebar text (raw markdown text).",
+                    "required": false
+                },
+                {
+                    "name": "iconName",
+                    "type": "String",
+                    "info": "One of('art and design', 'ask', 'books', 'business', 'cars', 'comics', 'cute animals', 'diy', 'entertainment', 'food and drink', 'funny', 'games', 'grooming', 'health', 'life advice', 'military', 'models pinup', 'music', 'news', 'philosophy', 'pictures and gifs', 'science', 'shopping', 'sports', 'style', 'tech', 'travel', 'unusual stories', 'video', '', 'None').",
+                    "required": false
+                },
+                {
+                    "name": "keyColor",
+                    "type": "String",
+                    "info": "A 6 - digit rgb hex color, e.g. '#AABBCC'.",
+                    "required": false
+                },
+                {
+                    "name": "subredditsName",
+                    "type": "String",
+                    "info": "Comma-separated string of subreddits name.",
+                    "required": false
+                },
+                {
+                    "name": "visibility",
+                    "type": "String",
+                    "info": "One of 'public', 'private', 'hidden'. Hidden multireddits will not be visible to you except through the API.",
+                    "required": false
+                },
+                {
+                    "name": "weightingScheme",
+                    "type": "String",
+                    "info": "One of 'classic', 'fresh'.",
+                    "required": false
+                },
+                {
+                    "name": "expandSrs",
+                    "type": "Boolean",
+                    "info": "Expand subreddits.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "muteUserByMessage",
+            "description": "Mute a user from a subreddit based on the thing ID of a message they sent.",
+            "args": [
+                {
+                    "name": "id",
+                    "type": "String",
+                    "info": "Thing ID of the message author to be muted.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "multiGetMine",
+            "description": "Retrieves a list of multireddits that are owned by the current user.",
+            "args": [
+                {
+                    "name": "expandSrs",
+                    "type": "Boolean",
+                    "info": "Expand subreddits.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "multiCopy",
+            "description": "Copy an existing multireddit to your own set.",
+            "args": [
+                {
+                    "name": "displayName",
+                    "type": "String",
+                    "info": "A string no longer than 50 characters.",
+                    "required": true
+                },
+                {
+                    "name": "from",
+                    "type": "String",
+                    "info": "Name of multireddit to copy.",
+                    "required": true
+                },
+                {
+                    "name": "to",
+                    "type": "String",
+                    "info": "Name of destination multireddit.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "editSubreddit",
+            "description": "Change a subreddit's configuration.",
+            "args": [
+                {
+                    "name": "name",
+                    "type": "String",
+                    "info": "Subreddit name.",
+                    "required": false
+                },
+                {
+                    "name": "publicDescription",
+                    "type": "String",
+                    "info": "Public description (raw markdown text).",
+                    "required": false
+                },
+                {
+                    "name": "description",
+                    "type": "String",
+                    "info": "Raw markdown text.",
+                    "required": false
+                },
+                {
+                    "name": "title",
+                    "type": "String",
+                    "info": "A string no longer than 100 characters.",
+                    "required": false
+                },
+                {
+                    "name": "header-title",
+                    "type": "String",
+                    "info": "A string no longer than 500 characters.",
+                    "required": false
+                },
+                {
+                    "name": "sr",
+                    "type": "String",
+                    "info": "Name of subreddit to change.",
+                    "required": false
+                },
+                {
+                    "name": "themeSr",
+                    "type": "String",
+                    "info": "Subreddit name.",
+                    "required": false
+                },
+                {
+                    "name": "lang",
+                    "type": "String",
+                    "info": "A valid IETF language tag (underscore separated).",
+                    "required": false
+                },
+                {
+                    "name": "commentScoreHideMins",
+                    "type": "Number",
+                    "info": "An integer between 0 and 1440 (default: 0).",
+                    "required": false
+                },
+                {
+                    "name": "excludeBannedModqueue",
+                    "type": "Boolean",
+                    "info": "Exclude banned modqueue, boolean value.",
+                    "required": false
+                },
+                {
+                    "name": "submitLinkLabel",
+                    "type": "String",
+                    "info": "A string no longer than 60 characters.",
+                    "required": false
+                },
+                {
+                    "name": "submitText",
+                    "type": "String",
+                    "info": "Raw markdown text.",
+                    "required": false
+                },
+                {
+                    "name": "submitTextLabel",
+                    "type": "String",
+                    "info": "A string no longer than 60 characters.",
+                    "required": false
+                },
+                {
+                    "name": "suggestedCommentSort",
+                    "type": "String",
+                    "info": "One of (confidence, top, new, controversial, old, random, qa, live).",
+                    "required": false
+                },
+                {
+                    "name": "linkType",
+                    "type": "String",
+                    "info": "One of (any, link, self).",
+                    "required": false
+                },
+                {
+                    "name": "spamComments",
+                    "type": "String",
+                    "info": "One of (low, high, all).",
+                    "required": false
+                },
+                {
+                    "name": "spamLinks",
+                    "type": "String",
+                    "info": "One of (low, high, all).",
+                    "required": false
+                },
+                {
+                    "name": "spamSelfposts",
+                    "type": "String",
+                    "info": "One of (low, high, all).",
+                    "required": false
+                },
+                {
+                    "name": "spoilersEnabled",
+                    "type": "Boolean",
+                    "info": "Spoilers enabled, boolean value.",
+                    "required": false
+                },
+                {
+                    "name": "type",
+                    "type": "String",
+                    "info": "One of (gold_restricted, archived, restricted, gold_only, employees_only, private, public).",
+                    "required": false
+                },
+                {
+                    "name": "wikiEditAge",
+                    "type": "Number",
+                    "info": "An integer greater than 0 (default: 0).",
+                    "required": false
+                },
+                {
+                    "name": "wikiEditKarma",
+                    "type": "Number",
+                    "info": "An integer greater than 0 (default: 0).",
+                    "required": false
+                },
+                {
+                    "name": "wikimode",
+                    "type": "String",
+                    "info": "One of (disabled, modonly, anyone).",
+                    "required": false
+                },
+                {
+                    "name": "allowImages",
+                    "type": "Boolean",
+                    "info": "Allow images, boolean value.",
+                    "required": false
+                },
+                {
+                    "name": "allowTop",
+                    "type": "Boolean",
+                    "info": "Allow top, boolean value.",
+                    "required": false
+                },
+                {
+                    "name": "hideAds",
+                    "type": "Boolean",
+                    "info": "Hide ads, boolean value.",
+                    "required": false
+                },
+                {
+                    "name": "over_18",
+                    "type": "Boolean",
+                    "info": "Is over 18, boolean value.",
+                    "required": false
+                },
+                {
+                    "name": "publicTraffic",
+                    "type": "Boolean",
+                    "info": "Public traffic, boolean value.",
+                    "required": false
+                },
+                {
+                    "name": "showMedia",
+                    "type": "Boolean",
+                    "info": "Show media, boolean value.",
+                    "required": false
+                },
+                {
+                    "name": "showMediaPreview",
+                    "type": "Boolean",
+                    "info": "Show media preview, boolean value.",
+                    "required": false
+                },
+                {
+                    "name": "collapseDeletedComments",
+                    "type": "Boolean",
+                    "info": "Collapse deleted comments, boolean value.",
+                    "required": false
+                },
+                {
+                    "name": "themeSrUpdate",
+                    "type": "Boolean",
+                    "info": "Theme subreddit update, boolean value.",
+                    "required": false
+                },
+                {
+                    "name": "g-recaptcha-response",
+                    "type": "String",
+                    "info": "Recaptcha response.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getDefaultSubreddits",
+            "description": "Retrieves a list of default subreddits.",
+            "args": [
+                {
+                    "name": "after",
+                    "type": "String",
+                    "info": "Fullname of a thing.",
+                    "required": false
+                },
+                {
+                    "name": "before",
+                    "type": "String",
+                    "info": "Fullname of a thing.",
+                    "required": false
+                },
+                {
+                    "name": "count",
+                    "type": "Number",
+                    "info": "A positive integer (default: 0).",
+                    "required": false
+                },
+                {
+                    "name": "limit",
+                    "type": "Number",
+                    "info": "Upper limit of number of items to retrieve. Maximum is 100.",
+                    "required": false
+                },
+                {
+                    "name": "srDetail",
+                    "type": "String",
+                    "info": "Expand subreddits (optional).",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getGoldOnlySubreddits",
+            "description": "Retrieves a list of gold-only subreddits.",
+            "args": [
+                {
+                    "name": "after",
+                    "type": "String",
+                    "info": "Fullname of a thing.",
+                    "required": false
+                },
+                {
+                    "name": "before",
+                    "type": "String",
+                    "info": "Fullname of a thing.",
+                    "required": false
+                },
+                {
+                    "name": "count",
+                    "type": "Number",
+                    "info": "A positive integer (default: 0).",
+                    "required": false
+                },
+                {
+                    "name": "limit",
+                    "type": "Number",
+                    "info": "Upper limit of number of items to retrieve. Maximum is 100.",
+                    "required": false
+                },
+                {
+                    "name": "srDetail",
+                    "type": "String",
+                    "info": "Expand subreddits (optional).",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getNewSubreddits",
+            "description": "Retrieves a list of new subreddits.",
+            "args": [
+                {
+                    "name": "after",
+                    "type": "String",
+                    "info": "Fullname of a thing.",
+                    "required": false
+                },
+                {
+                    "name": "before",
+                    "type": "String",
+                    "info": "Fullname of a thing.",
+                    "required": false
+                },
+                {
+                    "name": "count",
+                    "type": "Number",
+                    "info": "A positive integer (default: 0).",
+                    "required": false
+                },
+                {
+                    "name": "limit",
+                    "type": "Number",
+                    "info": "Upper limit of number of items to retrieve. Maximum is 100.",
+                    "required": false
+                },
+                {
+                    "name": "srDetail",
+                    "type": "String",
+                    "info": "Expand subreddits (optional).",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getSubredditSidebar",
+            "description": "Get a subreddit's sidebar contents.",
+            "args": [
+                {
+                    "name": "subreddit",
+                    "type": "String",
+                    "info": "Subreddit of which to retrieve sidebar.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getSubredditSettings",
+            "description": "Retrieve a list of the subreddit's settings. Must be a moderator.",
+            "args": [
+                {
+                    "name": "subreddit",
+                    "type": "String",
+                    "info": "The subreddit to retrieve.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getModerationLog",
+            "description": "Retrieves recent entries from the moderation log for the specified subreddit.",
+            "args": [
+                {
+                    "name": "subreddit",
+                    "type": "String",
+                    "info": "Subreddit of log to retrieve. All moderated subreddits by default.",
+                    "required": false
+                },
+                {
+                    "name": "mod",
+                    "type": "String",
+                    "info": "Filter by moderator.",
+                    "required": false
+                },
+                {
+                    "name": "type",
+                    "type": "String",
+                    "info": "Filter by mod action, one of (banuser, unbanuser, removelink, approvelink, removecomment, approvecomment, addmoderator, invitemoderator, uninvitemoderator, acceptmoderatorinvite, removemoderator, addcontributor, removecontributor, editsettings, editflair, distinguish, marknsfw, wikibanned, wikicontributor, wikiunbanned, wikipagelisted, removewikicontributor, wikirevise, wikipermlevel, ignorereports, unignorereports, setpermissions, setsuggestedsort, sticky, unsticky, setcontestmode, unsetcontestmode, lock, unlock, muteuser, unmuteuser, createrule, editrule, deleterule, spoiler, unspoiler, modmail_enrollment).",
+                    "required": false
+                },
+                {
+                    "name": "after",
+                    "type": "String",
+                    "info": "Fullname of a thing.",
+                    "required": false
+                },
+                {
+                    "name": "before",
+                    "type": "String",
+                    "info": "Fullname of a thing.",
+                    "required": false
+                },
+                {
+                    "name": "count",
+                    "type": "Number",
+                    "info": "A positive integer (default: 0).",
+                    "required": false
+                },
+                {
+                    "name": "limit",
+                    "type": "Number",
+                    "info": "Upper limit of number of items to retrieve. Maximum is 100.",
+                    "required": false
+                },
+                {
+                    "name": "srDetail",
+                    "type": "String",
+                    "info": "Expand subreddits (optional).",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "searchSubredditsByTopic",
+            "description": "Search for subreddits by topic keywords.",
+            "args": [
+                {
+                    "name": "query",
+                    "type": "String",
+                    "info": "Query with which to search.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "setSubredditStylesheet",
+            "description": "Set a subreddit's stylesheet.",
+            "args": [
+                {
+                    "name": "subreddit",
+                    "type": "String",
+                    "info": "Subreddit of which to set stylesheet.",
+                    "required": true
+                },
+                {
+                    "name": "stylesheetContents",
+                    "type": "String",
+                    "info": "Contents of stylesheet, probably pretty long.",
+                    "required": true
+                },
+                {
+                    "name": "reason",
+                    "type": "String",
+                    "info": "Since the stylesheet is a wiki page, optionally provide a reason for editing.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getSubmitText",
+            "description": "Retrieves the \"submitting to /r/&subreddit\" text for the selected subreddit.",
+            "args": [
+                {
+                    "name": "subreddit",
+                    "type": "String",
+                    "info": "Name of subreddit from which to obtain submit text.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "createSubreddit",
+            "description": "Create a new subreddit.",
+            "args": [
+                {
+                    "name": "sr",
+                    "type": "String",
+                    "info": "Name of subreddit to change.",
+                    "required": true
+                },
+                {
+                    "name": "name",
+                    "type": "String",
+                    "info": "Subreddit name.",
+                    "required": false
+                },
+                {
+                    "name": "publicDescription",
+                    "type": "String",
+                    "info": "Public description (raw markdown text).",
+                    "required": false
+                },
+                {
+                    "name": "description",
+                    "type": "String",
+                    "info": "Raw markdown text.",
+                    "required": false
+                },
+                {
+                    "name": "title",
+                    "type": "String",
+                    "info": "A string no longer than 100 characters.",
+                    "required": false
+                },
+                {
+                    "name": "header-title",
+                    "type": "String",
+                    "info": "A string no longer than 500 characters.",
+                    "required": false
+                },
+                {
+                    "name": "themeSr",
+                    "type": "String",
+                    "info": "Subreddit name.",
+                    "required": false
+                },
+                {
+                    "name": "lang",
+                    "type": "String",
+                    "info": "A valid IETF language tag (underscore separated).",
+                    "required": false
+                },
+                {
+                    "name": "commentScoreHideMins",
+                    "type": "Number",
+                    "info": "An integer between 0 and 1440 (default: 0).",
+                    "required": false
+                },
+                {
+                    "name": "excludeBannedModqueue",
+                    "type": "Boolean",
+                    "info": "Exclude banned modqueue, boolean value.",
+                    "required": false
+                },
+                {
+                    "name": "submitLinkLabel",
+                    "type": "String",
+                    "info": "A string no longer than 60 characters.",
+                    "required": false
+                },
+                {
+                    "name": "submitText",
+                    "type": "String",
+                    "info": "Raw markdown text.",
+                    "required": false
+                },
+                {
+                    "name": "submitTextLabel",
+                    "type": "String",
+                    "info": "A string no longer than 60 characters.",
+                    "required": false
+                },
+                {
+                    "name": "suggestedCommentSort",
+                    "type": "String",
+                    "info": "One of (confidence, top, new, controversial, old, random, qa, live).",
+                    "required": false
+                },
+                {
+                    "name": "linkType",
+                    "type": "String",
+                    "info": "One of (any, link, self).",
+                    "required": false
+                },
+                {
+                    "name": "spamComments",
+                    "type": "String",
+                    "info": "One of (low, high, all).",
+                    "required": false
+                },
+                {
+                    "name": "spamLinks",
+                    "type": "String",
+                    "info": "One of (low, high, all).",
+                    "required": false
+                },
+                {
+                    "name": "spamSelfposts",
+                    "type": "String",
+                    "info": "One of (low, high, all).",
+                    "required": false
+                },
+                {
+                    "name": "spoilersEnabled",
+                    "type": "Boolean",
+                    "info": "Spoilers enabled, boolean value.",
+                    "required": false
+                },
+                {
+                    "name": "type",
+                    "type": "String",
+                    "info": "One of (gold_restricted, archived, restricted, gold_only, employees_only, private, public).",
+                    "required": false
+                },
+                {
+                    "name": "wikiEditAge",
+                    "type": "Number",
+                    "info": "An integer greater than 0 (default: 0).",
+                    "required": false
+                },
+                {
+                    "name": "wikiEditKarma",
+                    "type": "Number",
+                    "info": "An integer greater than 0 (default: 0).",
+                    "required": false
+                },
+                {
+                    "name": "wikimode",
+                    "type": "String",
+                    "info": "One of (disabled, modonly, anyone).",
+                    "required": false
+                },
+                {
+                    "name": "allowImages",
+                    "type": "Boolean",
+                    "info": "Allow images, boolean value.",
+                    "required": false
+                },
+                {
+                    "name": "allowTop",
+                    "type": "Boolean",
+                    "info": "Allow top, boolean value.",
+                    "required": false
+                },
+                {
+                    "name": "hideAds",
+                    "type": "Boolean",
+                    "info": "Hide ads, boolean value.",
+                    "required": false
+                },
+                {
+                    "name": "over_18",
+                    "type": "Boolean",
+                    "info": "Is over 18, boolean value.",
+                    "required": false
+                },
+                {
+                    "name": "publicTraffic",
+                    "type": "Boolean",
+                    "info": "Public traffic, boolean value.",
+                    "required": false
+                },
+                {
+                    "name": "showMedia",
+                    "type": "Boolean",
+                    "info": "Show media, boolean value.",
+                    "required": false
+                },
+                {
+                    "name": "showMediaPreview",
+                    "type": "Boolean",
+                    "info": "Show media preview, boolean value.",
+                    "required": false
+                },
+                {
+                    "name": "collapseDeletedComments",
+                    "type": "Boolean",
+                    "info": "Collapse deleted comments, boolean value.",
+                    "required": false
+                },
+                {
+                    "name": "themeSrUpdate",
+                    "type": "Boolean",
+                    "info": "Theme subreddit update, boolean value.",
+                    "required": false
+                },
+                {
+                    "name": "g-recaptcha-response",
+                    "type": "String",
+                    "info": "Recaptcha response.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getSubredditStylesheet",
+            "description": "Get a subreddit's stylesheet.",
+            "args": [
+                {
+                    "name": "subreddit",
+                    "type": "String",
+                    "info": "Subreddit of which to retrieve stylesheet.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "subscribe",
+            "description": "Subscribe to a subreddit. Must have read access to the subreddit.",
+            "args": [
+                {
+                    "name": "subreddit",
+                    "type": "String",
+                    "info": "Subreddit to which to subscribe.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "unsubscribe",
+            "description": "Unsubscribe from a subreddit.",
+            "args": [
+                {
+                    "name": "subreddit",
+                    "type": "String",
+                    "info": "Subreddit from which to unsubscribe.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "uploadSubredditImage",
+            "description": "Upload an image to the specified subreddit.",
+            "args": [
+                {
+                    "name": "subreddit",
+                    "type": "String",
+                    "info": "Subreddit to which to upload image.",
+                    "required": true
+                },
+                {
+                    "name": "file",
+                    "type": "String",
+                    "info": "Relative or absolute path of file (maximum size of 500 KiB).",
+                    "required": true
+                },
+                {
+                    "name": "name",
+                    "type": "String",
+                    "info": "If &upload_type is 'img', assign the image this name. Ignored otherwise.",
+                    "required": true
+                },
+                {
+                    "name": "uploadType",
+                    "type": "String",
+                    "info": "One of 'img', 'header', 'icon', 'banner'.",
+                    "required": false
+                },
+                {
+                    "name": "imageType",
+                    "type": "String",
+                    "info": "One of 'png' or 'jpg'.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "distinguish",
+            "description": "Mod distinguish a post or comment.",
+            "args": [
+                {
+                    "name": "id",
+                    "type": "String",
+                    "info": "Thing ID of object to distinguish.",
+                    "required": true
+                },
+                {
+                    "name": "how",
+                    "type": "Boolean",
+                    "info": "True to set [M] distinguish. False to undistinguish.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "approve",
+            "description": "Marks the specified thing as approved.",
+            "args": [
+                {
+                    "name": "id",
+                    "type": "String",
+                    "info": "Thing ID of object to be approved.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "acceptModeratorInvite",
+            "description": "Accepts a moderator invitation for the specified subreddit. You must have a pending invitation for that subreddit.",
+            "args": [
+                {
+                    "name": "subreddit",
+                    "type": "String",
+                    "info": "Subreddit to accept invitation.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getUnmoderated",
+            "description": "Retrieves a list of things that have not been moderated in the specified subreddit.",
+            "args": [
+                {
+                    "name": "subreddit",
+                    "type": "String",
+                    "info": "Subreddit of items to retrieve. All moderated subreddits by default.",
+                    "required": false
+                },
+                {
+                    "name": "only",
+                    "type": "String",
+                    "info": "One of (links, comments).",
+                    "required": false
+                },
+                {
+                    "name": "after",
+                    "type": "String",
+                    "info": "Fullname of a thing.",
+                    "required": false
+                },
+                {
+                    "name": "before",
+                    "type": "String",
+                    "info": "Fullname of a thing.",
+                    "required": false
+                },
+                {
+                    "name": "count",
+                    "type": "Number",
+                    "info": "A positive integer (default: 0).",
+                    "required": false
+                },
+                {
+                    "name": "limit",
+                    "type": "Number",
+                    "info": "Upper limit of number of items to retrieve. Maximum is 100.",
+                    "required": false
+                },
+                {
+                    "name": "srDetail",
+                    "type": "String",
+                    "info": "Expand subreddits (optional).",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "wikiAllowEditor",
+            "description": "Allow the specified user to edit the specified wiki page.",
+            "args": [
+                {
+                    "name": "subreddit",
+                    "type": "String",
+                    "info": "Subreddit of the wiki page.",
+                    "required": true
+                },
+                {
+                    "name": "username",
+                    "type": "String",
+                    "info": "Username of user to allow.",
+                    "required": true
+                },
+                {
+                    "name": "page",
+                    "type": "String",
+                    "info": "Name of page to allow user to edit.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "wikiDisallowEditor",
+            "description": "Remove the specified user from the allowed editors list of the specified wiki page.",
+            "args": [
+                {
+                    "name": "subreddit",
+                    "type": "String",
+                    "info": "Subreddit of the wiki page.",
+                    "required": true
+                },
+                {
+                    "name": "username",
+                    "type": "String",
+                    "info": "Username of user to allow.",
+                    "required": true
+                },
+                {
+                    "name": "page",
+                    "type": "String",
+                    "info": "Name of page to disallow user to edit.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "wikiGetPages",
+            "description": "Retrieves a list of all pages of the specified subreddit's wiki.",
+            "args": [
+                {
+                    "name": "subreddit",
+                    "type": "String",
+                    "info": "Subreddit for which to retrieve pages.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "wikiGetPage",
+            "description": "Retrieves the specified wiki page, optionally at a specific revision or a comparison between revisions.",
+            "args": [
+                {
+                    "name": "subreddit",
+                    "type": "String",
+                    "info": "Subreddit in which to retrieve page.",
+                    "required": true
+                },
+                {
+                    "name": "page",
+                    "type": "String",
+                    "info": "Page to retrieve.",
+                    "required": true
+                },
+                {
+                    "name": "v",
+                    "type": "String",
+                    "info": "Specific revision ID to retrieve (optional).",
+                    "required": false
+                },
+                {
+                    "name": "v2",
+                    "type": "String",
+                    "info": "ID of revision with which to compare &v (optional2).",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "wikiGetRevisions",
+            "description": "Retrieves a listing of wiki revisions for all pages within the specified subreddit.",
+            "args": [
+                {
+                    "name": "subreddit",
+                    "type": "String",
+                    "info": "Subreddit for which to retrieve revisions.",
+                    "required": true
+                },
+                {
+                    "name": "after",
+                    "type": "String",
+                    "info": "Fullname of a thing.",
+                    "required": false
+                },
+                {
+                    "name": "before",
+                    "type": "String",
+                    "info": "Fullname of a thing.",
+                    "required": false
+                },
+                {
+                    "name": "count",
+                    "type": "Number",
+                    "info": "A positive integer (default: 0).",
+                    "required": false
+                },
+                {
+                    "name": "limit",
+                    "type": "Number",
+                    "info": "Upper limit of number of items to retrieve. Maximum is 100.",
+                    "required": false
+                },
+                {
+                    "name": "srDetail",
+                    "type": "String",
+                    "info": "Expand subreddits (optional).",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "wikiGetPageRevisions",
+            "description": "Retrieves a listing of wiki revisions for the specified page within the specified subreddit.",
+            "args": [
+                {
+                    "name": "subreddit",
+                    "type": "String",
+                    "info": "Subreddit for which to retrieve revisions.",
+                    "required": true
+                },
+                {
+                    "name": "page",
+                    "type": "String",
+                    "info": "Page for which to retrieve revisions.",
+                    "required": true
+                },
+                {
+                    "name": "after",
+                    "type": "String",
+                    "info": "Fullname of a thing.",
+                    "required": false
+                },
+                {
+                    "name": "before",
+                    "type": "String",
+                    "info": "Fullname of a thing.",
+                    "required": false
+                },
+                {
+                    "name": "count",
+                    "type": "Number",
+                    "info": "A positive integer (default: 0).",
+                    "required": false
+                },
+                {
+                    "name": "limit",
+                    "type": "Number",
+                    "info": "Upper limit of number of items to retrieve. Maximum is 100.",
+                    "required": false
+                },
+                {
+                    "name": "srDetail",
+                    "type": "String",
+                    "info": "Expand subreddits (optional).",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "wikiEditPage",
+            "description": "Edit a wiki page.",
+            "args": [
+                {
+                    "name": "subreddit",
+                    "type": "String",
+                    "info": "Subreddit in which to edit page.",
+                    "required": true
+                },
+                {
+                    "name": "page",
+                    "type": "String",
+                    "info": "Page to edit.",
+                    "required": true
+                },
+                {
+                    "name": "content",
+                    "type": "String",
+                    "info": "Content with which to overwrite page.",
+                    "required": true
+                },
+                {
+                    "name": "reason",
+                    "type": "String",
+                    "info": "Reason for revision (up to 256 characters long).",
+                    "required": false
+                },
+                {
+                    "name": "previous",
+                    "type": "String",
+                    "info": "Revision ID on which to base this edit.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "wikiToggleHideRevision",
+            "description": "Toggle a revision's status of hidden.",
+            "args": [
+                {
+                    "name": "subreddit",
+                    "type": "String",
+                    "info": "Subreddit of revision.",
+                    "required": true
+                },
+                {
+                    "name": "page",
+                    "type": "String",
+                    "info": "Pagename of revision.",
+                    "required": true
+                },
+                {
+                    "name": "revision",
+                    "type": "String",
+                    "info": "ID of revision to toggle hidden status.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "wikiRevertToRevision",
+            "description": "Revert a wiki page to a previous revision.",
+            "args": [
+                {
+                    "name": "subreddit",
+                    "type": "String",
+                    "info": "Subreddit of revision.",
+                    "required": true
+                },
+                {
+                    "name": "page",
+                    "type": "String",
+                    "info": "Pagename of revision.",
+                    "required": true
+                },
+                {
+                    "name": "revision",
+                    "type": "String",
+                    "info": "ID of revision to which to revert.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "wikiGetPageDiscussions",
+            "description": "Retrieves a listing of discussions about a certain wiki page.",
+            "args": [
+                {
+                    "name": "subreddit",
+                    "type": "String",
+                    "info": "Subreddit of page.",
+                    "required": true
+                },
+                {
+                    "name": "page",
+                    "type": "String",
+                    "info": "Page for which to retrieve discussions.",
+                    "required": true
+                },
+                {
+                    "name": "after",
+                    "type": "String",
+                    "info": "Fullname of a thing.",
+                    "required": false
+                },
+                {
+                    "name": "before",
+                    "type": "String",
+                    "info": "Fullname of a thing.",
+                    "required": false
+                },
+                {
+                    "name": "count",
+                    "type": "Number",
+                    "info": "A positive integer (default: 0).",
+                    "required": false
+                },
+                {
+                    "name": "limit",
+                    "type": "Number",
+                    "info": "Upper limit of number of items to retrieve. Maximum is 100.",
+                    "required": false
+                },
+                {
+                    "name": "srDetail",
+                    "type": "String",
+                    "info": "Expand subreddits (optional).",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "wikiGetPageSettings",
+            "description": "Get the specified page's settings in the specified subreddit.",
+            "args": [
+                {
+                    "name": "subreddit",
+                    "type": "String",
+                    "info": "Subreddit of page.",
+                    "required": true
+                },
+                {
+                    "name": "page",
+                    "type": "String",
+                    "info": "Name of page.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "wikiUpdatePageSettings",
+            "description": "Update the specified page's settings in the specified subreddit.",
+            "args": [
+                {
+                    "name": "subreddit",
+                    "type": "String",
+                    "info": "Subreddit of page.",
+                    "required": true
+                },
+                {
+                    "name": "page",
+                    "type": "String",
+                    "info": "Name of page.",
+                    "required": true
+                },
+                {
+                    "name": "permlevel",
+                    "type": "Number",
+                    "info": "Permissions level for page. 0 for use subreddit wiki permissions, 1 for only approved editors, 2 for only mods, null to not update.",
+                    "required": false
+                },
+                {
+                    "name": "listed",
+                    "type": "Boolean",
+                    "info": "Show this page on the list of wiki pages. True to show, false to hide, null to not update.",
+                    "required": false
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
         }
     ]
 }

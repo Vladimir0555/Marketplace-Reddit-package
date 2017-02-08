@@ -63,13 +63,13 @@ class Router
         // Get method for vendor route
         if(
             isset($this->custom[$block['name']]['method'])&&
-            in_array($this->custom[$block['name']]['method'], ['POST', 'GET', 'POST-Access'])
+            in_array($this->custom[$block['name']]['method'], ['GET', 'POST', 'PUT', 'DELETE', 'POST-Access'])
         ){
             $method = $this->custom[$block['name']]['method'];
         }else{
             $result['callback'] = 'error';
             $result['contextWrites']['to']['status_code'] = 'INTERNAL_PACKAGE_ERROR';
-            $result['contextWrites']['to']['status_msg'] = 'Wrong metadata format custom block Method is miss.';
+            $result['contextWrites']['to']['status_msg'] = 'Wrong metadata format custom block Method is miss in ' . $block['name'] . '.';
             echo json_encode($result);
             exit(200);
         }

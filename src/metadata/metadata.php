@@ -3716,6 +3716,3794 @@ return array (
                 ),
             ),
         ),
+        array (
+            'name' => 'getUserUpvoted',
+            'description' => 'Obtain posts and comments upvoted by the specified user.',
+            'args' => array (
+                array (
+                    'name' => 'username',
+                    'type' => 'String',
+                    'info' => 'Username of user for whom to retrieve records. Defaults to the current user.',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'show',
+                    'type' => 'String',
+                    'info' => 'One of (given).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'sort',
+                    'type' => 'String',
+                    'info' => 'One of (hot, new, top, controversial).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 't',
+                    'type' => 'String',
+                    'info' => 'One of (hour, day, week, month, year, all).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'after',
+                    'type' => 'String',
+                    'info' => 'Get items lower on list than this entry. Does not mean chronologically.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'before',
+                    'type' => 'String',
+                    'info' => 'Get items higher on list than this entry. Does not mean chronologically.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'count',
+                    'type' => 'Number',
+                    'info' => 'A positive integer (default: 0).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'limit',
+                    'type' => 'Number',
+                    'info' => 'Upper limit of number of items to retrieve. Maximum is 100.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'srDetail',
+                    'type' => 'String',
+                    'info' => 'Expand subreddits (optional).',
+                    'required' => false,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'getUserDownvoted',
+            'description' => 'Obtain posts and comments downvoted by the specified user.',
+            'args' => array (
+                array (
+                    'name' => 'username',
+                    'type' => 'String',
+                    'info' => 'Username of user for whom to retrieve records. Defaults to the current user.',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'show',
+                    'type' => 'String',
+                    'info' => 'One of (given).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'sort',
+                    'type' => 'String',
+                    'info' => 'One of (hot, new, top, controversial).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 't',
+                    'type' => 'String',
+                    'info' => 'One of (hour, day, week, month, year, all).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'after',
+                    'type' => 'String',
+                    'info' => 'Get items lower on list than this entry. Does not mean chronologically.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'before',
+                    'type' => 'String',
+                    'info' => 'Get items higher on list than this entry. Does not mean chronologically.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'count',
+                    'type' => 'Number',
+                    'info' => 'A positive integer (default: 0).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'limit',
+                    'type' => 'Number',
+                    'info' => 'Upper limit of number of items to retrieve. Maximum is 100.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'srDetail',
+                    'type' => 'String',
+                    'info' => 'Expand subreddits (optional).',
+                    'required' => false,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'getUserComments',
+            'description' => 'Obtain only comments made by the specified user.',
+            'args' => array (
+                array (
+                    'name' => 'username',
+                    'type' => 'String',
+                    'info' => 'Username of user for whom to retrieve records. Defaults to the current user.',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'show',
+                    'type' => 'String',
+                    'info' => 'One of (given).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'sort',
+                    'type' => 'String',
+                    'info' => 'One of (hot, new, top, controversial).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 't',
+                    'type' => 'String',
+                    'info' => 'One of (hour, day, week, month, year, all).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'after',
+                    'type' => 'String',
+                    'info' => 'Get items lower on list than this entry. Does not mean chronologically.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'before',
+                    'type' => 'String',
+                    'info' => 'Get items higher on list than this entry. Does not mean chronologically.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'count',
+                    'type' => 'Number',
+                    'info' => 'A positive integer (default: 0).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'limit',
+                    'type' => 'Number',
+                    'info' => 'Upper limit of number of items to retrieve. Maximum is 100.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'srDetail',
+                    'type' => 'String',
+                    'info' => 'Expand subreddits (optional).',
+                    'required' => false,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'getUserSubmitted',
+            'description' => 'Obtain only posts made by the specified user.',
+            'args' => array (
+                array (
+                    'name' => 'username',
+                    'type' => 'String',
+                    'info' => 'Username of user for whom to retrieve records. Defaults to the current user.',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'show',
+                    'type' => 'String',
+                    'info' => 'One of (given).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'sort',
+                    'type' => 'String',
+                    'info' => 'One of (hot, new, top, controversial).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 't',
+                    'type' => 'String',
+                    'info' => 'One of (hour, day, week, month, year, all).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'after',
+                    'type' => 'String',
+                    'info' => 'Get items lower on list than this entry. Does not mean chronologically.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'before',
+                    'type' => 'String',
+                    'info' => 'Get items higher on list than this entry. Does not mean chronologically.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'count',
+                    'type' => 'Number',
+                    'info' => 'A positive integer (default: 0).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'limit',
+                    'type' => 'Number',
+                    'info' => 'Upper limit of number of items to retrieve. Maximum is 100.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'srDetail',
+                    'type' => 'String',
+                    'info' => 'Expand subreddits (optional).',
+                    'required' => false,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'getUserGildingsGiven',
+            'description' => 'Obtain posts and comments gilded (given) by the specified user.',
+            'args' => array (
+                array (
+                    'name' => 'username',
+                    'type' => 'String',
+                    'info' => 'Username of user for whom to retrieve records. Defaults to the current user.',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'show',
+                    'type' => 'String',
+                    'info' => 'One of (given).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'sort',
+                    'type' => 'String',
+                    'info' => 'One of (hot, new, top, controversial).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 't',
+                    'type' => 'String',
+                    'info' => 'One of (hour, day, week, month, year, all).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'after',
+                    'type' => 'String',
+                    'info' => 'Get items lower on list than this entry. Does not mean chronologically.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'before',
+                    'type' => 'String',
+                    'info' => 'Get items higher on list than this entry. Does not mean chronologically.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'count',
+                    'type' => 'Number',
+                    'info' => 'A positive integer (default: 0).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'limit',
+                    'type' => 'Number',
+                    'info' => 'Upper limit of number of items to retrieve. Maximum is 100.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'srDetail',
+                    'type' => 'String',
+                    'info' => 'Expand subreddits (optional).',
+                    'required' => false,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'getUserGildingsReceived',
+            'description' => 'Obtain posts and comments gilded (received) by the specified user.',
+            'args' => array (
+                array (
+                    'name' => 'username',
+                    'type' => 'String',
+                    'info' => 'Username of user for whom to retrieve records. Defaults to the current user.',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'show',
+                    'type' => 'String',
+                    'info' => 'One of (given).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'sort',
+                    'type' => 'String',
+                    'info' => 'One of (hot, new, top, controversial).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 't',
+                    'type' => 'String',
+                    'info' => 'One of (hour, day, week, month, year, all).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'after',
+                    'type' => 'String',
+                    'info' => 'Get items lower on list than this entry. Does not mean chronologically.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'before',
+                    'type' => 'String',
+                    'info' => 'Get items higher on list than this entry. Does not mean chronologically.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'count',
+                    'type' => 'Number',
+                    'info' => 'A positive integer (default: 0).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'limit',
+                    'type' => 'Number',
+                    'info' => 'Upper limit of number of items to retrieve. Maximum is 100.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'srDetail',
+                    'type' => 'String',
+                    'info' => 'Expand subreddits (optional).',
+                    'required' => false,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'getUserSaved',
+            'description' => 'Obtain posts and comments saved by the specified user.',
+            'args' => array (
+                array (
+                    'name' => 'username',
+                    'type' => 'String',
+                    'info' => 'Username of user for whom to retrieve records. Defaults to the current user.',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'show',
+                    'type' => 'String',
+                    'info' => 'One of (given).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'sort',
+                    'type' => 'String',
+                    'info' => 'One of (hot, new, top, controversial).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 't',
+                    'type' => 'String',
+                    'info' => 'One of (hour, day, week, month, year, all).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'after',
+                    'type' => 'String',
+                    'info' => 'Get items lower on list than this entry. Does not mean chronologically.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'before',
+                    'type' => 'String',
+                    'info' => 'Get items higher on list than this entry. Does not mean chronologically.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'count',
+                    'type' => 'Number',
+                    'info' => 'A positive integer (default: 0).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'limit',
+                    'type' => 'Number',
+                    'info' => 'Upper limit of number of items to retrieve. Maximum is 100.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'srDetail',
+                    'type' => 'String',
+                    'info' => 'Expand subreddits (optional).',
+                    'required' => false,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'getUserHidden',
+            'description' => 'Obtain posts and comments hidden by the specified user.',
+            'args' => array (
+                array (
+                    'name' => 'username',
+                    'type' => 'String',
+                    'info' => 'Username of user for whom to retrieve records. Defaults to the current user.',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'show',
+                    'type' => 'String',
+                    'info' => 'One of (given).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'sort',
+                    'type' => 'String',
+                    'info' => 'One of (hot, new, top, controversial).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 't',
+                    'type' => 'String',
+                    'info' => 'One of (hour, day, week, month, year, all).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'after',
+                    'type' => 'String',
+                    'info' => 'Get items lower on list than this entry. Does not mean chronologically.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'before',
+                    'type' => 'String',
+                    'info' => 'Get items higher on list than this entry. Does not mean chronologically.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'count',
+                    'type' => 'Number',
+                    'info' => 'A positive integer (default: 0).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'limit',
+                    'type' => 'Number',
+                    'info' => 'Upper limit of number of items to retrieve. Maximum is 100.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'srDetail',
+                    'type' => 'String',
+                    'info' => 'Expand subreddits (optional).',
+                    'required' => false,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'searchSubredditsByName',
+            'description' => 'List subreddit names that begin with a query string.',
+            'args' => array (
+                array (
+                    'name' => 'query',
+                    'type' => 'String',
+                    'info' => 'Search for subreddits that start with this. Maximum 50 characters, all printable.',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'includeOver_18',
+                    'type' => 'Boolean',
+                    'info' => 'Include subreddits that are set as NSFW (over_18).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'exact',
+                    'type' => 'Boolean',
+                    'info' => 'Only return exact match.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'includeUnadvertisable',
+                    'type' => 'Boolean',
+                    'info' => 'Only return subreddits that have hide_ads set to True or are on the anti_ads_subreddits list.',
+                    'required' => false,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'getRecommendedSubreddits',
+            'description' => 'Retrieve a list of recommended subreddits based on the names of existing ones.',
+            'args' => array (
+                array (
+                    'name' => 'srnames',
+                    'type' => 'String',
+                    'info' => 'Comma-delimited list of subreddits on which to base recommendations.',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'omit',
+                    'type' => 'String',
+                    'info' => 'Omit these specific subreddits from results (comma-delimited list of subreddit names).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'over_18',
+                    'type' => 'Boolean',
+                    'info' => 'Include subreddits that are set as NSFW (over_18).',
+                    'required' => false,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'deleteSubredditImage',
+            'description' => 'Remove an image from the subreddit\'s custom image set.',
+            'args' => array (
+                array (
+                    'name' => 'subreddit',
+                    'type' => 'String',
+                    'info' => 'Subreddit from which to remove the image.',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'imageName',
+                    'type' => 'String',
+                    'info' => 'The name of the image to delete.',
+                    'required' => true,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'getWikiContributors',
+            'description' => 'Retrieve a list of approved wiki contributors from the specified subreddit. Must be a mod or approved wiki contributor in subreddit. Using pagination will result in the last item of the previous page appearing as the first item of the next page.',
+            'args' => array (
+                array (
+                    'name' => 'subreddit',
+                    'type' => 'String',
+                    'info' => 'Subreddit for which to retrieve approved wiki contributors.',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'user',
+                    'type' => 'String',
+                    'info' => 'Jump to a specific user. Will return an empty list if user is not on list.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'show',
+                    'type' => 'String',
+                    'info' => 'One of (given).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'after',
+                    'type' => 'String',
+                    'info' => 'Get items lower on list than this entry. Does not mean chronologically.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'before',
+                    'type' => 'String',
+                    'info' => 'Get items higher on list than this entry. Does not mean chronologically.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'count',
+                    'type' => 'Number',
+                    'info' => 'A positive integer (default: 0).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'limit',
+                    'type' => 'Number',
+                    'info' => 'Upper limit of number of items to retrieve. Maximum is 100.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'srDetail',
+                    'type' => 'String',
+                    'info' => 'Expand subreddits (optional).',
+                    'required' => false,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'getContributors',
+            'description' => 'Retrieve a list of approved submitters from the specified subreddit. Must be a mod or approved submitter in subreddit. Using pagination will result in the last item of the previous page appearing as the first item of the next page.',
+            'args' => array (
+                array (
+                    'name' => 'subreddit',
+                    'type' => 'String',
+                    'info' => 'Subreddit for which to retrieve approved wiki contributors.',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'user',
+                    'type' => 'String',
+                    'info' => 'Jump to a specific user. Will return an empty list if user is not on list.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'show',
+                    'type' => 'String',
+                    'info' => 'One of (given).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'after',
+                    'type' => 'String',
+                    'info' => 'Get items lower on list than this entry. Does not mean chronologically.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'before',
+                    'type' => 'String',
+                    'info' => 'Get items higher on list than this entry. Does not mean chronologically.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'count',
+                    'type' => 'Number',
+                    'info' => 'A positive integer (default: 0).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'limit',
+                    'type' => 'Number',
+                    'info' => 'Upper limit of number of items to retrieve. Maximum is 100.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'srDetail',
+                    'type' => 'String',
+                    'info' => 'Expand subreddits (optional).',
+                    'required' => false,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'getWikiBanned',
+            'description' => 'Retrieve a list of wiki banned users from the specified subreddit. Must be a mod with access permissions. Using pagination will result in the last item of the previous page appearing as the first item of the next page.',
+            'args' => array (
+                array (
+                    'name' => 'subreddit',
+                    'type' => 'String',
+                    'info' => 'Subreddit for which to retrieve wiki banned.',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'user',
+                    'type' => 'String',
+                    'info' => 'Jump to a specific user. Will return an empty list if user is not on list.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'show',
+                    'type' => 'String',
+                    'info' => 'One of (given).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'after',
+                    'type' => 'String',
+                    'info' => 'Get items lower on list than this entry. Does not mean chronologically.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'before',
+                    'type' => 'String',
+                    'info' => 'Get items higher on list than this entry. Does not mean chronologically.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'count',
+                    'type' => 'Number',
+                    'info' => 'A positive integer (default: 0).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'limit',
+                    'type' => 'Number',
+                    'info' => 'Upper limit of number of items to retrieve. Maximum is 100.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'srDetail',
+                    'type' => 'String',
+                    'info' => 'Expand subreddits (optional).',
+                    'required' => false,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'getModerators',
+            'description' => 'Retrieve a list of moderators from the specified subreddit. Must have read access to subreddit. This function does not use pagination, but it\'s here anyway in case that\'s changed in the future.',
+            'args' => array (
+                array (
+                    'name' => 'subreddit',
+                    'type' => 'String',
+                    'info' => 'Subreddit for which to retrieve moderators.',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'user',
+                    'type' => 'String',
+                    'info' => 'Jump to a specific user. Will return an empty list if user is not on list.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'show',
+                    'type' => 'String',
+                    'info' => 'One of (given).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'after',
+                    'type' => 'String',
+                    'info' => 'Get items lower on list than this entry. Does not mean chronologically.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'before',
+                    'type' => 'String',
+                    'info' => 'Get items higher on list than this entry. Does not mean chronologically.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'count',
+                    'type' => 'Number',
+                    'info' => 'A positive integer (default: 0).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'limit',
+                    'type' => 'Number',
+                    'info' => 'Upper limit of number of items to retrieve. Maximum is 100.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'srDetail',
+                    'type' => 'String',
+                    'info' => 'Expand subreddits (optional).',
+                    'required' => false,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'getMuted',
+            'description' => 'Retrieve a list of muted users from the specified subreddit. Must be a mod with access permissions. Using pagination will result in the last item of the previous page appearing as the first item of the next page.',
+            'args' => array (
+                array (
+                    'name' => 'subreddit',
+                    'type' => 'String',
+                    'info' => 'Subreddit for which to retrieve mute.',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'user',
+                    'type' => 'String',
+                    'info' => 'Jump to a specific user. Will return an empty list if user is not on list.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'show',
+                    'type' => 'String',
+                    'info' => 'One of (given).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'after',
+                    'type' => 'String',
+                    'info' => 'Get items lower on list than this entry. Does not mean chronologically.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'before',
+                    'type' => 'String',
+                    'info' => 'Get items higher on list than this entry. Does not mean chronologically.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'count',
+                    'type' => 'Number',
+                    'info' => 'A positive integer (default: 0).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'limit',
+                    'type' => 'Number',
+                    'info' => 'Upper limit of number of items to retrieve. Maximum is 100.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'srDetail',
+                    'type' => 'String',
+                    'info' => 'Expand subreddits (optional).',
+                    'required' => false,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'getBanned',
+            'description' => 'Retrieve a list of banned users from the specified subreddit. Must be a mod with access permissions. Using pagination will result in the last item of the previous page appearing as the first item of the next page.',
+            'args' => array (
+                array (
+                    'name' => 'subreddit',
+                    'type' => 'String',
+                    'info' => 'Subreddit for which to retrieve banned.',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'user',
+                    'type' => 'String',
+                    'info' => 'Jump to a specific user. Will return an empty list if user is not on list.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'show',
+                    'type' => 'String',
+                    'info' => 'One of (given).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'after',
+                    'type' => 'String',
+                    'info' => 'Get items lower on list than this entry. Does not mean chronologically.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'before',
+                    'type' => 'String',
+                    'info' => 'Get items higher on list than this entry. Does not mean chronologically.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'count',
+                    'type' => 'Number',
+                    'info' => 'A positive integer (default: 0).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'limit',
+                    'type' => 'Number',
+                    'info' => 'Upper limit of number of items to retrieve. Maximum is 100.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'srDetail',
+                    'type' => 'String',
+                    'info' => 'Expand subreddits (optional).',
+                    'required' => false,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'aboutSubreddit',
+            'description' => 'Retrieves information about the specified subreddit, including subreddit ID.',
+            'args' => array (
+                array (
+                    'name' => 'subreddit',
+                    'type' => 'String',
+                    'info' => 'Subreddit for which to retrieve information.',
+                    'required' => true,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'deleteSubredditIcon',
+            'description' => 'Remove the subreddit\'s custom mobile icon.',
+            'args' => array (
+                array (
+                    'name' => 'subreddit',
+                    'type' => 'String',
+                    'info' => 'Subreddit from which to remove the icon.',
+                    'required' => true,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'deleteSubredditHeaderImage',
+            'description' => 'Remove the subreddit\'s custom header image.',
+            'args' => array (
+                array (
+                    'name' => 'subreddit',
+                    'type' => 'String',
+                    'info' => 'Subreddit from which to remove the header image.',
+                    'required' => true,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'deleteSubredditBanner',
+            'description' => 'Remove the subreddit\'s custom mobile banner.',
+            'args' => array (
+                array (
+                    'name' => 'subreddit',
+                    'type' => 'String',
+                    'info' => 'Subreddit from which to remove the banner.',
+                    'required' => true,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'unblockUser',
+            'description' => 'Unblock a user by username.',
+            'args' => array (
+                array (
+                    'name' => 'name',
+                    'type' => 'String',
+                    'info' => 'Username of user to unblock.',
+                    'required' => true,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'removeFriend',
+            'description' => 'Removes the specified user as a friend.',
+            'args' => array (
+                array (
+                    'name' => 'id',
+                    'type' => 'String',
+                    'info' => 'Username of user to remove.',
+                    'required' => true,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'addFriend',
+            'description' => 'Adds the specified user as a friend.',
+            'args' => array (
+                array (
+                    'name' => 'name',
+                    'type' => 'String',
+                    'info' => 'Username of friend to add.',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'note',
+                    'type' => 'String',
+                    'info' => 'Note to add to friend record. Currently only available to those with reddit gold.',
+                    'required' => false,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'search',
+            'description' => 'Perform a search query. Somewhat untested due to the complexity of and possible combinations to use in the search function.',
+            'args' => array (
+                array (
+                    'name' => 'q',
+                    'type' => 'String',
+                    'info' => 'Query of which to search.',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'subreddit',
+                    'type' => 'String',
+                    'info' => 'Subreddit to which to restrict search.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'sort',
+                    'type' => 'String',
+                    'info' => 'Sort results by one of \'relevance\', \'hot\', \'top\', \'new\', \'comments\'. Defaults to \'relevance\'.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 't',
+                    'type' => 'String',
+                    'info' => 'One of \'hour\', \'day\', \'week\', \'month\', \'year\', \'all\'. Defaults to all.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'type',
+                    'type' => 'String',
+                    'info' => 'Comma-delimited list of result types: \'sr\', \'link\', or null.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'includeFacets',
+                    'type' => 'Boolean',
+                    'info' => 'Include facets.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'restrictSr',
+                    'type' => 'Boolean',
+                    'info' => 'Restrict subreddit.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'syntax',
+                    'type' => 'String',
+                    'info' => 'One of (cloudsearch, lucene, plain).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'after',
+                    'type' => 'String',
+                    'info' => 'Fullname of a thing.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'before',
+                    'type' => 'String',
+                    'info' => 'Fullname of a thing.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'count',
+                    'type' => 'Number',
+                    'info' => 'A positive integer (default: 0).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'limit',
+                    'type' => 'Number',
+                    'info' => 'The maximum number of items desired (default: 25, maximum: 100).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'srDetail',
+                    'type' => 'String',
+                    'info' => 'Expand subreddits (optional).',
+                    'required' => false,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'usernameAvailable',
+            'description' => 'Presumably checks whether the specified username is available, but endpoint is not working at this time.',
+            'args' => array (
+                array (
+                    'name' => 'user',
+                    'type' => 'String',
+                    'info' => 'Username to check for availability.',
+                    'required' => true,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'multiGetDescription',
+            'description' => 'Get a multi\'s description.',
+            'args' => array (
+                array (
+                    'name' => 'multipath',
+                    'type' => 'String',
+                    'info' => 'Multireddit url path.',
+                    'required' => true,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'multiEdit',
+            'description' => 'Create or update a multireddit.',
+            'args' => array (
+                array (
+                    'name' => 'multipath',
+                    'type' => 'String',
+                    'info' => 'Multireddit url path.',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'displayName',
+                    'type' => 'String',
+                    'info' => 'A string no longer than 50 characters.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'descriptionMd',
+                    'type' => 'String',
+                    'info' => 'Multireddit sidebar text (raw markdown text).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'iconName',
+                    'type' => 'String',
+                    'info' => 'One of(\'art and design\', \'ask\', \'books\', \'business\', \'cars\', \'comics\', \'cute animals\', \'diy\', \'entertainment\', \'food and drink\', \'funny\', \'games\', \'grooming\', \'health\', \'life advice\', \'military\', \'models pinup\', \'music\', \'news\', \'philosophy\', \'pictures and gifs\', \'science\', \'shopping\', \'sports\', \'style\', \'tech\', \'travel\', \'unusual stories\', \'video\', \'\', \'None\').',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'keyColor',
+                    'type' => 'String',
+                    'info' => 'A 6 - digit rgb hex color, e.g. \'#AABBCC\'.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'subredditsName',
+                    'type' => 'String',
+                    'info' => 'Comma-separated string of subreddits name.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'visibility',
+                    'type' => 'String',
+                    'info' => 'One of \'public\', \'private\', \'hidden\'. Hidden multireddits will not be visible to you except through the API.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'weightingScheme',
+                    'type' => 'String',
+                    'info' => 'One of \'classic\', \'fresh\'.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'expandSrs',
+                    'type' => 'Boolean',
+                    'info' => 'Expand subreddits.',
+                    'required' => false,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'multiAddSubreddit',
+            'description' => 'Add the specified subreddit to the specified multireddit.',
+            'args' => array (
+                array (
+                    'name' => 'multipath',
+                    'type' => 'String',
+                    'info' => 'Multireddit url path.',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'srname',
+                    'type' => 'String',
+                    'info' => 'Name of subreddit to add.',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'modelName',
+                    'type' => 'String',
+                    'info' => 'Name of subreddit.',
+                    'required' => false,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'multiGetSubreddit',
+            'description' => 'Get information about the specified subreddit in the specified multireddit.',
+            'args' => array (
+                array (
+                    'name' => 'multipath',
+                    'type' => 'String',
+                    'info' => 'Name of multireddit.',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'srname',
+                    'type' => 'String',
+                    'info' => 'Subreddit for which to obtain information.',
+                    'required' => true,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'multiRemoveSubreddit',
+            'description' => 'Remove the specified subreddit from the specified multireddit.',
+            'args' => array (
+                array (
+                    'name' => 'multipath',
+                    'type' => 'String',
+                    'info' => 'Name of multireddit.',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'srname',
+                    'type' => 'String',
+                    'info' => 'Name of subreddit to remove.',
+                    'required' => true,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'multiEditDescription',
+            'description' => 'Edit the description/sidebar for the specified multireddit.',
+            'args' => array (
+                array (
+                    'name' => 'multipath',
+                    'type' => 'String',
+                    'info' => 'Multireddit url path.',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'modelBodyMd',
+                    'type' => 'String',
+                    'info' => 'New description (raw markdown text).',
+                    'required' => true,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'getUserOverview',
+            'description' => 'Obtain posts and comments made by the specified user.',
+            'args' => array (
+                array (
+                    'name' => 'username',
+                    'type' => 'String',
+                    'info' => 'Username of user for whom to retrieve records.',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'sort',
+                    'type' => 'String',
+                    'info' => 'Sorting method. One of \'hot\', \'new\', \'top\', \'controversial\', or null.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'show',
+                    'type' => 'String',
+                    'info' => 'One of (given).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 't',
+                    'type' => 'String',
+                    'info' => 'One of \'hour\', \'day\', \'week\', \'month\', \'year\', \'all\', or null.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'after',
+                    'type' => 'String',
+                    'info' => 'Fullname of a thing.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'before',
+                    'type' => 'String',
+                    'info' => 'Fullname of a thing.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'count',
+                    'type' => 'Number',
+                    'info' => 'A positive integer (default: 0).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'limit',
+                    'type' => 'Number',
+                    'info' => 'Upper limit of number of items to retrieve. Maximum is 100.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'srDetail',
+                    'type' => 'String',
+                    'info' => 'Expand subreddits (optional).',
+                    'required' => false,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'getUser',
+            'description' => 'Retrieve information about the specified user.',
+            'args' => array (
+                array (
+                    'name' => 'username',
+                    'type' => 'String',
+                    'info' => 'Username of user to retrieve.',
+                    'required' => true,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'getUserTrophies',
+            'description' => 'Get a user\'s trophies.',
+            'args' => array (
+                array (
+                    'name' => 'id',
+                    'type' => 'String',
+                    'info' => 'Username of user for whom to retrieve trophies.',
+                    'required' => true,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'multiGet',
+            'description' => 'Fetch a multi\'s data and subreddit list by name.',
+            'args' => array (
+                array (
+                    'name' => 'multipath',
+                    'type' => 'String',
+                    'info' => 'Name of multireddit to retrieve.',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'expandSrs',
+                    'type' => 'Boolean',
+                    'info' => 'Expand subreddits.',
+                    'required' => false,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'searchSubreddits',
+            'description' => 'Search for subreddits by title and description.',
+            'args' => array (
+                array (
+                    'name' => 'q',
+                    'type' => 'String',
+                    'info' => 'Query with which to search',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'sort',
+                    'type' => 'String',
+                    'info' => 'Sorting method. One of \'relevance\', \'activity\'',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'after',
+                    'type' => 'String',
+                    'info' => 'Fullname of a thing.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'before',
+                    'type' => 'String',
+                    'info' => 'Fullname of a thing.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'count',
+                    'type' => 'Number',
+                    'info' => 'A positive integer (default: 0).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'limit',
+                    'type' => 'Number',
+                    'info' => 'Upper limit of number of items to retrieve. Maximum is 100.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'srDetail',
+                    'type' => 'String',
+                    'info' => 'Expand subreddits (optional).',
+                    'required' => false,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'leaveModerator',
+            'description' => 'Abdicate moderator status in a subreddit.',
+            'args' => array (
+                array (
+                    'name' => 'id',
+                    'type' => 'String',
+                    'info' => 'Name of subreddit to leave.',
+                    'required' => true,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'getStickies',
+            'description' => 'Retrieve a subreddit\'s stickied posts.',
+            'args' => array (
+                array (
+                    'name' => 'subreddit',
+                    'type' => 'String',
+                    'info' => 'Subreddit from which to retrieve sticky posts.',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'num',
+                    'type' => 'String',
+                    'info' => 'Argument can be used to select a specific sticky (an integer between 1 and 2 (default: 1)).',
+                    'required' => false,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'leaveContributor',
+            'description' => 'Abdicate approved submitter status in a subreddit.',
+            'args' => array (
+                array (
+                    'name' => 'id',
+                    'type' => 'String',
+                    'info' => 'Name of subreddit to leave.',
+                    'required' => true,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'multiDelete',
+            'description' => 'Deletes the specified multireddit.',
+            'args' => array (
+                array (
+                    'name' => 'multipath',
+                    'type' => 'String',
+                    'info' => 'Name of multireddit to delete.',
+                    'required' => true,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'multiGetUser',
+            'description' => 'Retrieves a list of multireddits owned by the specified user.',
+            'args' => array (
+                array (
+                    'name' => 'username',
+                    'type' => 'String',
+                    'info' => 'Username of user for which to retrieve owned multireddits.',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'expandSrs',
+                    'type' => 'Boolean',
+                    'info' => 'Obtain extra details about the subreddits of each multireddit.',
+                    'required' => false,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'ignoreReports',
+            'description' => 'Ignores reports for the specified thing.',
+            'args' => array (
+                array (
+                    'name' => 'id',
+                    'type' => 'String',
+                    'info' => 'Thing ID of object to be ignored.',
+                    'required' => true,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'multiRename',
+            'description' => 'Renames a multireddit.',
+            'args' => array (
+                array (
+                    'name' => 'displayName',
+                    'type' => 'String',
+                    'info' => 'A string no longer than 50 characters.',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'from',
+                    'type' => 'String',
+                    'info' => 'Name of multireddit to rename.',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'to',
+                    'type' => 'String',
+                    'info' => 'Destination name.',
+                    'required' => true,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'unmuteUserByMessage',
+            'description' => 'Unmute a user from a subreddit based on the thing ID of a message they sent.',
+            'args' => array (
+                array (
+                    'name' => 'id',
+                    'type' => 'String',
+                    'info' => 'Thing ID of the message author to be unmuted.',
+                    'required' => true,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'getPopularSubreddits',
+            'description' => 'Retrieves a list of popular subreddits.',
+            'args' => array (
+                array (
+                    'name' => 'after',
+                    'type' => 'String',
+                    'info' => 'Fullname of a thing.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'before',
+                    'type' => 'String',
+                    'info' => 'Fullname of a thing.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'count',
+                    'type' => 'Number',
+                    'info' => 'A positive integer (default: 0).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'limit',
+                    'type' => 'Number',
+                    'info' => 'Upper limit of number of items to retrieve. Maximum is 100.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'srDetail',
+                    'type' => 'String',
+                    'info' => 'Expand subreddits (optional).',
+                    'required' => false,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'getMyModeratedSubreddits',
+            'description' => 'Retrieve a list of the current user\'s subreddits in which they are a moderator.',
+            'args' => array (
+                array (
+                    'name' => 'after',
+                    'type' => 'String',
+                    'info' => 'Fullname of a thing.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'before',
+                    'type' => 'String',
+                    'info' => 'Fullname of a thing.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'count',
+                    'type' => 'Number',
+                    'info' => 'A positive integer (default: 0).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'limit',
+                    'type' => 'Number',
+                    'info' => 'Upper limit of number of items to retrieve. Maximum is 100.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'srDetail',
+                    'type' => 'String',
+                    'info' => 'Expand subreddits (optional).',
+                    'required' => false,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'unignoreReports',
+            'description' => 'Allow future reports on a thing to cause notifications.',
+            'args' => array (
+                array (
+                    'name' => 'id',
+                    'type' => 'String',
+                    'info' => 'Thing ID of object to be unignored.',
+                    'required' => true,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'remove',
+            'description' => 'Remove a link, comment, or modmail message.',
+            'args' => array (
+                array (
+                    'name' => 'id',
+                    'type' => 'String',
+                    'info' => 'Thing ID of object to remove.',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'spam',
+                    'type' => 'Boolean',
+                    'info' => 'Mark as spam.',
+                    'required' => false,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'getMyContributedSubreddits',
+            'description' => 'Retrieve a list of the current user\'s subreddits in which they are an approved submitter.',
+            'args' => array (
+                array (
+                    'name' => 'after',
+                    'type' => 'String',
+                    'info' => 'Fullname of a thing.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'before',
+                    'type' => 'String',
+                    'info' => 'Fullname of a thing.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'count',
+                    'type' => 'Number',
+                    'info' => 'A positive integer (default: 0).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'limit',
+                    'type' => 'Number',
+                    'info' => 'Upper limit of number of items to retrieve. Maximum is 100.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'srDetail',
+                    'type' => 'String',
+                    'info' => 'Expand subreddits (optional).',
+                    'required' => false,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'getMySubscribedSubreddits',
+            'description' => 'Retrieve a list of the current user\'s subscribed subreddits.',
+            'args' => array (
+                array (
+                    'name' => 'after',
+                    'type' => 'String',
+                    'info' => 'Fullname of a thing.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'before',
+                    'type' => 'String',
+                    'info' => 'Fullname of a thing.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'count',
+                    'type' => 'Number',
+                    'info' => 'A positive integer (default: 0).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'limit',
+                    'type' => 'Number',
+                    'info' => 'Upper limit of number of items to retrieve. Maximum is 100.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'srDetail',
+                    'type' => 'String',
+                    'info' => 'Expand subreddits (optional).',
+                    'required' => false,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'multiCreate',
+            'description' => 'Create a multi. Responds with 409 Conflict if it already exists.',
+            'args' => array (
+                array (
+                    'name' => 'multipath',
+                    'type' => 'String',
+                    'info' => 'Multireddit url path.',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'displayName',
+                    'type' => 'String',
+                    'info' => 'A string no longer than 50 characters.',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'descriptionMd',
+                    'type' => 'String',
+                    'info' => 'Multireddit sidebar text (raw markdown text).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'iconName',
+                    'type' => 'String',
+                    'info' => 'One of(\'art and design\', \'ask\', \'books\', \'business\', \'cars\', \'comics\', \'cute animals\', \'diy\', \'entertainment\', \'food and drink\', \'funny\', \'games\', \'grooming\', \'health\', \'life advice\', \'military\', \'models pinup\', \'music\', \'news\', \'philosophy\', \'pictures and gifs\', \'science\', \'shopping\', \'sports\', \'style\', \'tech\', \'travel\', \'unusual stories\', \'video\', \'\', \'None\').',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'keyColor',
+                    'type' => 'String',
+                    'info' => 'A 6 - digit rgb hex color, e.g. \'#AABBCC\'.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'subredditsName',
+                    'type' => 'String',
+                    'info' => 'Comma-separated string of subreddits name.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'visibility',
+                    'type' => 'String',
+                    'info' => 'One of \'public\', \'private\', \'hidden\'. Hidden multireddits will not be visible to you except through the API.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'weightingScheme',
+                    'type' => 'String',
+                    'info' => 'One of \'classic\', \'fresh\'.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'expandSrs',
+                    'type' => 'Boolean',
+                    'info' => 'Expand subreddits.',
+                    'required' => false,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'muteUserByMessage',
+            'description' => 'Mute a user from a subreddit based on the thing ID of a message they sent.',
+            'args' => array (
+                array (
+                    'name' => 'id',
+                    'type' => 'String',
+                    'info' => 'Thing ID of the message author to be muted.',
+                    'required' => true,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'multiGetMine',
+            'description' => 'Retrieves a list of multireddits that are owned by the current user.',
+            'args' => array (
+                array (
+                    'name' => 'expandSrs',
+                    'type' => 'Boolean',
+                    'info' => 'Expand subreddits.',
+                    'required' => false,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'multiCopy',
+            'description' => 'Copy an existing multireddit to your own set.',
+            'args' => array (
+                array (
+                    'name' => 'displayName',
+                    'type' => 'String',
+                    'info' => 'A string no longer than 50 characters.',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'from',
+                    'type' => 'String',
+                    'info' => 'Name of multireddit to copy.',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'to',
+                    'type' => 'String',
+                    'info' => 'Name of destination multireddit.',
+                    'required' => true,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'editSubreddit',
+            'description' => 'Change a subreddit\'s configuration.',
+            'args' => array (
+                array (
+                    'name' => 'name',
+                    'type' => 'String',
+                    'info' => 'Subreddit name.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'publicDescription',
+                    'type' => 'String',
+                    'info' => 'Public description (raw markdown text).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'description',
+                    'type' => 'String',
+                    'info' => 'Raw markdown text.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'title',
+                    'type' => 'String',
+                    'info' => 'A string no longer than 100 characters.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'header-title',
+                    'type' => 'String',
+                    'info' => 'A string no longer than 500 characters.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'sr',
+                    'type' => 'String',
+                    'info' => 'Name of subreddit to change.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'themeSr',
+                    'type' => 'String',
+                    'info' => 'Subreddit name.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'lang',
+                    'type' => 'String',
+                    'info' => 'A valid IETF language tag (underscore separated).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'commentScoreHideMins',
+                    'type' => 'Number',
+                    'info' => 'An integer between 0 and 1440 (default: 0).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'excludeBannedModqueue',
+                    'type' => 'Boolean',
+                    'info' => 'Exclude banned modqueue, boolean value.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'submitLinkLabel',
+                    'type' => 'String',
+                    'info' => 'A string no longer than 60 characters.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'submitText',
+                    'type' => 'String',
+                    'info' => 'Raw markdown text.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'submitTextLabel',
+                    'type' => 'String',
+                    'info' => 'A string no longer than 60 characters.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'suggestedCommentSort',
+                    'type' => 'String',
+                    'info' => 'One of (confidence, top, new, controversial, old, random, qa, live).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'linkType',
+                    'type' => 'String',
+                    'info' => 'One of (any, link, self).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'spamComments',
+                    'type' => 'String',
+                    'info' => 'One of (low, high, all).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'spamLinks',
+                    'type' => 'String',
+                    'info' => 'One of (low, high, all).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'spamSelfposts',
+                    'type' => 'String',
+                    'info' => 'One of (low, high, all).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'spoilersEnabled',
+                    'type' => 'Boolean',
+                    'info' => 'Spoilers enabled, boolean value.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'type',
+                    'type' => 'String',
+                    'info' => 'One of (gold_restricted, archived, restricted, gold_only, employees_only, private, public).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'wikiEditAge',
+                    'type' => 'Number',
+                    'info' => 'An integer greater than 0 (default: 0).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'wikiEditKarma',
+                    'type' => 'Number',
+                    'info' => 'An integer greater than 0 (default: 0).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'wikimode',
+                    'type' => 'String',
+                    'info' => 'One of (disabled, modonly, anyone).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'allowImages',
+                    'type' => 'Boolean',
+                    'info' => 'Allow images, boolean value.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'allowTop',
+                    'type' => 'Boolean',
+                    'info' => 'Allow top, boolean value.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'hideAds',
+                    'type' => 'Boolean',
+                    'info' => 'Hide ads, boolean value.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'over_18',
+                    'type' => 'Boolean',
+                    'info' => 'Is over 18, boolean value.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'publicTraffic',
+                    'type' => 'Boolean',
+                    'info' => 'Public traffic, boolean value.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'showMedia',
+                    'type' => 'Boolean',
+                    'info' => 'Show media, boolean value.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'showMediaPreview',
+                    'type' => 'Boolean',
+                    'info' => 'Show media preview, boolean value.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'collapseDeletedComments',
+                    'type' => 'Boolean',
+                    'info' => 'Collapse deleted comments, boolean value.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'themeSrUpdate',
+                    'type' => 'Boolean',
+                    'info' => 'Theme subreddit update, boolean value.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'g-recaptcha-response',
+                    'type' => 'String',
+                    'info' => 'Recaptcha response.',
+                    'required' => false,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'getDefaultSubreddits',
+            'description' => 'Retrieves a list of default subreddits.',
+            'args' => array (
+                array (
+                    'name' => 'after',
+                    'type' => 'String',
+                    'info' => 'Fullname of a thing.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'before',
+                    'type' => 'String',
+                    'info' => 'Fullname of a thing.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'count',
+                    'type' => 'Number',
+                    'info' => 'A positive integer (default: 0).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'limit',
+                    'type' => 'Number',
+                    'info' => 'Upper limit of number of items to retrieve. Maximum is 100.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'srDetail',
+                    'type' => 'String',
+                    'info' => 'Expand subreddits (optional).',
+                    'required' => false,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'getGoldOnlySubreddits',
+            'description' => 'Retrieves a list of gold-only subreddits.',
+            'args' => array (
+                array (
+                    'name' => 'after',
+                    'type' => 'String',
+                    'info' => 'Fullname of a thing.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'before',
+                    'type' => 'String',
+                    'info' => 'Fullname of a thing.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'count',
+                    'type' => 'Number',
+                    'info' => 'A positive integer (default: 0).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'limit',
+                    'type' => 'Number',
+                    'info' => 'Upper limit of number of items to retrieve. Maximum is 100.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'srDetail',
+                    'type' => 'String',
+                    'info' => 'Expand subreddits (optional).',
+                    'required' => false,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'getNewSubreddits',
+            'description' => 'Retrieves a list of new subreddits.',
+            'args' => array (
+                array (
+                    'name' => 'after',
+                    'type' => 'String',
+                    'info' => 'Fullname of a thing.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'before',
+                    'type' => 'String',
+                    'info' => 'Fullname of a thing.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'count',
+                    'type' => 'Number',
+                    'info' => 'A positive integer (default: 0).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'limit',
+                    'type' => 'Number',
+                    'info' => 'Upper limit of number of items to retrieve. Maximum is 100.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'srDetail',
+                    'type' => 'String',
+                    'info' => 'Expand subreddits (optional).',
+                    'required' => false,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'getSubredditSidebar',
+            'description' => 'Get a subreddit\'s sidebar contents.',
+            'args' => array (
+                array (
+                    'name' => 'subreddit',
+                    'type' => 'String',
+                    'info' => 'Subreddit of which to retrieve sidebar.',
+                    'required' => true,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'getSubredditSettings',
+            'description' => 'Retrieve a list of the subreddit\'s settings. Must be a moderator.',
+            'args' => array (
+                array (
+                    'name' => 'subreddit',
+                    'type' => 'String',
+                    'info' => 'The subreddit to retrieve.',
+                    'required' => true,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'getModerationLog',
+            'description' => 'Retrieves recent entries from the moderation log for the specified subreddit.',
+            'args' => array (
+                array (
+                    'name' => 'subreddit',
+                    'type' => 'String',
+                    'info' => 'Subreddit of log to retrieve. All moderated subreddits by default.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'mod',
+                    'type' => 'String',
+                    'info' => 'Filter by moderator.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'type',
+                    'type' => 'String',
+                    'info' => 'Filter by mod action, one of (banuser, unbanuser, removelink, approvelink, removecomment, approvecomment, addmoderator, invitemoderator, uninvitemoderator, acceptmoderatorinvite, removemoderator, addcontributor, removecontributor, editsettings, editflair, distinguish, marknsfw, wikibanned, wikicontributor, wikiunbanned, wikipagelisted, removewikicontributor, wikirevise, wikipermlevel, ignorereports, unignorereports, setpermissions, setsuggestedsort, sticky, unsticky, setcontestmode, unsetcontestmode, lock, unlock, muteuser, unmuteuser, createrule, editrule, deleterule, spoiler, unspoiler, modmail_enrollment).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'after',
+                    'type' => 'String',
+                    'info' => 'Fullname of a thing.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'before',
+                    'type' => 'String',
+                    'info' => 'Fullname of a thing.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'count',
+                    'type' => 'Number',
+                    'info' => 'A positive integer (default: 0).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'limit',
+                    'type' => 'Number',
+                    'info' => 'Upper limit of number of items to retrieve. Maximum is 100.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'srDetail',
+                    'type' => 'String',
+                    'info' => 'Expand subreddits (optional).',
+                    'required' => false,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'searchSubredditsByTopic',
+            'description' => 'Search for subreddits by topic keywords.',
+            'args' => array (
+                array (
+                    'name' => 'query',
+                    'type' => 'String',
+                    'info' => 'Query with which to search.',
+                    'required' => true,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'setSubredditStylesheet',
+            'description' => 'Set a subreddit\'s stylesheet.',
+            'args' => array (
+                array (
+                    'name' => 'subreddit',
+                    'type' => 'String',
+                    'info' => 'Subreddit of which to set stylesheet.',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'stylesheetContents',
+                    'type' => 'String',
+                    'info' => 'Contents of stylesheet, probably pretty long.',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'reason',
+                    'type' => 'String',
+                    'info' => 'Since the stylesheet is a wiki page, optionally provide a reason for editing.',
+                    'required' => false,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'getSubmitText',
+            'description' => 'Retrieves the "submitting to /r/&subreddit" text for the selected subreddit.',
+            'args' => array (
+                array (
+                    'name' => 'subreddit',
+                    'type' => 'String',
+                    'info' => 'Name of subreddit from which to obtain submit text.',
+                    'required' => true,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'createSubreddit',
+            'description' => 'Create a new subreddit.',
+            'args' => array (
+                array (
+                    'name' => 'sr',
+                    'type' => 'String',
+                    'info' => 'Name of subreddit to change.',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'name',
+                    'type' => 'String',
+                    'info' => 'Subreddit name.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'publicDescription',
+                    'type' => 'String',
+                    'info' => 'Public description (raw markdown text).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'description',
+                    'type' => 'String',
+                    'info' => 'Raw markdown text.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'title',
+                    'type' => 'String',
+                    'info' => 'A string no longer than 100 characters.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'header-title',
+                    'type' => 'String',
+                    'info' => 'A string no longer than 500 characters.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'themeSr',
+                    'type' => 'String',
+                    'info' => 'Subreddit name.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'lang',
+                    'type' => 'String',
+                    'info' => 'A valid IETF language tag (underscore separated).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'commentScoreHideMins',
+                    'type' => 'Number',
+                    'info' => 'An integer between 0 and 1440 (default: 0).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'excludeBannedModqueue',
+                    'type' => 'Boolean',
+                    'info' => 'Exclude banned modqueue, boolean value.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'submitLinkLabel',
+                    'type' => 'String',
+                    'info' => 'A string no longer than 60 characters.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'submitText',
+                    'type' => 'String',
+                    'info' => 'Raw markdown text.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'submitTextLabel',
+                    'type' => 'String',
+                    'info' => 'A string no longer than 60 characters.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'suggestedCommentSort',
+                    'type' => 'String',
+                    'info' => 'One of (confidence, top, new, controversial, old, random, qa, live).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'linkType',
+                    'type' => 'String',
+                    'info' => 'One of (any, link, self).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'spamComments',
+                    'type' => 'String',
+                    'info' => 'One of (low, high, all).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'spamLinks',
+                    'type' => 'String',
+                    'info' => 'One of (low, high, all).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'spamSelfposts',
+                    'type' => 'String',
+                    'info' => 'One of (low, high, all).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'spoilersEnabled',
+                    'type' => 'Boolean',
+                    'info' => 'Spoilers enabled, boolean value.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'type',
+                    'type' => 'String',
+                    'info' => 'One of (gold_restricted, archived, restricted, gold_only, employees_only, private, public).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'wikiEditAge',
+                    'type' => 'Number',
+                    'info' => 'An integer greater than 0 (default: 0).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'wikiEditKarma',
+                    'type' => 'Number',
+                    'info' => 'An integer greater than 0 (default: 0).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'wikimode',
+                    'type' => 'String',
+                    'info' => 'One of (disabled, modonly, anyone).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'allowImages',
+                    'type' => 'Boolean',
+                    'info' => 'Allow images, boolean value.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'allowTop',
+                    'type' => 'Boolean',
+                    'info' => 'Allow top, boolean value.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'hideAds',
+                    'type' => 'Boolean',
+                    'info' => 'Hide ads, boolean value.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'over_18',
+                    'type' => 'Boolean',
+                    'info' => 'Is over 18, boolean value.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'publicTraffic',
+                    'type' => 'Boolean',
+                    'info' => 'Public traffic, boolean value.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'showMedia',
+                    'type' => 'Boolean',
+                    'info' => 'Show media, boolean value.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'showMediaPreview',
+                    'type' => 'Boolean',
+                    'info' => 'Show media preview, boolean value.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'collapseDeletedComments',
+                    'type' => 'Boolean',
+                    'info' => 'Collapse deleted comments, boolean value.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'themeSrUpdate',
+                    'type' => 'Boolean',
+                    'info' => 'Theme subreddit update, boolean value.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'g-recaptcha-response',
+                    'type' => 'String',
+                    'info' => 'Recaptcha response.',
+                    'required' => false,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'getSubredditStylesheet',
+            'description' => 'Get a subreddit\'s stylesheet.',
+            'args' => array (
+                array (
+                    'name' => 'subreddit',
+                    'type' => 'String',
+                    'info' => 'Subreddit of which to retrieve stylesheet.',
+                    'required' => true,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'subscribe',
+            'description' => 'Subscribe to a subreddit. Must have read access to the subreddit.',
+            'args' => array (
+                array (
+                    'name' => 'subreddit',
+                    'type' => 'String',
+                    'info' => 'Subreddit to which to subscribe.',
+                    'required' => true,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'unsubscribe',
+            'description' => 'Unsubscribe from a subreddit.',
+            'args' => array (
+                array (
+                    'name' => 'subreddit',
+                    'type' => 'String',
+                    'info' => 'Subreddit from which to unsubscribe.',
+                    'required' => true,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'uploadSubredditImage',
+            'description' => 'Upload an image to the specified subreddit.',
+            'args' => array (
+                array (
+                    'name' => 'subreddit',
+                    'type' => 'String',
+                    'info' => 'Subreddit to which to upload image.',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'file',
+                    'type' => 'String',
+                    'info' => 'Relative or absolute path of file (maximum size of 500 KiB).',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'name',
+                    'type' => 'String',
+                    'info' => 'If &upload_type is \'img\', assign the image this name. Ignored otherwise.',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'uploadType',
+                    'type' => 'String',
+                    'info' => 'One of \'img\', \'header\', \'icon\', \'banner\'.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'imageType',
+                    'type' => 'String',
+                    'info' => 'One of \'png\' or \'jpg\'.',
+                    'required' => false,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'distinguish',
+            'description' => 'Mod distinguish a post or comment.',
+            'args' => array (
+                array (
+                    'name' => 'id',
+                    'type' => 'String',
+                    'info' => 'Thing ID of object to distinguish.',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'how',
+                    'type' => 'Boolean',
+                    'info' => 'True to set [M] distinguish. False to undistinguish.',
+                    'required' => false,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'approve',
+            'description' => 'Marks the specified thing as approved.',
+            'args' => array (
+                array (
+                    'name' => 'id',
+                    'type' => 'String',
+                    'info' => 'Thing ID of object to be approved.',
+                    'required' => true,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'acceptModeratorInvite',
+            'description' => 'Accepts a moderator invitation for the specified subreddit. You must have a pending invitation for that subreddit.',
+            'args' => array (
+                array (
+                    'name' => 'subreddit',
+                    'type' => 'String',
+                    'info' => 'Subreddit to accept invitation.',
+                    'required' => true,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'getUnmoderated',
+            'description' => 'Retrieves a list of things that have not been moderated in the specified subreddit.',
+            'args' => array (
+                array (
+                    'name' => 'subreddit',
+                    'type' => 'String',
+                    'info' => 'Subreddit of items to retrieve. All moderated subreddits by default.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'only',
+                    'type' => 'String',
+                    'info' => 'One of (links, comments).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'after',
+                    'type' => 'String',
+                    'info' => 'Fullname of a thing.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'before',
+                    'type' => 'String',
+                    'info' => 'Fullname of a thing.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'count',
+                    'type' => 'Number',
+                    'info' => 'A positive integer (default: 0).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'limit',
+                    'type' => 'Number',
+                    'info' => 'Upper limit of number of items to retrieve. Maximum is 100.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'srDetail',
+                    'type' => 'String',
+                    'info' => 'Expand subreddits (optional).',
+                    'required' => false,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'wikiAllowEditor',
+            'description' => 'Allow the specified user to edit the specified wiki page.',
+            'args' => array (
+                array (
+                    'name' => 'subreddit',
+                    'type' => 'String',
+                    'info' => 'Subreddit of the wiki page.',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'username',
+                    'type' => 'String',
+                    'info' => 'Username of user to allow.',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'page',
+                    'type' => 'String',
+                    'info' => 'Name of page to allow user to edit.',
+                    'required' => true,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'wikiDisallowEditor',
+            'description' => 'Remove the specified user from the allowed editors list of the specified wiki page.',
+            'args' => array (
+                array (
+                    'name' => 'subreddit',
+                    'type' => 'String',
+                    'info' => 'Subreddit of the wiki page.',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'username',
+                    'type' => 'String',
+                    'info' => 'Username of user to allow.',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'page',
+                    'type' => 'String',
+                    'info' => 'Name of page to disallow user to edit.',
+                    'required' => true,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'wikiGetPages',
+            'description' => 'Retrieves a list of all pages of the specified subreddit\'s wiki.',
+            'args' => array (
+                array (
+                    'name' => 'subreddit',
+                    'type' => 'String',
+                    'info' => 'Subreddit for which to retrieve pages.',
+                    'required' => true,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'wikiGetPage',
+            'description' => 'Retrieves the specified wiki page, optionally at a specific revision or a comparison between revisions.',
+            'args' => array (
+                array (
+                    'name' => 'subreddit',
+                    'type' => 'String',
+                    'info' => 'Subreddit in which to retrieve page.',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'page',
+                    'type' => 'String',
+                    'info' => 'Page to retrieve.',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'v',
+                    'type' => 'String',
+                    'info' => 'Specific revision ID to retrieve (optional).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'v2',
+                    'type' => 'String',
+                    'info' => 'ID of revision with which to compare &v (optional2).',
+                    'required' => false,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'wikiGetRevisions',
+            'description' => 'Retrieves a listing of wiki revisions for all pages within the specified subreddit.',
+            'args' => array (
+                array (
+                    'name' => 'subreddit',
+                    'type' => 'String',
+                    'info' => 'Subreddit for which to retrieve revisions.',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'after',
+                    'type' => 'String',
+                    'info' => 'Fullname of a thing.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'before',
+                    'type' => 'String',
+                    'info' => 'Fullname of a thing.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'count',
+                    'type' => 'Number',
+                    'info' => 'A positive integer (default: 0).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'limit',
+                    'type' => 'Number',
+                    'info' => 'Upper limit of number of items to retrieve. Maximum is 100.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'srDetail',
+                    'type' => 'String',
+                    'info' => 'Expand subreddits (optional).',
+                    'required' => false,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'wikiGetPageRevisions',
+            'description' => 'Retrieves a listing of wiki revisions for the specified page within the specified subreddit.',
+            'args' => array (
+                array (
+                    'name' => 'subreddit',
+                    'type' => 'String',
+                    'info' => 'Subreddit for which to retrieve revisions.',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'page',
+                    'type' => 'String',
+                    'info' => 'Page for which to retrieve revisions.',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'after',
+                    'type' => 'String',
+                    'info' => 'Fullname of a thing.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'before',
+                    'type' => 'String',
+                    'info' => 'Fullname of a thing.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'count',
+                    'type' => 'Number',
+                    'info' => 'A positive integer (default: 0).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'limit',
+                    'type' => 'Number',
+                    'info' => 'Upper limit of number of items to retrieve. Maximum is 100.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'srDetail',
+                    'type' => 'String',
+                    'info' => 'Expand subreddits (optional).',
+                    'required' => false,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'wikiEditPage',
+            'description' => 'Edit a wiki page.',
+            'args' => array (
+                array (
+                    'name' => 'subreddit',
+                    'type' => 'String',
+                    'info' => 'Subreddit in which to edit page.',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'page',
+                    'type' => 'String',
+                    'info' => 'Page to edit.',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'content',
+                    'type' => 'String',
+                    'info' => 'Content with which to overwrite page.',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'reason',
+                    'type' => 'String',
+                    'info' => 'Reason for revision (up to 256 characters long).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'previous',
+                    'type' => 'String',
+                    'info' => 'Revision ID on which to base this edit.',
+                    'required' => false,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'wikiToggleHideRevision',
+            'description' => 'Toggle a revision\'s status of hidden.',
+            'args' => array (
+                array (
+                    'name' => 'subreddit',
+                    'type' => 'String',
+                    'info' => 'Subreddit of revision.',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'page',
+                    'type' => 'String',
+                    'info' => 'Pagename of revision.',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'revision',
+                    'type' => 'String',
+                    'info' => 'ID of revision to toggle hidden status.',
+                    'required' => true,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'wikiRevertToRevision',
+            'description' => 'Revert a wiki page to a previous revision.',
+            'args' => array (
+                array (
+                    'name' => 'subreddit',
+                    'type' => 'String',
+                    'info' => 'Subreddit of revision.',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'page',
+                    'type' => 'String',
+                    'info' => 'Pagename of revision.',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'revision',
+                    'type' => 'String',
+                    'info' => 'ID of revision to which to revert.',
+                    'required' => true,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'wikiGetPageDiscussions',
+            'description' => 'Retrieves a listing of discussions about a certain wiki page.',
+            'args' => array (
+                array (
+                    'name' => 'subreddit',
+                    'type' => 'String',
+                    'info' => 'Subreddit of page.',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'page',
+                    'type' => 'String',
+                    'info' => 'Page for which to retrieve discussions.',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'after',
+                    'type' => 'String',
+                    'info' => 'Fullname of a thing.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'before',
+                    'type' => 'String',
+                    'info' => 'Fullname of a thing.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'count',
+                    'type' => 'Number',
+                    'info' => 'A positive integer (default: 0).',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'limit',
+                    'type' => 'Number',
+                    'info' => 'Upper limit of number of items to retrieve. Maximum is 100.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'srDetail',
+                    'type' => 'String',
+                    'info' => 'Expand subreddits (optional).',
+                    'required' => false,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'wikiGetPageSettings',
+            'description' => 'Get the specified page\'s settings in the specified subreddit.',
+            'args' => array (
+                array (
+                    'name' => 'subreddit',
+                    'type' => 'String',
+                    'info' => 'Subreddit of page.',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'page',
+                    'type' => 'String',
+                    'info' => 'Name of page.',
+                    'required' => true,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
+        array (
+            'name' => 'wikiUpdatePageSettings',
+            'description' => 'Update the specified page\'s settings in the specified subreddit.',
+            'args' => array (
+                array (
+                    'name' => 'subreddit',
+                    'type' => 'String',
+                    'info' => 'Subreddit of page.',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'page',
+                    'type' => 'String',
+                    'info' => 'Name of page.',
+                    'required' => true,
+                ),
+                array (
+                    'name' => 'permlevel',
+                    'type' => 'Number',
+                    'info' => 'Permissions level for page. 0 for use subreddit wiki permissions, 1 for only approved editors, 2 for only mods, null to not update.',
+                    'required' => false,
+                ),
+                array (
+                    'name' => 'listed',
+                    'type' => 'Boolean',
+                    'info' => 'Show this page on the list of wiki pages. True to show, false to hide, null to not update.',
+                    'required' => false,
+                ),
+            ),
+            'callbacks' => array (
+                array (
+                    'name' => 'error',
+                    'info' => 'Error',
+                ),
+                array (
+                    'name' => 'success',
+                    'info' => 'Success',
+                ),
+            ),
+        ),
     ),
     'custom' => array (
         'getAccessToken'=> array (
@@ -4694,6 +8482,1020 @@ return array (
             ),
             'vendorUrl' => 'https://oauth.reddit.com/message/sent.json',
             'method' => 'GET',
+            'showApiType' => false,
+        ),
+        'getUserUpvoted' => array (
+            'dictionary' => array (
+                'username' => 'username',
+                'show' => 'show',
+                'sort' => 'sort',
+                't' => 't',
+                'after' => 'after',
+                'before' => 'before',
+                'count' => 'count',
+                'limit' => 'limit',
+                'srDetail' => 'sr_detail',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com/user/{{username}}/upvoted.json',
+            'method' => 'POST',
+            'showApiType' => false,
+        ),
+        'getUserDownvoted' => array (
+            'dictionary' => array (
+                'username' => 'username',
+                'show' => 'show',
+                'sort' => 'sort',
+                't' => 't',
+                'after' => 'after',
+                'before' => 'before',
+                'count' => 'count',
+                'limit' => 'limit',
+                'srDetail' => 'sr_detail',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com/user/{{username}}/downvoted.json',
+            'method' => 'GET',
+            'showApiType' => false,
+        ),
+        'getUserComments' => array (
+            'dictionary' => array (
+                'username' => 'username',
+                'show' => 'show',
+                'sort' => 'sort',
+                't' => 't',
+                'after' => 'after',
+                'before' => 'before',
+                'count' => 'count',
+                'limit' => 'limit',
+                'srDetail' => 'sr_detail',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com/user/{{username}}/comments.json',
+            'method' => 'GET',
+            'showApiType' => false,
+        ),
+        'getUserSubmitted' => array (
+            'dictionary' => array (
+                'username' => 'username',
+                'show' => 'show',
+                'sort' => 'sort',
+                't' => 't',
+                'after' => 'after',
+                'before' => 'before',
+                'count' => 'count',
+                'limit' => 'limit',
+                'srDetail' => 'sr_detail',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com/user/{{username}}/submitted.json',
+            'method' => 'GET',
+            'showApiType' => false,
+        ),
+        'getUserGildingsGiven' => array (
+            'dictionary' => array (
+                'username' => 'username',
+                'show' => 'show',
+                'sort' => 'sort',
+                't' => 't',
+                'after' => 'after',
+                'before' => 'before',
+                'count' => 'count',
+                'limit' => 'limit',
+                'srDetail' => 'sr_detail',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com/user/{{username}}/gilded.json',
+            'method' => 'GET',
+            'showApiType' => false,
+        ),
+        'getUserGildingsReceived' => array (
+            'dictionary' => array (
+                'username' => 'username',
+                'show' => 'show',
+                'sort' => 'sort',
+                't' => 't',
+                'after' => 'after',
+                'before' => 'before',
+                'count' => 'count',
+                'limit' => 'limit',
+                'srDetail' => 'sr_detail',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com/user/{{username}}/gilded.json',
+            'method' => 'GET',
+            'showApiType' => false,
+        ),
+        'getUserSaved' => array (
+            'dictionary' => array (
+                'username' => 'username',
+                'show' => 'show',
+                'sort' => 'sort',
+                't' => 't',
+                'after' => 'after',
+                'before' => 'before',
+                'count' => 'count',
+                'limit' => 'limit',
+                'srDetail' => 'sr_detail',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com/user/{{username}}/saved.json',
+            'method' => 'GET',
+            'showApiType' => false,
+        ),
+        'getUserHidden' => array (
+            'dictionary' => array (
+                'username' => 'username',
+                'show' => 'show',
+                'sort' => 'sort',
+                't' => 't',
+                'after' => 'after',
+                'before' => 'before',
+                'count' => 'count',
+                'limit' => 'limit',
+                'srDetail' => 'sr_detail',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com/user/{{username}}/hidden.json',
+            'method' => 'GET',
+            'showApiType' => false,
+        ),
+        'searchSubredditsByName' => array (
+            'dictionary' => array (
+                'query' => 'query',
+                'includeOver_18' => 'include_over_18',
+                'exact' => 'exact',
+                'includeUnadvertisable' => 'include_unadvertisable',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com/api/search_reddit_names',
+            'method' => 'POST',
+            'showApiType' => false,
+        ),
+        'getRecommendedSubreddits' => array (
+            'dictionary' => array (
+                'srnames' => 'srnames',
+                'omit' => 'omit',
+                'over_18' => 'over_18',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com/api/recommend/sr/{{srnames}}.json',
+            'method' => 'GET',
+            'showApiType' => false,
+        ),
+        'deleteSubredditImage' => array (
+            'dictionary' => array (
+                'subreddit' => 'subreddit',
+                'imageName' => 'image_name',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com[[/r/{{subreddit}}]]/api/delete_sr_img',
+            'method' => 'POST',
+            'showApiType' => true,
+        ),
+        'getWikiContributors' => array (
+            'dictionary' => array (
+                'subreddit' => 'subreddit',
+                'user' => 'user',
+                'show' => 'show',
+                'after' => 'after',
+                'before' => 'before',
+                'count' => 'count',
+                'limit' => 'limit',
+                'srDetail' => 'sr_detail',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com[[/r/{{subreddit}}]]/about/wikicontributors.json',
+            'method' => 'GET',
+            'showApiType' => false,
+        ),
+        'getContributors' => array (
+            'dictionary' => array (
+                'subreddit' => 'subreddit',
+                'user' => 'user',
+                'show' => 'show',
+                'after' => 'after',
+                'before' => 'before',
+                'count' => 'count',
+                'limit' => 'limit',
+                'srDetail' => 'sr_detail',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com[[/r/{{subreddit}}]]/about/contributors.json',
+            'method' => 'GET',
+            'showApiType' => false,
+        ),
+        'getWikiBanned' => array (
+            'dictionary' => array (
+                'subreddit' => 'subreddit',
+                'user' => 'user',
+                'show' => 'show',
+                'after' => 'after',
+                'before' => 'before',
+                'count' => 'count',
+                'limit' => 'limit',
+                'srDetail' => 'sr_detail',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com[[/r/{{subreddit}}]]/about/wikibanned.json',
+            'method' => 'GET',
+            'showApiType' => false,
+        ),
+        'getModerators' => array (
+            'dictionary' => array (
+                'subreddit' => 'subreddit',
+                'user' => 'user',
+                'show' => 'show',
+                'after' => 'after',
+                'before' => 'before',
+                'count' => 'count',
+                'limit' => 'limit',
+                'srDetail' => 'sr_detail',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com[[/r/{{subreddit}}]]/about/moderators.json',
+            'method' => 'GET',
+            'showApiType' => false,
+        ),
+        'getMuted' => array (
+            'dictionary' => array (
+                'subreddit' => 'subreddit',
+                'user' => 'user',
+                'show' => 'show',
+                'after' => 'after',
+                'before' => 'before',
+                'count' => 'count',
+                'limit' => 'limit',
+                'srDetail' => 'sr_detail',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com[[/r/{{subreddit}}]]/about/muted.json',
+            'method' => 'GET',
+            'showApiType' => false,
+        ),
+        'getBanned' => array (
+            'dictionary' => array (
+                'subreddit' => 'subreddit',
+                'user' => 'user',
+                'show' => 'show',
+                'after' => 'after',
+                'before' => 'before',
+                'count' => 'count',
+                'limit' => 'limit',
+                'srDetail' => 'sr_detail',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com[[/r/{{subreddit}}]]/about/banned.json',
+            'method' => 'GET',
+            'showApiType' => false,
+        ),
+        'aboutSubreddit' => array (
+            'dictionary' => array (
+                'subreddit' => 'subreddit',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com[[/r/{{subreddit}}]]/about.json',
+            'method' => 'GET',
+            'showApiType' => false,
+        ),
+        'deleteSubredditIcon' => array (
+            'dictionary' => array (
+                'subreddit' => 'subreddit',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com[[/r/{{subreddit}}]]/api/delete_sr_icon',
+            'method' => 'POST',
+            'showApiType' => true,
+        ),
+        'deleteSubredditHeaderImage' => array (
+            'dictionary' => array (
+                'subreddit' => 'subreddit',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com[[/r/{{subreddit}}]]/api/delete_sr_header',
+            'method' => 'POST',
+            'showApiType' => true,
+        ),
+        'deleteSubredditBanner' => array (
+            'dictionary' => array (
+                'subreddit' => 'subreddit',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com[[/r/{{subreddit}}]]/api/delete_sr_banner',
+            'method' => 'POST',
+            'showApiType' => true,
+        ),
+        'unblockUser' => array (
+            'dictionary' => array (
+                'name' => 'name',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com/api/unfriend',
+            'method' => 'POST',
+            'showApiType' => false,
+            'custom' => true,
+        ),
+        'removeFriend' => array (
+            'dictionary' => array (
+                'id' => 'id',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com/api/v1/me/friends/{{id}}',
+            'method' => 'DELETE',
+            'showApiType' => false,
+        ),
+        'addFriend' => array (
+            'dictionary' => array (
+                'name' => 'name',
+                'note' => 'note',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com/api/v1/me/friends/{{name}}',
+            'method' => 'PUT',
+            'showApiType' => false,
+            'custom' => true,
+        ),
+        'search' => array (
+            'dictionary' => array (
+                'q' => 'q',
+                'subreddit' => 'subreddit',
+                'sort' => 'sort',
+                't' => 't',
+                'type' => 'type',
+                'includeFacets' => 'include_facets',
+                'restrictSr' => 'restrict_sr',
+                'syntax' => 'syntax',
+                'after' => 'after',
+                'before' => 'before',
+                'count' => 'count',
+                'limit' => 'limit',
+                'srDetail' => 'sr_detail',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com[[/r/{{subreddit}}]]/search',
+            'method' => 'GET',
+            'showApiType' => false,
+        ),
+        'usernameAvailable' => array (
+            'dictionary' => array (
+                'user' => 'user',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com/api/username_available.json',
+            'method' => 'GET',
+            'showApiType' => false,
+        ),
+        'multiGetDescription' => array (
+            'dictionary' => array (
+                'multipath' => 'multipath',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com/api/multi/{{multipath}}/description',
+            'method' => 'GET',
+            'showApiType' => false,
+        ),
+        'multiEdit' => array (
+            'dictionary' => array (
+                'multipath' => 'multipath',
+                'displayName' => 'display_name',
+                'descriptionMd' => 'description_md',
+                'iconName' => 'icon_name',
+                'keyColor' => 'key_color',
+                'subredditsName' => 'subreddits',
+                'visibility' => 'visibility',
+                'weightingScheme' => 'weighting_scheme',
+                'expandSrs' => 'expand_srs',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com/api/multi/{{multipath}}',
+            'method' => 'PUT',
+            'showApiType' => false,
+            'custom' => true,
+        ),
+        'multiAddSubreddit' => array (
+            'dictionary' => array (
+                'multipath' => 'multipath',
+                'srname' => 'srname',
+                'modelName' => 'model',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com/api/multi/{{multipath}}/r/{{srname}}',
+            'method' => 'PUT',
+            'showApiType' => false,
+            'custom' => true,
+        ),
+        'multiGetSubreddit' => array (
+            'dictionary' => array (
+                'multipath' => 'multipath',
+                'srname' => 'srname',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com/api/multi/{{multipath}}/r/{{srname}}',
+            'method' => 'GET',
+            'showApiType' => false,
+        ),
+        'multiRemoveSubreddit' => array (
+            'dictionary' => array (
+                'multipath' => 'multipath',
+                'srname' => 'srname',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com/api/multi/{{multipath}}/r/{{srname}}',
+            'method' => 'DELETE',
+            'showApiType' => false,
+        ),
+        'multiEditDescription' => array (
+            'dictionary' => array (
+                'multipath' => 'multipath',
+                'modelBodyMd' => 'model_body_md',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com/api/multi/{{multipath}}/description',
+            'method' => 'PUT',
+            'showApiType' => false,
+            'custom' => true,
+        ),
+        'getUserOverview' => array (
+            'dictionary' => array (
+                'username' => 'username',
+                'sort' => 'sort',
+                'show' => 'show',
+                't' => 't',
+                'after' => 'after',
+                'before' => 'before',
+                'count' => 'count',
+                'limit' => 'limit',
+                'srDetail' => 'sr_detail',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com/user/{{username}}/overview.json',
+            'method' => 'GET',
+            'showApiType' => false,
+        ),
+        'getUser' => array (
+            'dictionary' => array (
+                'username' => 'username',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com/user/{{username}}/about.json',
+            'method' => 'GET',
+            'showApiType' => false,
+        ),
+        'getUserTrophies' => array (
+            'dictionary' => array (
+                'id' => 'id',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com/api/v1/user/{{id}}/trophies',
+            'method' => 'GET',
+            'showApiType' => false,
+        ),
+        'multiGet' => array (
+            'dictionary' => array (
+                'multipath' => 'multipath',
+                'expandSrs' => 'expand_srs',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com/api/multi/{{multipath}}',
+            'method' => 'GET',
+            'showApiType' => false,
+        ),
+        'searchSubreddits' => array (
+            'dictionary' => array (
+                'q' => 'q',
+                'sort' => 'sort',
+                'after' => 'after',
+                'before' => 'before',
+                'count' => 'count',
+                'limit' => 'limit',
+                'srDetail' => 'sr_detail',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com/subreddits/search',
+            'method' => 'GET',
+            'showApiType' => false,
+            'custom' => true,
+        ),
+        'leaveModerator' => array (
+            'dictionary' => array (
+                'id' => 'id',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com/api/leavemoderator',
+            'method' => 'POST',
+            'showApiType' => false,
+        ),
+        'getStickies' => array (
+            'dictionary' => array (
+                'subreddit' => 'subreddit',
+                'num' => 'num',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com[[/r/{{subreddit}}]]/sticky.json',
+            'method' => 'GET',
+            'showApiType' => false,
+        ),
+        'leaveContributor' => array (
+            'dictionary' => array (
+                'id' => 'id',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com/api/leavecontributor',
+            'method' => 'POST',
+            'showApiType' => false,
+        ),
+        'multiDelete' => array (
+            'dictionary' => array (
+                'multipath' => 'multipath',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com/api/multi/{{multipath}}',
+            'method' => 'DELETE',
+            'showApiType' => false,
+        ),
+        'multiGetUser' => array (
+            'dictionary' => array (
+                'username' => 'username',
+                'expandSrs' => 'expand_srs',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com/api/multi/user/{{username}}',
+            'method' => 'GET',
+            'showApiType' => false,
+        ),
+        'ignoreReports' => array (
+            'dictionary' => array (
+                'id' => 'id',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com/api/ignore_reports',
+            'method' => 'POST',
+            'showApiType' => false,
+        ),
+        'multiRename' => array (
+            'dictionary' => array (
+                'displayName' => 'display_name',
+                'from' => 'from',
+                'to' => 'to',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com/api/multi/rename',
+            'method' => 'POST',
+            'showApiType' => false,
+        ),
+        'unmuteUserByMessage' => array (
+            'dictionary' => array (
+                'id' => 'id',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com/api/unmute_message_author',
+            'method' => 'POST',
+            'showApiType' => false,
+        ),
+        'getPopularSubreddits' => array (
+            'dictionary' => array (
+                'after' => 'after',
+                'before' => 'before',
+                'count' => 'count',
+                'limit' => 'limit',
+                'srDetail' => 'sr_detail',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com/subreddits/popular',
+            'method' => 'GET',
+            'showApiType' => false,
+        ),
+        'getMyModeratedSubreddits' => array (
+            'dictionary' => array (
+                'after' => 'after',
+                'before' => 'before',
+                'count' => 'count',
+                'limit' => 'limit',
+                'srDetail' => 'sr_detail',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com/subreddits/mine/moderator',
+            'method' => 'GET',
+            'showApiType' => false,
+        ),
+        'unignoreReports' => array (
+            'dictionary' => array (
+                'id' => 'id',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com/api/unignore_reports',
+            'method' => 'POST',
+            'showApiType' => false,
+        ),
+        'remove' => array (
+            'dictionary' => array (
+                'id' => 'id',
+                'spam' => 'spam',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com/api/remove',
+            'method' => 'POST',
+            'showApiType' => false,
+        ),
+        'getMyContributedSubreddits' => array (
+            'dictionary' => array (
+                'after' => 'after',
+                'before' => 'before',
+                'count' => 'count',
+                'limit' => 'limit',
+                'srDetail' => 'sr_detail',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com/subreddits/mine/contributor',
+            'method' => 'GET',
+            'showApiType' => false,
+        ),
+        'getMySubscribedSubreddits' => array (
+            'dictionary' => array (
+                'after' => 'after',
+                'before' => 'before',
+                'count' => 'count',
+                'limit' => 'limit',
+                'srDetail' => 'sr_detail',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com/subreddits/mine/subscriber',
+            'method' => 'GET',
+            'showApiType' => false,
+        ),
+        'multiCreate' => array (
+            'dictionary' => array (
+                'multipath' => 'multipath',
+                'displayName' => 'display_name',
+                'descriptionMd' => 'description_md',
+                'iconName' => 'icon_name',
+                'keyColor' => 'key_color',
+                'subredditsName' => 'subreddits_name',
+                'visibility' => 'visibility',
+                'weightingScheme' => 'weighting_scheme',
+                'expandSrs' => 'expand_srs',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com/api/multi/{{multipath}}',
+            'method' => 'POST',
+            'showApiType' => false,
+            'custom' => true,
+        ),
+        'muteUserByMessage' => array (
+            'dictionary' => array (
+                'id' => 'id',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com/api/mute_message_author',
+            'method' => 'POST',
+            'showApiType' => false,
+        ),
+        'multiGetMine' => array (
+            'dictionary' => array (
+                'expandSrs' => 'expand_srs',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com/api/multi/mine',
+            'method' => 'GET',
+            'showApiType' => false,
+        ),
+        'multiCopy' => array (
+            'dictionary' => array (
+                'displayName' => 'display_name',
+                'from' => 'from',
+                'to' => 'to',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com/api/multi/copy',
+            'method' => 'POST',
+            'showApiType' => false,
+        ),
+        'editSubreddit' => array (
+            'dictionary' => array (
+                'name' => 'name',
+                'publicDescription' => 'public_description',
+                'description' => 'description',
+                'title' => 'title',
+                'header-title' => 'header-title',
+                'sr' => 'sr',
+                'themeSr' => 'theme_sr',
+                'lang' => 'lang',
+                'commentScoreHideMins' => 'comment_score_hide_mins',
+                'excludeBannedModqueue' => 'exclude_banned_modqueue',
+                'submitLinkLabel' => 'submit_link_label',
+                'submitText' => 'submit_text',
+                'submitTextLabel' => 'submit_text_label',
+                'suggestedCommentSort' => 'suggested_comment_sort',
+                'linkType' => 'link_type',
+                'spamComments' => 'spam_comments',
+                'spamLinks' => 'spam_links',
+                'spamSelfposts' => 'spam_selfposts',
+                'spoilersEnabled' => 'spoilers_enabled',
+                'type' => 'type',
+                'wikiEditAge' => 'wiki_edit_age',
+                'wikiEditKarma' => 'wiki_edit_karma',
+                'wikimode' => 'wikimode',
+                'allowImages' => 'allow_images',
+                'allowTop' => 'allow_top',
+                'hideAds' => 'hide_ads',
+                'over_18' => 'over_18',
+                'publicTraffic' => 'public_traffic',
+                'showMedia' => 'show_media',
+                'showMediaPreview' => 'show_media_preview',
+                'collapseDeletedComments' => 'collapse_deleted_comments',
+                'themeSrUpdate' => 'theme_sr_update',
+                'g-recaptcha-response' => 'g-recaptcha-response',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com/api/site_admin',
+            'method' => 'POST',
+            'showApiType' => false,
+        ),
+        'getDefaultSubreddits' => array (
+            'dictionary' => array (
+                'after' => 'after',
+                'before' => 'before',
+                'count' => 'count',
+                'limit' => 'limit',
+                'srDetail' => 'sr_detail',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com/subreddits/default',
+            'method' => 'GET',
+            'showApiType' => false,
+        ),
+        'getGoldOnlySubreddits' => array (
+            'dictionary' => array (
+                'after' => 'after',
+                'before' => 'before',
+                'count' => 'count',
+                'limit' => 'limit',
+                'srDetail' => 'sr_detail',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com/subreddits/gold',
+            'method' => 'GET',
+            'showApiType' => false,
+        ),
+        'getNewSubreddits' => array (
+            'dictionary' => array (
+                'after' => 'after',
+                'before' => 'before',
+                'count' => 'count',
+                'limit' => 'limit',
+                'srDetail' => 'sr_detail',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com/subreddits/new',
+            'method' => 'GET',
+            'showApiType' => false,
+        ),
+        'getSubredditSidebar' => array (
+            'dictionary' => array (
+                'subreddit' => 'subreddit',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com[[/r/{{subreddit}}]]/wiki/config/sidebar.json',
+            'method' => 'GET',
+            'showApiType' => false,
+        ),
+        'getSubredditSettings' => array (
+            'dictionary' => array (
+                'subreddit' => 'subreddit',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com[[/r/{{subreddit}}]]/about/edit.json',
+            'method' => 'GET',
+            'showApiType' => false,
+        ),
+        'getModerationLog' => array (
+            'dictionary' => array (
+                'subreddit' => 'subreddit',
+                'mod' => 'mod',
+                'type' => 'type',
+                'after' => 'after',
+                'before' => 'before',
+                'count' => 'count',
+                'limit' => 'limit',
+                'srDetail' => 'sr_detail',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com[[/r/{{subreddit}}]]/about/log.json',
+            'method' => 'GET',
+            'showApiType' => false,
+        ),
+        'searchSubredditsByTopic' => array (
+            'dictionary' => array (
+                'query' => 'query',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com/api/subreddits_by_topic',
+            'method' => 'GET',
+            'showApiType' => false,
+        ),
+        'setSubredditStylesheet' => array (
+            'dictionary' => array (
+                'subreddit' => 'subreddit',
+                'stylesheetContents' => 'stylesheet_contents',
+                'reason' => 'reason',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com[[/r/{{subreddit}}]]/api/subreddit_stylesheet',
+            'method' => 'POST',
+            'showApiType' => true,
+            'custom' => true,
+        ),
+        'getSubmitText' => array (
+            'dictionary' => array (
+                'subreddit' => 'subreddit',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com[[/r/{{subreddit}}]]/api/submit_text',
+            'method' => 'GET',
+            'showApiType' => false,
+        ),
+        'createSubreddit' => array (
+            'dictionary' => array (
+                'sr' => 'sr',
+                'name' => 'name',
+                'publicDescription' => 'public_description',
+                'description' => 'description',
+                'title' => 'title',
+                'header-title' => 'header-title',
+                'themeSr' => 'theme_sr',
+                'lang' => 'lang',
+                'commentScoreHideMins' => 'comment_score_hide_mins',
+                'excludeBannedModqueue' => 'exclude_banned_modqueue',
+                'submitLinkLabel' => 'submit_link_label',
+                'submitText' => 'submit_text',
+                'submitTextLabel' => 'submit_text_label',
+                'suggestedCommentSort' => 'suggested_comment_sort',
+                'linkType' => 'link_type',
+                'spamComments' => 'spam_comments',
+                'spamLinks' => 'spam_links',
+                'spamSelfposts' => 'spam_selfposts',
+                'spoilersEnabled' => 'spoilers_enabled',
+                'type' => 'type',
+                'wikiEditAge' => 'wiki_edit_age',
+                'wikiEditKarma' => 'wiki_edit_karma',
+                'wikimode' => 'wikimode',
+                'allowImages' => 'allow_images',
+                'allowTop' => 'allow_top',
+                'hideAds' => 'hide_ads',
+                'over_18' => 'over_18',
+                'publicTraffic' => 'public_traffic',
+                'showMedia' => 'show_media',
+                'showMediaPreview' => 'show_media_preview',
+                'collapseDeletedComments' => 'collapse_deleted_comments',
+                'themeSrUpdate' => 'theme_sr_update',
+                'g-recaptcha-response' => 'g-recaptcha-response',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com/api/site_admin',
+            'method' => 'POST',
+            'showApiType' => true,
+        ),
+        'getSubredditStylesheet' => array (
+            'dictionary' => array (
+                'subreddit' => 'subreddit',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com[[/r/{{subreddit}}]]/wiki/config/stylesheet.json',
+            'method' => 'GET',
+            'showApiType' => false,
+        ),
+        'subscribe' => array (
+            'dictionary' => array (
+                'subreddit' => 'subreddit',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com/api/subscribe',
+            'method' => 'POST',
+            'showApiType' => false,
+            'custom' => true,
+        ),
+        'unsubscribe' => array (
+            'dictionary' => array (
+                'subreddit' => 'subreddit',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com/api/subscribe',
+            'method' => 'POST',
+            'showApiType' => false,
+            'custom' => true,
+        ),
+        'uploadSubredditImage' => array (
+            'dictionary' => array (
+                'subreddit' => 'subreddit',
+                'file' => 'file',
+                'name' => 'name',
+                'uploadType' => 'upload_type',
+                'imageType' => 'image_type',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com[[/r/{{subreddit}}]]/api/upload_sr_img',
+            'method' => 'POST',
+            'showApiType' => false,
+        ),
+        'distinguish' => array (
+            'dictionary' => array (
+                'id' => 'id',
+                'how' => 'how',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com/api/distinguish',
+            'method' => 'POST',
+            'showApiType' => true,
+        ),
+        'approve' => array (
+            'dictionary' => array (
+                'id' => 'id',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com/api/approve',
+            'method' => 'POST',
+            'showApiType' => false,
+        ),
+        'acceptModeratorInvite' => array (
+            'dictionary' => array (
+                'subreddit' => 'subreddit',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com[[/r/{{subreddit}}]]/api/accept_moderator_invite',
+            'method' => 'POST',
+            'showApiType' => true,
+        ),
+        'getUnmoderated' => array (
+            'dictionary' => array (
+                'subreddit' => 'subreddit',
+                'only' => 'only',
+                'after' => 'after',
+                'before' => 'before',
+                'count' => 'count',
+                'limit' => 'limit',
+                'srDetail' => 'sr_detail',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com[[/r/{{subreddit}}]]/about/unmoderated.json',
+            'method' => 'GET',
+            'showApiType' => false,
+        ),
+        'wikiAllowEditor' => array (
+            'dictionary' => array (
+                'subreddit' => 'subreddit',
+                'username' => 'username',
+                'page' => 'page',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com[[/r/{{subreddit}}]]/api/wiki/alloweditor/add',
+            'method' => 'POST',
+            'showApiType' => false,
+        ),
+        'wikiDisallowEditor' => array (
+            'dictionary' => array (
+                'subreddit' => 'subreddit',
+                'username' => 'username',
+                'page' => 'page',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com[[/r/{{subreddit}}]]/api/wiki/alloweditor/del',
+            'method' => 'POST',
+            'showApiType' => false,
+        ),
+        'wikiGetPages' => array (
+            'dictionary' => array (
+                'subreddit' => 'subreddit',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com[[/r/{{subreddit}}]]/wiki/pages',
+            'method' => 'GET',
+            'showApiType' => false,
+        ),
+        'wikiGetPage' => array (
+            'dictionary' => array (
+                'subreddit' => 'subreddit',
+                'page' => 'page',
+                'v' => 'v',
+                'v2' => 'v2',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com[[/r/{{subreddit}}]]/wiki/{{page}}',
+            'method' => 'GET',
+            'showApiType' => false,
+        ),
+        'wikiGetRevisions' => array (
+            'dictionary' => array (
+                'subreddit' => 'subreddit',
+                'after' => 'after',
+                'before' => 'before',
+                'count' => 'count',
+                'limit' => 'limit',
+                'srDetail' => 'sr_detail',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com[[/r/{{subreddit}}]]/wiki/revisions',
+            'method' => 'GET',
+            'showApiType' => false,
+        ),
+        'wikiGetPageRevisions' => array (
+            'dictionary' => array (
+                'subreddit' => 'subreddit',
+                'page' => 'page',
+                'after' => 'after',
+                'before' => 'before',
+                'count' => 'count',
+                'limit' => 'limit',
+                'srDetail' => 'sr_detail',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com[[/r/{{subreddit}}]]/wiki/revisions/{{page}}',
+            'method' => 'GET',
+            'showApiType' => false,
+        ),
+        'wikiEditPage' => array (
+            'dictionary' => array (
+                'subreddit' => 'subreddit',
+                'page' => 'page',
+                'content' => 'content',
+                'reason' => 'reason',
+                'previous' => 'previous',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com[[/r/{{subreddit}}]]/api/wiki/edit',
+            'method' => 'POST',
+            'showApiType' => false,
+        ),
+        'wikiToggleHideRevision' => array (
+            'dictionary' => array (
+                'subreddit' => 'subreddit',
+                'page' => 'page',
+                'revision' => 'revision',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com[[/r/{{subreddit}}]]/api/wiki/hide',
+            'method' => 'POST',
+            'showApiType' => false,
+        ),
+        'wikiRevertToRevision' => array (
+            'dictionary' => array (
+                'subreddit' => 'subreddit',
+                'page' => 'page',
+                'revision' => 'revision',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com[[/r/{{subreddit}}]]/api/wiki/revert',
+            'method' => 'POST',
+            'showApiType' => false,
+        ),
+        'wikiGetPageDiscussions' => array (
+            'dictionary' => array (
+                'subreddit' => 'subreddit',
+                'page' => 'page',
+                'after' => 'after',
+                'before' => 'before',
+                'count' => 'count',
+                'limit' => 'limit',
+                'srDetail' => 'sr_detail',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com[[/r/{{subreddit}}]]/wiki/discussions/{{page}}',
+            'method' => 'GET',
+            'showApiType' => false,
+        ),
+        'wikiGetPageSettings' => array (
+            'dictionary' => array (
+                'subreddit' => 'subreddit',
+                'page' => 'page',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com[[/r/{{subreddit}}]]/wiki/settings/{{page}}',
+            'method' => 'GET',
+            'showApiType' => false,
+        ),
+        'wikiUpdatePageSettings' => array (
+            'dictionary' => array (
+                'subreddit' => 'subreddit',
+                'page' => 'page',
+                'permlevel' => 'permlevel',
+                'listed' => 'listed',
+            ),
+            'vendorUrl' => 'https://oauth.reddit.com[[/r/{{subreddit}}]]/wiki/settings/{{page}}',
+            'method' => 'POST',
             'showApiType' => false,
         ),
     ),
