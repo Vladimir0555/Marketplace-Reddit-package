@@ -4,8 +4,15 @@ Reddit is a social news aggregation, web content rating, and discussion website.
 * Credentials: appClientId, appClientSecret
 
 ## How to get credentials: 
-0. Item one 
-1. Item two 
+0. [Sign up or Log in](https://www.reddit.com/login) on reddit.com
+1. On page [preferences/apps](https://www.reddit.com/prefs/apps/) create an app.
+2. Fill all required fields and click create app.
+3. In our package we using OAuth authentication, more details about how it work in Reddit you can read [HERE](https://github.com/reddit/reddit/wiki/OAuth2).
+4. To get access token, which used in all blocks of package as required field, first of all you need redirect the user to this URL:
+   * https://www.reddit.com/api/v1/authorize?client_id={CLIENT_ID}&response_type={TYPE}&state={RANDOM_STRING}&redirect_uri={URI}&duration={DURATION}&scope={SCOPE_STRING}
+   * About link syntax you can read [HERE](https://github.com/reddit/reddit/wiki/OAuth2#authorization)
+5. In redirect link, one of parameter will be "code", which we will use next.
+6. Finally to get access token use "getAccessToken" block in this package.
 
 ## Reddit.getAccessToken
 Get access token from code provided in the redirect described.
@@ -904,4 +911,3 @@ Retrieves the current user's sent personal messages.
 | count      | Number     | A positive integer (default: 0).
 | limit      | Number     | Upper limit of the number of links to retrieve. Maximum is 100.
 | srDetail   | String     | Expand subreddits.
-

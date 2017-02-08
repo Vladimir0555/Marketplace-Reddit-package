@@ -2463,7 +2463,6 @@ return array(
     ),
 ),
 */
-
 'getUserUpvoted' => array(
         'blockName' => 'getUserUpvoted',
         'blockUse' => true,
@@ -3647,25 +3646,26 @@ return array(
         ),
     ),
 ),
-/* 'unblockUser' => array(
+'unblockUser' => array(
     'blockName' => 'unblockUser',
-    'blockUse' => false,
+    'blockUse' => true,
     'description' => 'Unblock a user by username.',
     'vendor' => array(
         'url' => '/api/unfriend',
         'method' => 'POST',
         'showApiType' => false,
     ),
+    'custom' => true,
     'args' => array(
         array(
-            'name' => 'user',
+            'name' => 'name',
             'type' => 'string',
             'info' => 'Username of user to unblock.',
             'default' => 'none',
             'required' => true,
         ),
     ),
-),*/
+),
 'removeFriend' => array(
     'blockName' => 'removeFriend',
     'blockUse' => false,
@@ -3839,7 +3839,7 @@ return array(
     'blockUse' => true,
     'description' => 'Get a multi\'s description.',
     'vendor' => array(
-        'url' => ' /api/multi/{{multipath}}/description',
+        'url' => '/api/multi/{{multipath}}/description',
         'method' => 'GET',
         'showApiType' => false,
     ),
@@ -3915,7 +3915,7 @@ return array(
         ),
         array(
             'name' => 'weighting_scheme',
-            'type' => 'string|null',
+            'type' => 'string',
             'info' => 'One of \'classic\', \'fresh\'.',
             'default' => 'null',
             'required' => false,
@@ -3934,7 +3934,7 @@ return array(
     'blockUse' => true,
     'description' => 'Add the specified subreddit to the specified multireddit.',
     'vendor' => array(
-        'url' => ' /api/multi/{{multipath}}/r/{{srname}}',
+        'url' => '/api/multi/{{multipath}}/r/{{srname}}',
         'method' => 'PUT',
         'showApiType' => false,
     ),
@@ -3994,7 +3994,7 @@ return array(
     'blockUse' => true,
     'description' => 'Remove the specified subreddit from the specified multireddit.',
     'vendor' => array(
-        'url' => ' /api/multi/{{multipath}}/r/{{srname}}',
+        'url' => '/api/multi/{{multipath}}/r/{{srname}}',
         'method' => 'DELETE',
         'showApiType' => false,
     ),
@@ -4718,7 +4718,7 @@ return array(
         ),
         array(
             'name' => 'weighting_scheme',
-            'type' => 'string|null',
+            'type' => 'string',
             'info' => 'One of \'classic\', \'fresh\'.',
             'default' => 'null',
             'required' => false,
@@ -5714,14 +5714,613 @@ return array(
         ),
     ),
 ),
+'distinguish' => array(
+    'blockName' => 'distinguish',
+    'blockUse' => true,
+    'description' => 'Mod distinguish a post or comment.',
+    'vendor' => array(
+        'url' => '/api/distinguish',
+        'method' => 'POST',
+        'showApiType' => true,
+    ),
+    'args' => array(
+        array(
+            'name' => 'id',
+            'type' => 'string',
+            'info' => 'Thing ID of object to distinguish.',
+            'default' => 'none',
+            'required' => true,
+        ),
+        array(
+            'name' => 'how',
+            'type' => 'bool',
+            'info' => 'True to set [M] distinguish. False to undistinguish.',
+            'default' => 'true',
+            'required' => false,
+        ),
+    ),
+),
+'approve' => array(
+    'blockName' => 'approve',
+    'blockUse' => true,
+    'description' => 'Marks the specified thing as approved.',
+    'vendor' => array(
+        'url' => '/api/approve',
+        'method' => 'POST',
+        'showApiType' => false,
+    ),
+    'args' => array(
+        array(
+            'name' => 'id',
+            'type' => 'string',
+            'info' => 'Thing ID of object to be approved.',
+            'default' => 'none',
+            'required' => true,
+        ),
+    ),
+),
+'acceptModeratorInvite' => array(
+    'blockName' => 'acceptModeratorInvite',
+    'blockUse' => true,
+    'description' => 'Accepts a moderator invitation for the specified subreddit. You must have a pending invitation for that subreddit.',
+    'vendor' => array(
+        'url' => '[[/r/{{subreddit}}]]/api/accept_moderator_invite',
+        'method' => 'POST',
+        'showApiType' => true,
+    ),
+    'args' => array(
+        array(
+            'name' => 'subreddit',
+            'type' => 'string',
+            'info' => 'Subreddit to accept invitation.',
+            'default' => 'none',
+            'required' => true,
+        ),
+    ),
+),
+'getUnmoderated' => array(
+    'blockName' => 'getUnmoderated',
+    'blockUse' => true,
+    'description' => 'Retrieves a list of things that have not been moderated in the specified subreddit.',
+    'vendor' => array(
+        'url' => '[[/r/{{subreddit}}]]/about/unmoderated.json',
+        'method' => 'GET',
+        'showApiType' => false,
+    ),
+    'args' => array(
+        array(
+            'name' => 'subreddit',
+            'type' => 'string',
+            'info' => 'Subreddit of items to retrieve. All moderated subreddits by default.',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'only',
+            'type' => 'string',
+            'info' => 'One of (links, comments).',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'after',
+            'type' => 'string',
+            'info' => 'Fullname of a thing.',
+            'default' => 'null',
+            'required' => false,
+        ),
+        array(
+            'name' => 'before',
+            'type' => 'string',
+            'info' => 'Fullname of a thing.',
+            'default' => 'null',
+            'required' => false,
+        ),
+        array(
+            'name' => 'count',
+            'type' => 'int',
+            'info' => 'A positive integer (default: 0).',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'limit',
+            'type' => 'int',
+            'info' => 'Upper limit of number of items to retrieve. Maximum is 100.',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'sr_detail',
+            'type' => 'string',
+            'info' => 'Expand subreddits (optional).',
+            'default' => 'none',
+            'required' => false,
+        ),
+    ),
+),
+'wikiAllowEditor' => array(
+    'blockName' => 'wikiAllowEditor',
+    'blockUse' => true,
+    'description' => 'Allow the specified user to edit the specified wiki page.',
+    'vendor' => array(
+        'url' => '[[/r/{{subreddit}}]]/api/wiki/alloweditor/add',
+        'method' => 'POST',
+        'showApiType' => false,
+    ),
+    'args' => array(
+        array(
+            'name' => 'subreddit',
+            'type' => 'string',
+            'info' => 'Subreddit of the wiki page.',
+            'default' => 'none',
+            'required' => true,
+        ),
+        array(
+            'name' => 'username',
+            'type' => 'string',
+            'info' => 'Username of user to allow.',
+            'default' => 'none',
+            'required' => true,
+        ),
+        array(
+            'name' => 'page',
+            'type' => 'string',
+            'info' => 'Name of page to allow user to edit.',
+            'default' => 'none',
+            'required' => true,
+        ),
+    ),
+),
+'wikiDisallowEditor' => array(
+    'blockName' => 'wikiDisallowEditor',
+    'blockUse' => true,
+    'description' => 'Remove the specified user from the allowed editors list of the specified wiki page.',
+    'vendor' => array(
+        'url' => '[[/r/{{subreddit}}]]/api/wiki/alloweditor/del',
+        'method' => 'POST',
+        'showApiType' => false,
+    ),
+    'args' => array(
+        array(
+            'name' => 'subreddit',
+            'type' => 'string',
+            'info' => 'Subreddit of the wiki page.',
+            'default' => 'none',
+            'required' => true,
+        ),
+        array(
+            'name' => 'username',
+            'type' => 'string',
+            'info' => 'Username of user to allow.',
+            'default' => 'none',
+            'required' => true,
+        ),
+        array(
+            'name' => 'page',
+            'type' => 'string',
+            'info' => 'Name of page to disallow user to edit.',
+            'default' => 'none',
+            'required' => true,
+        ),
+    ),
+),
+'wikiGetPages' => array(
+    'blockName' => 'wikiGetPages',
+    'blockUse' => true,
+    'description' => 'Retrieves a list of all pages of the specified subreddit\'s wiki.',
+    'vendor' => array(
+        'url' => '[[/r/{{subreddit}}]]/wiki/pages',
+        'method' => 'GET',
+        'showApiType' => false,
+    ),
+    'args' => array(
+        array(
+            'name' => 'subreddit',
+            'type' => 'string',
+            'info' => 'Subreddit for which to retrieve pages.',
+            'default' => 'none',
+            'required' => true,
+        ),
+    ),
+),
+'wikiGetPage' => array(
+    'blockName' => 'wikiGetPage',
+    'blockUse' => true,
+    'description' => 'Retrieves the specified wiki page, optionally at a specific revision or a comparison between revisions.',
+    'vendor' => array(
+        'url' => '[[/r/{{subreddit}}]]/wiki/{{page}}',
+        'method' => 'GET',
+        'showApiType' => false,
+    ),
+    'args' => array(
+        array(
+            'name' => 'subreddit',
+            'type' => 'string',
+            'info' => 'Subreddit in which to retrieve page.',
+            'default' => 'none',
+            'required' => true,
+        ),
+        array(
+            'name' => 'page',
+            'type' => 'string',
+            'info' => 'Page to retrieve.',
+            'default' => 'none',
+            'required' => true,
+        ),
+        array(
+            'name' => 'v',
+            'type' => 'string',
+            'info' => 'Specific revision ID to retrieve (optional).',
+            'default' => 'null',
+            'required' => false,
+        ),
+        array(
+            'name' => 'v2',
+            'type' => 'string',
+            'info' => 'ID of revision with which to compare &v (optional2).',
+            'default' => 'null',
+            'required' => false,
+        ),
+    ),
+),
+'wikiGetRevisions' => array(
+    'blockName' => 'wikiGetRevisions',
+    'blockUse' => true,
+    'description' => 'Retrieves a listing of wiki revisions for all pages within the specified subreddit.',
+    'vendor' => array(
+        'url' => '[[/r/{{subreddit}}]]/wiki/revisions',
+        'method' => 'GET',
+        'showApiType' => false,
+    ),
+    'args' => array(
+        array(
+            'name' => 'subreddit',
+            'type' => 'string',
+            'info' => 'Subreddit for which to retrieve revisions.',
+            'default' => 'none',
+            'required' => true,
+        ),
+        array(
+            'name' => 'after',
+            'type' => 'string',
+            'info' => 'Fullname of a thing.',
+            'default' => 'null',
+            'required' => false,
+        ),
+        array(
+            'name' => 'before',
+            'type' => 'string',
+            'info' => 'Fullname of a thing.',
+            'default' => 'null',
+            'required' => false,
+        ),
+        array(
+            'name' => 'count',
+            'type' => 'int',
+            'info' => 'A positive integer (default: 0).',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'limit',
+            'type' => 'int',
+            'info' => 'Upper limit of number of items to retrieve. Maximum is 100.',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'sr_detail',
+            'type' => 'string',
+            'info' => 'Expand subreddits (optional).',
+            'default' => 'none',
+            'required' => false,
+        ),
+    ),
+),
+'wikiGetPageRevisions' => array(
+    'blockName' => 'wikiGetPageRevisions',
+    'blockUse' => true,
+    'description' => 'Retrieves a listing of wiki revisions for the specified page within the specified subreddit.',
+    'vendor' => array(
+        'url' => '[[/r/{{subreddit}}]]/wiki/revisions/{{page}}',
+        'method' => 'GET',
+        'showApiType' => false,
+    ),
+    'args' => array(
+        array(
+            'name' => 'subreddit',
+            'type' => 'string',
+            'info' => 'Subreddit for which to retrieve revisions.',
+            'default' => 'none',
+            'required' => true,
+        ),
+        array(
+            'name' => 'page',
+            'type' => 'string',
+            'info' => 'Page for which to retrieve revisions.',
+            'default' => 'none',
+            'required' => true,
+        ),
+        array(
+            'name' => 'after',
+            'type' => 'string',
+            'info' => 'Fullname of a thing.',
+            'default' => 'null',
+            'required' => false,
+        ),
+        array(
+            'name' => 'before',
+            'type' => 'string',
+            'info' => 'Fullname of a thing.',
+            'default' => 'null',
+            'required' => false,
+        ),
+        array(
+            'name' => 'count',
+            'type' => 'int',
+            'info' => 'A positive integer (default: 0).',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'limit',
+            'type' => 'int',
+            'info' => 'Upper limit of number of items to retrieve. Maximum is 100.',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'sr_detail',
+            'type' => 'string',
+            'info' => 'Expand subreddits (optional).',
+            'default' => 'none',
+            'required' => false,
+        ),
+    ),
+),
+'wikiEditPage' => array(
+    'blockName' => 'wikiEditPage',
+    'blockUse' => true,
+    'description' => 'Edit a wiki page.',
+    'vendor' => array(
+        'url' => '[[/r/{{subreddit}}]]/api/wiki/edit',
+        'method' => 'POST',
+        'showApiType' => false,
+    ),
+    'args' => array(
+        array(
+            'name' => 'subreddit',
+            'type' => 'string',
+            'info' => 'Subreddit in which to edit page.',
+            'default' => 'none',
+            'required' => true,
+        ),
+        array(
+            'name' => 'page',
+            'type' => 'string',
+            'info' => 'Page to edit.',
+            'default' => 'none',
+            'required' => true,
+        ),
+        array(
+            'name' => 'content',
+            'type' => 'string',
+            'info' => 'Content with which to overwrite page.',
+            'default' => 'none',
+            'required' => true,
+        ),
+        array(
+            'name' => 'reason',
+            'type' => 'string',
+            'info' => 'Reason for revision (up to 256 characters long).',
+            'default' => 'null',
+            'required' => false,
+        ),
+        array(
+            'name' => 'previous',
+            'type' => 'string',
+            'info' => 'Revision ID on which to base this edit.',
+            'default' => 'null',
+            'required' => false,
+        ),
+    ),
+),
+'wikiToggleHideRevision' => array(
+    'blockName' => 'wikiToggleHideRevision',
+    'blockUse' => true,
+    'description' => 'Toggle a revision\'s status of hidden.',
+    'vendor' => array(
+        'url' => '[[/r/{{subreddit}}]]/api/wiki/hide',
+        'method' => 'POST',
+        'showApiType' => false,
+    ),
+    'args' => array(
+        array(
+            'name' => 'subreddit',
+            'type' => 'string',
+            'info' => 'Subreddit of revision.',
+            'default' => 'none',
+            'required' => true,
+        ),
+        array(
+            'name' => 'page',
+            'type' => 'string',
+            'info' => 'Pagename of revision.',
+            'default' => 'none',
+            'required' => true,
+        ),
+        array(
+            'name' => 'revision',
+            'type' => 'string',
+            'info' => 'ID of revision to toggle hidden status.',
+            'default' => 'none',
+            'required' => true,
+        ),
+    ),
+),
+'wikiRevertToRevision' => array(
+    'blockName' => 'wikiRevertToRevision',
+    'blockUse' => true,
+    'description' => 'Revert a wiki page to a previous revision.',
+    'vendor' => array(
+        'url' => '[[/r/{{subreddit}}]]/api/wiki/revert',
+        'method' => 'POST',
+        'showApiType' => false,
+    ),
+    'args' => array(
+        array(
+            'name' => 'subreddit',
+            'type' => 'string',
+            'info' => 'Subreddit of revision.',
+            'default' => 'none',
+            'required' => true,
+        ),
+        array(
+            'name' => 'page',
+            'type' => 'string',
+            'info' => 'Pagename of revision.',
+            'default' => 'none',
+            'required' => true,
+        ),
+        array(
+            'name' => 'revision',
+            'type' => 'string',
+            'info' => 'ID of revision to which to revert.',
+            'default' => 'none',
+            'required' => true,
+        ),
+    ),
+),
+'wikiGetPageDiscussions' => array(
+    'blockName' => 'wikiGetPageDiscussions',
+    'blockUse' => true,
+    'description' => 'Retrieves a listing of discussions about a certain wiki page.',
+    'vendor' => array(
+        'url' => '[[/r/{{subreddit}}]]/wiki/discussions/{{page}}',
+        'method' => 'GET',
+        'showApiType' => false,
+    ),
+    'args' => array(
+        array(
+            'name' => 'subreddit',
+            'type' => 'string',
+            'info' => 'Subreddit of page.',
+            'default' => 'none',
+            'required' => true,
+        ),
+        array(
+            'name' => 'page',
+            'type' => 'string',
+            'info' => 'Page for which to retrieve discussions.',
+            'default' => 'none',
+            'required' => true,
+        ),
+        array(
+            'name' => 'after',
+            'type' => 'string',
+            'info' => 'Fullname of a thing.',
+            'default' => 'null',
+            'required' => false,
+        ),
+        array(
+            'name' => 'before',
+            'type' => 'string',
+            'info' => 'Fullname of a thing.',
+            'default' => 'null',
+            'required' => false,
+        ),
+        array(
+            'name' => 'count',
+            'type' => 'int',
+            'info' => 'A positive integer (default: 0).',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'limit',
+            'type' => 'int',
+            'info' => 'Upper limit of number of items to retrieve. Maximum is 100.',
+            'default' => 'none',
+            'required' => false,
+        ),
+        array(
+            'name' => 'sr_detail',
+            'type' => 'string',
+            'info' => 'Expand subreddits (optional).',
+            'default' => 'none',
+            'required' => false,
+        ),
+    ),
+),
+'wikiGetPageSettings' => array(
+    'blockName' => 'wikiGetPageSettings',
+    'blockUse' => true,
+    'description' => 'Get the specified page\'s settings in the specified subreddit.',
+    'vendor' => array(
+        'url' => '[[/r/{{subreddit}}]]/wiki/settings/{{page}}',
+        'method' => 'GET',
+        'showApiType' => false,
+    ),
+    'args' => array(
+        array(
+            'name' => 'subreddit',
+            'type' => 'string',
+            'info' => 'Subreddit of page.',
+            'default' => 'none',
+            'required' => true,
+        ),
+        array(
+            'name' => 'page',
+            'type' => 'string',
+            'info' => 'Name of page.',
+            'default' => 'none',
+            'required' => true,
+        ),
+    ),
+),
+'wikiUpdatePageSettings' => array(
+    'blockName' => 'wikiUpdatePageSettings',
+    'blockUse' => true,
+    'description' => 'Update the specified page\'s settings in the specified subreddit.',
+    'vendor' => array(
+        'url' => '[[/r/{{subreddit}}]]/wiki/settings/{{page}}',
+        'method' => 'POST',
+        'showApiType' => false,
+    ),
+    'args' => array(
+        array(
+            'name' => 'subreddit',
+            'type' => 'string',
+            'info' => 'Subreddit of page.',
+            'default' => 'none',
+            'required' => true,
+        ),
+        array(
+            'name' => 'page',
+            'type' => 'string',
+            'info' => 'Name of page.',
+            'default' => 'none',
+            'required' => true,
+        ),
+        array(
+            'name' => 'permlevel',
+            'type' => 'int',
+            'info' => 'Permissions level for page. 0 for use subreddit wiki permissions, 1 for only approved editors, 2 for only mods, null to not update.',
+            'default' => 'null',
+            'required' => false,
+        ),
+        array(
+            'name' => 'listed',
+            'type' => 'bool',
+            'info' => 'Show this page on the list of wiki pages. True to show, false to hide, null to not update.',
+            'default' => 'null',
+            'required' => false,
+        ),
+    ),
+),
 
-
-
-
-
-
-
-/*- Not use in sprint 19 -* /
+/*- Not use -* /
     'updateMyPrefs' => array(
         'blockName' => 'updateMyPrefs',
         'blockUse' => false,
@@ -5779,14 +6378,14 @@ return array(
             ),
             array(
                 'name' => 'template_id',
-                'type' => 'string|null',
+                'type' => 'string',
                 'info' => 'Template ID of template to apply to link. Null will remove the link\'s flair.',
                 'default' => 'null',
                 'required' => false,
             ),
             array(
                 'name' => 'text',
-                'type' => 'string|null',
+                'type' => 'string',
                 'info' => 'Modified flair text, if allowed.',
                 'default' => 'null',
                 'required' => false,
@@ -5819,14 +6418,14 @@ return array(
             ),
             array(
                 'name' => 'text',
-                'type' => 'string|null',
+                'type' => 'string',
                 'info' => 'Custom flair text.',
                 'default' => 'null',
                 'required' => false,
             ),
             array(
                 'name' => 'css_class',
-                'type' => 'string|null',
+                'type' => 'string',
                 'info' => 'Custom flair CSS class. If both fields are null, deletes flair.',
                 'default' => 'null',
                 'required' => false,
@@ -5859,7 +6458,7 @@ return array(
             ),
             array(
                 'name' => 'text',
-                'type' => 'string|null',
+                'type' => 'string',
                 'info' => 'Text of post.',
                 'default' => 'null',
                 'required' => false,
@@ -5892,7 +6491,7 @@ return array(
         'args' => array(
             array(
                 'name' => 'thing_ids',
-                'type' => 'string|array',
+                'type' => 'string',
                 'info' => 'String or array of thing ID\'s of links to store as visited.',
                 'default' => 'none',
                 'required' => true,
@@ -5925,14 +6524,14 @@ return array(
             ),
             array(
                 'name' => 'after',
-                'type' => 'string|null',
+                'type' => 'string',
                 'info' => 'Get items lower on list than this entry. Does not mean chronologically.',
                 'default' => 'null',
                 'required' => false,
             ),
             array(
                 'name' => 'before',
-                'type' => 'string|null',
+                'type' => 'string',
                 'info' => 'Get items higher on list than this entry. Does not mean chronologically.',
                 'default' => 'null',
                 'required' => false,
@@ -5991,14 +6590,14 @@ return array(
             ),
             array(
                 'name' => 'after',
-                'type' => 'string|null',
+                'type' => 'string',
                 'info' => 'Get items lower on list than this entry. Does not mean chronologically.',
                 'default' => 'null',
                 'required' => false,
             ),
             array(
                 'name' => 'before',
-                'type' => 'string|null',
+                'type' => 'string',
                 'info' => 'Get items higher on list than this entry. Does not mean chronologically.',
                 'default' => 'null',
                 'required' => false,
@@ -6054,33 +6653,6 @@ return array(
             ),
         ),
     ),
-    'distinguish' => array(
-        'blockName' => 'distinguish',
-        'blockUse' => false,
-        'description' => 'Mod distinguish a post or comment.',
-        'vendor' => array(
-            'url' => '/api/distinguish',
-            'method' => 'POST',
-            'showApiType' => false,
-        ),
-        'args' => array(
-            array(
-                'name' => 'thing_id',
-                'type' => 'string',
-                'info' => 'Thing ID of object to distinguish.',
-                'default' => 'none',
-                'required' => true,
-            ),
-            array(
-                'name' => 'how',
-                'type' => 'bool',
-                'info' => 'True to set [M] distinguish. False to undistinguish.',
-                'default' => 'true',
-                'required' => false,
-            ),
-        ),
-    ),
-
     'getReports' => array(
         'blockName' => 'getReports',
         'blockUse' => false,
@@ -6107,14 +6679,14 @@ return array(
             ),
             array(
                 'name' => 'after',
-                'type' => 'string|null',
+                'type' => 'string',
                 'info' => 'Get items lower on list than this entry. Does not mean chronologically.',
                 'default' => 'null',
                 'required' => false,
             ),
             array(
                 'name' => 'before',
-                'type' => 'string|null',
+                'type' => 'string',
                 'info' => 'Get items higher on list than this entry. Does not mean chronologically.',
                 'default' => 'null',
                 'required' => false,
@@ -6154,14 +6726,14 @@ return array(
             ),
             array(
                 'name' => 'after',
-                'type' => 'string|null',
+                'type' => 'string',
                 'info' => 'Get items lower on list than this entry. Does not mean chronologically.',
                 'default' => 'null',
                 'required' => false,
             ),
             array(
                 'name' => 'before',
-                'type' => 'string|null',
+                'type' => 'string',
                 'info' => 'Get items higher on list than this entry. Does not mean chronologically.',
                 'default' => 'null',
                 'required' => false,
@@ -6201,14 +6773,14 @@ return array(
             ),
             array(
                 'name' => 'after',
-                'type' => 'string|null',
+                'type' => 'string',
                 'info' => 'Get items lower on list than this entry. Does not mean chronologically.',
                 'default' => 'null',
                 'required' => false,
             ),
             array(
                 'name' => 'before',
-                'type' => 'string|null',
+                'type' => 'string',
                 'info' => 'Get items higher on list than this entry. Does not mean chronologically.',
                 'default' => 'null',
                 'required' => false,
@@ -6217,46 +6789,6 @@ return array(
                 'name' => 'only',
                 'type' => 'null',
                 'info' => 'Obtain only links or comments. One of \'links\' or \'comments\'. Null for both.',
-                'default' => 'null',
-                'required' => false,
-            ),
-        ),
-    ),
-    'getUnmoderated' => array(
-        'blockName' => 'getUnmoderated',
-        'blockUse' => false,
-        'description' => 'Retrieves a list of things that have not been moderated in the specified subreddit.',
-        'vendor' => array(
-            'url' => '[[/r/{{subreddit}}]]/about/unmoderated.json',
-            'method' => 'POST',
-            'showApiType' => false,
-        ),
-        'args' => array(
-            array(
-                'name' => 'subreddit',
-                'type' => 'string',
-                'info' => 'Subreddit of items to retrieve. All moderated subreddits by default.',
-                'default' => '\'mod\'',
-                'required' => false,
-            ),
-            array(
-                'name' => 'limit',
-                'type' => 'int',
-                'info' => 'Upper limit of number of items to retrieve. Maximum is 100.',
-                'default' => '25',
-                'required' => false,
-            ),
-            array(
-                'name' => 'after',
-                'type' => 'string|null',
-                'info' => 'Get items lower on list than this entry. Does not mean chronologically.',
-                'default' => 'null',
-                'required' => false,
-            ),
-            array(
-                'name' => 'before',
-                'type' => 'string|null',
-                'info' => 'Get items higher on list than this entry. Does not mean chronologically.',
                 'default' => 'null',
                 'required' => false,
             ),
@@ -6288,59 +6820,20 @@ return array(
             ),
             array(
                 'name' => 'after',
-                'type' => 'string|null',
+                'type' => 'string',
                 'info' => 'Get items lower on list than this entry. Does not mean chronologically.',
                 'default' => 'null',
                 'required' => false,
             ),
             array(
                 'name' => 'before',
-                'type' => 'string|null',
+                'type' => 'string',
                 'info' => 'Get items higher on list than this entry. Does not mean chronologically.',
                 'default' => 'null',
                 'required' => false,
             ),
         ),
     ),
-    'acceptModeratorInvite' => array(
-        'blockName' => 'acceptModeratorInvite',
-        'blockUse' => false,
-        'description' => 'Accepts a moderator invitation for the specified subreddit. You must have a pending invitation for that subreddit.',
-        'vendor' => array(
-            'url' => '[[/r/{{subreddit}}]]/api/accept_moderator_invite',
-            'method' => 'POST',
-            'showApiType' => false,
-        ),
-        'args' => array(
-            array(
-                'name' => 'subreddit',
-                'type' => 'string',
-                'info' => 'Subreddit to accept invitation.',
-                'default' => 'none',
-                'required' => true,
-            ),
-        ),
-    ),
-    'approve' => array(
-        'blockName' => 'approve',
-        'blockUse' => false,
-        'description' => 'Marks the specified thing as approved.',
-        'vendor' => array(
-            'url' => '/api/approve',
-            'method' => 'POST',
-            'showApiType' => false,
-        ),
-        'args' => array(
-            array(
-                'name' => 'thing_id',
-                'type' => 'string',
-                'info' => 'Thing ID of object to be approved.',
-                'default' => 'none',
-                'required' => true,
-            ),
-        ),
-    ),
-
     'spam' => array(
         'blockName' => 'spam',
         'blockUse' => false,
@@ -6360,10 +6853,6 @@ return array(
             ),
         ),
     ),
-
-
-
-
     'ban' => array(
         'blockName' => 'ban',
         'blockUse' => false,
@@ -6390,21 +6879,21 @@ return array(
             ),
             array(
                 'name' => 'note',
-                'type' => 'string|null',
+                'type' => 'string',
                 'info' => 'Ban note in banned users list. Not shown to user.',
                 'default' => 'null',
                 'required' => false,
             ),
             array(
                 'name' => 'message',
-                'type' => 'string|null',
+                'type' => 'string',
                 'info' => 'Ban message sent to user.',
                 'default' => 'null',
                 'required' => false,
             ),
             array(
                 'name' => 'duration',
-                'type' => 'int|null',
+                'type' => 'int',
                 'info' => 'Duration of ban in days.',
                 'default' => 'null',
                 'required' => false,
@@ -6792,14 +7281,14 @@ return array(
             ),
             array(
                 'name' => 'note',
-                'type' => 'string|null',
+                'type' => 'string',
                 'info' => 'Ban note in banned users list. Not shown to user.',
                 'default' => 'null',
                 'required' => false,
             ),
             array(
                 'name' => 'duration',
-                'type' => 'int|null',
+                'type' => 'int',
                 'info' => 'Duration of ban in days.',
                 'default' => 'null',
                 'required' => false,
@@ -6910,7 +7399,7 @@ return array(
             ),
             array(
                 'name' => 'note',
-                'type' => 'string|null',
+                'type' => 'string',
                 'info' => 'Mute note in muted users list. Not shown to user.',
                 'default' => 'null',
                 'required' => false,
@@ -6943,59 +7432,6 @@ return array(
             ),
         ),
     ),
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     'getNotifications' => array(
         'blockName' => 'getNotifications',
         'blockUse' => false,
@@ -7008,21 +7444,21 @@ return array(
         'args' => array(
             array(
                 'name' => 'start_date',
-                'type' => 'string|null',
+                'type' => 'string',
                 'info' => 'Start date of notification records.',
                 'default' => 'null',
                 'required' => false,
             ),
             array(
                 'name' => 'end_date',
-                'type' => 'string|null',
+                'type' => 'string',
                 'info' => 'End date of notification records.',
                 'default' => 'null',
                 'required' => false,
             ),
             array(
                 'name' => 'sort',
-                'type' => 'string|null',
+                'type' => 'string',
                 'info' => 'One of \'new\', \'old\', or null.',
                 'default' => 'null',
                 'required' => false,
@@ -7052,309 +7488,6 @@ return array(
                 'info' => 'Whether or not to mark as read. False doesn\'t seem to be working.',
                 'default' => 'true',
                 'required' => false,
-            ),
-        ),
-    ),
-
-
-
-
-
-
-
-
-
-
-
-    'wikiAllowEditor' => array(
-        'blockName' => 'wikiAllowEditor',
-        'blockUse' => false,
-        'description' => 'Allow the specified user to edit the specified wiki page.',
-        'vendor' => array(
-            'url' => '[[/r/{{subreddit}}]]/api/wiki/alloweditor/add',
-            'method' => 'POST',
-            'showApiType' => false,
-        ),
-        'args' => array(
-            array(
-                'name' => 'subreddit',
-                'type' => 'string',
-                'info' => 'Subreddit of the wiki page.',
-                'default' => 'none',
-                'required' => true,
-            ),
-            array(
-                'name' => 'username',
-                'type' => 'string',
-                'info' => 'Username of user to allow.',
-                'default' => 'none',
-                'required' => true,
-            ),
-            array(
-                'name' => 'pagename',
-                'type' => 'string',
-                'info' => 'Name of page to allow user to edit.',
-                'default' => 'none',
-                'required' => true,
-            ),
-        ),
-    ),
-    'wikiDisallowEditor' => array(
-        'blockName' => 'wikiDisallowEditor',
-        'blockUse' => false,
-        'description' => 'Remove the specified user from the allowed editors list of the specified wiki page.',
-        'vendor' => array(
-            'url' => '[[/r/{{subreddit}}]]/api/wiki/alloweditor/del',
-            'method' => 'POST',
-            'showApiType' => false,
-        ),
-        'args' => array(
-            array(
-                'name' => 'subreddit',
-                'type' => 'string',
-                'info' => 'Subreddit of the wiki page.',
-                'default' => 'none',
-                'required' => true,
-            ),
-            array(
-                'name' => 'username',
-                'type' => 'string',
-                'info' => 'Username of user to allow.',
-                'default' => 'none',
-                'required' => true,
-            ),
-            array(
-                'name' => 'pagename',
-                'type' => 'string',
-                'info' => 'Name of page to disallow user to edit.',
-                'default' => 'none',
-                'required' => true,
-            ),
-        ),
-    ),
-    'wikiGetPages' => array(
-        'blockName' => 'wikiGetPages',
-        'blockUse' => false,
-        'description' => 'Retrieves a list of all pages of the specified subreddit\'s wiki.',
-        'vendor' => array(
-            'url' => '[[/r/{{subreddit}}]]/wiki/pages',
-            'method' => 'POST',
-            'showApiType' => false,
-        ),
-        'args' => array(
-            array(
-                'name' => 'subreddit',
-                'type' => 'string',
-                'info' => 'Subreddit for which to retrieve pages.',
-                'default' => 'none',
-                'required' => true,
-            ),
-        ),
-    ),
-    'wikiGetPage' => array(
-        'blockName' => 'wikiGetPage',
-        'blockUse' => false,
-        'description' => 'Retrieves the specified wiki page, optionally at a specific revision or a comparison between revisions.',
-        'vendor' => array(
-            'url' => '[[/r/{{subreddit}}]]/wiki/{{pagename}}',
-            'method' => 'POST',
-            'showApiType' => false,
-        ),
-        'args' => array(
-            array(
-                'name' => 'subreddit',
-                'type' => 'string',
-                'info' => 'Subreddit in which to retrieve page.',
-                'default' => 'none',
-                'required' => true,
-            ),
-            array(
-                'name' => 'pagename',
-                'type' => 'string',
-                'info' => 'Page to retrieve.',
-                'default' => 'none',
-                'required' => true,
-            ),
-            array(
-                'name' => 'revision_id',
-                'type' => 'string|null',
-                'info' => 'Specific revision ID to retrieve (optional).',
-                'default' => 'null',
-                'required' => false,
-            ),
-            array(
-                'name' => 'compare_with',
-                'type' => 'string|null',
-                'info' => 'ID of revision with which to compare &revision_id (optional2). May not be working.',
-                'default' => 'null',
-                'required' => false,
-            ),
-        ),
-    ),
-    'wikiGetRevisions' => array(
-        'blockName' => 'wikiGetRevisions',
-        'blockUse' => false,
-        'description' => 'Retrieves a listing of wiki revisions for all pages within the specified subreddit.',
-        'vendor' => array(
-            'url' => '[[/r/{{subreddit}}]]/wiki/revisions',
-            'method' => 'POST',
-            'showApiType' => false,
-        ),
-        'args' => array(
-            array(
-                'name' => 'subreddit',
-                'type' => 'string',
-                'info' => 'Subreddit for which to retrieve revisions.',
-                'default' => 'none',
-                'required' => true,
-            ),
-            array(
-                'name' => 'limit',
-                'type' => 'int',
-                'info' => 'Upper limit of number of items to retrieve. Maximum is 100.',
-                'default' => '25',
-                'required' => false,
-            ),
-            array(
-                'name' => 'after',
-                'type' => 'string|null',
-                'info' => 'Get items lower on list than this entry. Does not mean chronologically.',
-                'default' => 'null',
-                'required' => false,
-            ),
-            array(
-                'name' => 'before',
-                'type' => 'string|null',
-                'info' => 'Get items higher on list than this entry. Does not mean chronologically.',
-                'default' => 'null',
-                'required' => false,
-            ),
-        ),
-    ),
-    'wikiGetPageRevisions' => array(
-        'blockName' => 'wikiGetPageRevisions',
-        'blockUse' => false,
-        'description' => 'Retrieves a listing of wiki revisions for the specified page within the specified subreddit.',
-        'vendor' => array(
-            'url' => '[[/r/{{subreddit}}]]/wiki/revisions/{{pagename}}',
-            'method' => 'POST',
-            'showApiType' => false,
-        ),
-        'args' => array(
-            array(
-                'name' => 'subreddit',
-                'type' => 'string',
-                'info' => 'Subreddit for which to retrieve revisions.',
-                'default' => 'none',
-                'required' => true,
-            ),
-            array(
-                'name' => 'pagename',
-                'type' => 'string',
-                'info' => 'Page for which to retrieve revisions.',
-                'default' => 'none',
-                'required' => true,
-            ),
-            array(
-                'name' => 'limit',
-                'type' => 'int',
-                'info' => 'Upper limit of number of items to retrieve. Maximum is 100.',
-                'default' => '25',
-                'required' => false,
-            ),
-            array(
-                'name' => 'after',
-                'type' => 'string|null',
-                'info' => 'Get items lower on list than this entry. Does not mean chronologically.',
-                'default' => 'null',
-                'required' => false,
-            ),
-            array(
-                'name' => 'before',
-                'type' => 'string|null',
-                'info' => 'Get items higher on list than this entry. Does not mean chronologically.',
-                'default' => 'null',
-                'required' => false,
-            ),
-        ),
-    ),
-    'wikiEditPage' => array(
-        'blockName' => 'wikiEditPage',
-        'blockUse' => false,
-        'description' => 'Edit or create a wiki page.',
-        'vendor' => array(
-            'url' => '[[/r/{{subreddit}}]]/api/wiki/edit',
-            'method' => 'POST',
-            'showApiType' => false,
-        ),
-        'args' => array(
-            array(
-                'name' => 'subreddit',
-                'type' => 'string',
-                'info' => 'Subreddit in which to edit page.',
-                'default' => 'none',
-                'required' => true,
-            ),
-            array(
-                'name' => 'pagename',
-                'type' => 'string',
-                'info' => 'Page to edit.',
-                'default' => 'none',
-                'required' => true,
-            ),
-            array(
-                'name' => 'content',
-                'type' => 'string',
-                'info' => 'Content with which to overwrite page.',
-                'default' => 'none',
-                'required' => true,
-            ),
-            array(
-                'name' => 'reason',
-                'type' => 'string|null',
-                'info' => 'Reason for revision, optional.',
-                'default' => 'null',
-                'required' => false,
-            ),
-            array(
-                'name' => 'previous',
-                'type' => 'string|null',
-                'info' => 'Revision ID on which to base this edit. Handled by function, so optional.',
-                'default' => 'null',
-                'required' => false,
-            ),
-        ),
-    ),
-    'wikiToggleHideRevision' => array(
-        'blockName' => 'wikiToggleHideRevision',
-        'blockUse' => false,
-        'description' => 'Toggle a revision\'s status of hidden.',
-        'vendor' => array(
-            'url' => '[[/r/{{subreddit}}]]/api/wiki/hide',
-            'method' => 'POST',
-            'showApiType' => false,
-        ),
-        'args' => array(
-            array(
-                'name' => 'subreddit',
-                'type' => 'string',
-                'info' => 'Subreddit of revision.',
-                'default' => 'none',
-                'required' => true,
-            ),
-            array(
-                'name' => 'pagename',
-                'type' => 'string',
-                'info' => 'Pagename of revision.',
-                'default' => 'none',
-                'required' => true,
-            ),
-            array(
-                'name' => 'revision_id',
-                'type' => 'string',
-                'info' => 'ID of revision to toggle hidden status.',
-                'default' => 'none',
-                'required' => true,
             ),
         ),
     ),
@@ -7421,152 +7554,6 @@ return array(
                 'info' => 'ID of revision to unhide.',
                 'default' => 'none',
                 'required' => true,
-            ),
-        ),
-    ),
-    'wikiRevertToRevision' => array(
-        'blockName' => 'wikiRevertToRevision',
-        'blockUse' => false,
-        'description' => 'Revert a wiki page to a previous revision.',
-        'vendor' => array(
-            'url' => '[[/r/{{subreddit}}]]/api/wiki/revert',
-            'method' => 'POST',
-            'showApiType' => false,
-        ),
-        'args' => array(
-            array(
-                'name' => 'subreddit',
-                'type' => 'string',
-                'info' => 'Subreddit of revision.',
-                'default' => 'none',
-                'required' => true,
-            ),
-            array(
-                'name' => 'pagename',
-                'type' => 'string',
-                'info' => 'Pagename of revision.',
-                'default' => 'none',
-                'required' => true,
-            ),
-            array(
-                'name' => 'revision_id',
-                'type' => 'string',
-                'info' => 'ID of revision to which to revert.',
-                'default' => 'none',
-                'required' => true,
-            ),
-        ),
-    ),
-    'wikiGetPageDiscussions' => array(
-        'blockName' => 'wikiGetPageDiscussions',
-        'blockUse' => false,
-        'description' => 'Retrieves a listing of discussions about a certain wiki page.',
-        'vendor' => array(
-            'url' => '[[/r/{{subreddit}}]]/wiki/discussions/{{pagename}}',
-            'method' => 'POST',
-            'showApiType' => false,
-        ),
-        'args' => array(
-            array(
-                'name' => 'subreddit',
-                'type' => 'string',
-                'info' => 'Subreddit of page.',
-                'default' => 'none',
-                'required' => true,
-            ),
-            array(
-                'name' => 'pagename',
-                'type' => 'string',
-                'info' => 'Page for which to retrieve discussions.',
-                'default' => 'none',
-                'required' => true,
-            ),
-            array(
-                'name' => 'limit',
-                'type' => 'int',
-                'info' => 'Upper limit of number of items to retrieve. Maximum is 100.',
-                'default' => '25',
-                'required' => false,
-            ),
-            array(
-                'name' => 'after',
-                'type' => 'string|null',
-                'info' => 'Get items lower on list than this entry. Does not mean chronologically.',
-                'default' => 'null',
-                'required' => false,
-            ),
-            array(
-                'name' => 'before',
-                'type' => 'string|null',
-                'info' => 'Get items higher on list than this entry. Does not mean chronologically.',
-                'default' => 'null',
-                'required' => false,
-            ),
-        ),
-    ),
-    'wikiGetPageSettings' => array(
-        'blockName' => 'wikiGetPageSettings',
-        'blockUse' => false,
-        'description' => 'Get the specified page\'s settings in the specified subreddit.',
-        'vendor' => array(
-            'url' => '[[/r/{{subreddit}}]]/wiki/settings/{{pagename}}',
-            'method' => 'POST',
-            'showApiType' => false,
-        ),
-        'args' => array(
-            array(
-                'name' => 'subreddit',
-                'type' => 'string',
-                'info' => 'Subreddit of page.',
-                'default' => 'none',
-                'required' => true,
-            ),
-            array(
-                'name' => 'pagename',
-                'type' => 'string',
-                'info' => 'Name of page.',
-                'default' => 'none',
-                'required' => true,
-            ),
-        ),
-    ),
-    'wikiUpdatePageSettings' => array(
-        'blockName' => 'wikiUpdatePageSettings',
-        'blockUse' => false,
-        'description' => 'Update the specified page\'s settings in the specified subreddit.',
-        'vendor' => array(
-            'url' => '[[/r/{{subreddit}}]]/wiki/settings/{{pagename}}',
-            'method' => 'POST',
-            'showApiType' => false,
-        ),
-        'args' => array(
-            array(
-                'name' => 'subreddit',
-                'type' => 'string',
-                'info' => 'Subreddit of page.',
-                'default' => 'none',
-                'required' => true,
-            ),
-            array(
-                'name' => 'pagename',
-                'type' => 'string',
-                'info' => 'Name of page.',
-                'default' => 'none',
-                'required' => true,
-            ),
-            array(
-                'name' => 'permlevel',
-                'type' => 'int|null',
-                'info' => 'Permissions level for page. 0 for use subreddit wiki permissions, 1 for only approved editors, 2 for only mods, null to not update.',
-                'default' => 'null',
-                'required' => false,
-            ),
-            array(
-                'name' => 'listed',
-                'type' => 'bool|null',
-                'info' => 'Show this page on the list of wiki pages. True to show, false to hide, null to not update.',
-                'default' => 'null',
-                'required' => false,
             ),
         ),
     ),
