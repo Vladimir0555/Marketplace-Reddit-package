@@ -18,19 +18,21 @@ class ApiRouteTest extends \PHPUnit_Framework_TestCase
 
         // Include metadata array
         $this->settings = include_once dirname(__DIR__) . '/metadata/metadata.php';
-        // Init Blocks path
+        // Init Router Class
         include_once dirname(__DIR__) . '/Core/Router.php';
         $this->router = new \Core\Router($this->settings['package'], $this->settings['blocks'], $this->settings['custom']);
+        // Config Router
         $this->router->setup();
     }
 
     public function testRouts()
     {
+        // Init Blocks path
         $routes = [
-            ['route' => '/api/' . $this->packageName . '/', 'method' => 'GET'],
+            ['route' => '/api/' . $this->settings['package'] . '/', 'method' => 'GET'],
         ];
         foreach($this->settings['custom'] as $blockName => $block){
-            $routes[] = ['route' => '/api/' . $this->packageName . '/' . $blockName . '/'];
+            $routes[] = ['route' => '/api/' . $this->settings['package'] . '/' . $blockName . '/'];
         }
 
         // Beautify output
@@ -48,7 +50,7 @@ class ApiRouteTest extends \PHPUnit_Framework_TestCase
 
             // Output Test info
             print($this->router->getRouter()->response()->code() . ' - ' . $route['route'] . "\n");
-
+            // Check status 200
             $this->assertEquals(200, $this->router->getRouter()->response()->code());
         }
         // Beautify output

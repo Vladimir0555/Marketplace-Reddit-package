@@ -911,3 +911,922 @@ Retrieves the current user's sent personal messages.
 | count      | Number     | A positive integer (default: 0).
 | limit      | Number     | Upper limit of the number of links to retrieve. Maximum is 100.
 | srDetail   | String     | Expand subreddits.
+
+## Reddit.getUserUpvoted
+Obtain posts and comments upvoted by the specified user.
+
+| Field   | Type  | Description
+|---------|-------|----------
+| username| String| Username of user for whom to retrieve records. Defaults to the current user.
+| show    | String| One of (given).
+| sort    | String| One of (hot, new, top, controversial).
+| t       | String| One of (hour, day, week, month, year, all).
+| after   | String| Get items lower on list than this entry. Does not mean chronologically.
+| before  | String| Get items higher on list than this entry. Does not mean chronologically.
+| count   | Number| A positive integer (default: 0).
+| limit   | Number| Upper limit of number of items to retrieve. Maximum is 100.
+| srDetail| String| Expand subreddits (optional).
+
+## Reddit.getUserDownvoted
+Obtain posts and comments downvoted by the specified user.
+
+| Field   | Type  | Description
+|---------|-------|----------
+| username| String| Username of user for whom to retrieve records. Defaults to the current user.
+| show    | String| One of (given).
+| sort    | String| One of (hot, new, top, controversial).
+| t       | String| One of (hour, day, week, month, year, all).
+| after   | String| Get items lower on list than this entry. Does not mean chronologically.
+| before  | String| Get items higher on list than this entry. Does not mean chronologically.
+| count   | Number| A positive integer (default: 0).
+| limit   | Number| Upper limit of number of items to retrieve. Maximum is 100.
+| srDetail| String| Expand subreddits (optional).
+
+## Reddit.getUserComments
+Obtain only comments made by the specified user.
+
+| Field   | Type  | Description
+|---------|-------|----------
+| username| String| Username of user for whom to retrieve records. Defaults to the current user.
+| show    | String| One of (given).
+| sort    | String| One of (hot, new, top, controversial).
+| t       | String| One of (hour, day, week, month, year, all).
+| after   | String| Get items lower on list than this entry. Does not mean chronologically.
+| before  | String| Get items higher on list than this entry. Does not mean chronologically.
+| count   | Number| A positive integer (default: 0).
+| limit   | Number| Upper limit of number of items to retrieve. Maximum is 100.
+| srDetail| String| Expand subreddits (optional).
+
+## Reddit.getUserSubmitted
+Obtain only posts made by the specified user.
+
+| Field   | Type  | Description
+|---------|-------|----------
+| username| String| Username of user for whom to retrieve records. Defaults to the current user.
+| show    | String| One of (given).
+| sort    | String| One of (hot, new, top, controversial).
+| t       | String| One of (hour, day, week, month, year, all).
+| after   | String| Get items lower on list than this entry. Does not mean chronologically.
+| before  | String| Get items higher on list than this entry. Does not mean chronologically.
+| count   | Number| A positive integer (default: 0).
+| limit   | Number| Upper limit of number of items to retrieve. Maximum is 100.
+| srDetail| String| Expand subreddits (optional).
+
+## Reddit.getUserGildingsGiven
+Obtain posts and comments gilded (given) by the specified user.
+
+| Field   | Type  | Description
+|---------|-------|----------
+| username| String| Username of user for whom to retrieve records. Defaults to the current user.
+| show    | String| One of (given).
+| sort    | String| One of (hot, new, top, controversial).
+| t       | String| One of (hour, day, week, month, year, all).
+| after   | String| Get items lower on list than this entry. Does not mean chronologically.
+| before  | String| Get items higher on list than this entry. Does not mean chronologically.
+| count   | Number| A positive integer (default: 0).
+| limit   | Number| Upper limit of number of items to retrieve. Maximum is 100.
+| srDetail| String| Expand subreddits (optional).
+
+## Reddit.getUserGildingsReceived
+Obtain posts and comments gilded (received) by the specified user.
+
+| Field   | Type  | Description
+|---------|-------|----------
+| username| String| Username of user for whom to retrieve records. Defaults to the current user.
+| show    | String| One of (given).
+| sort    | String| One of (hot, new, top, controversial).
+| t       | String| One of (hour, day, week, month, year, all).
+| after   | String| Get items lower on list than this entry. Does not mean chronologically.
+| before  | String| Get items higher on list than this entry. Does not mean chronologically.
+| count   | Number| A positive integer (default: 0).
+| limit   | Number| Upper limit of number of items to retrieve. Maximum is 100.
+| srDetail| String| Expand subreddits (optional).
+
+## Reddit.getUserSaved
+Obtain posts and comments saved by the specified user.
+
+| Field   | Type  | Description
+|---------|-------|----------
+| username| String| Username of user for whom to retrieve records. Defaults to the current user.
+| show    | String| One of (given).
+| sort    | String| One of (hot, new, top, controversial).
+| t       | String| One of (hour, day, week, month, year, all).
+| after   | String| Get items lower on list than this entry. Does not mean chronologically.
+| before  | String| Get items higher on list than this entry. Does not mean chronologically.
+| count   | Number| A positive integer (default: 0).
+| limit   | Number| Upper limit of number of items to retrieve. Maximum is 100.
+| srDetail| String| Expand subreddits (optional).
+
+## Reddit.getUserHidden
+Obtain posts and comments hidden by the specified user.
+
+| Field   | Type  | Description
+|---------|-------|----------
+| username| String| Username of user for whom to retrieve records. Defaults to the current user.
+| show    | String| One of (given).
+| sort    | String| One of (hot, new, top, controversial).
+| t       | String| One of (hour, day, week, month, year, all).
+| after   | String| Get items lower on list than this entry. Does not mean chronologically.
+| before  | String| Get items higher on list than this entry. Does not mean chronologically.
+| count   | Number| A positive integer (default: 0).
+| limit   | Number| Upper limit of number of items to retrieve. Maximum is 100.
+| srDetail| String| Expand subreddits (optional).
+
+## Reddit.searchSubredditsByName
+List subreddit names that begin with a query string.
+
+| Field                | Type   | Description
+|----------------------|--------|----------
+| query                | String | Search for subreddits that start with this. Maximum 50 characters, all printable.
+| includeOver_18       | Boolean| Include subreddits that are set as NSFW (over_18).
+| exact                | Boolean| Only return exact match.
+| includeUnadvertisable| Boolean| Only return subreddits that have hide_ads set to True or are on the anti_ads_subreddits list.
+
+## Reddit.getRecommendedSubreddits
+Retrieve a list of recommended subreddits based on the names of existing ones.
+
+| Field  | Type   | Description
+|--------|--------|----------
+| srnames| String | Comma-delimited list of subreddits on which to base recommendations.
+| omit   | String | Omit these specific subreddits from results (comma-delimited list of subreddit names).
+| over_18| Boolean| Include subreddits that are set as NSFW (over_18).
+
+## Reddit.deleteSubredditImage
+Remove an image from the subreddit's custom image set.
+
+| Field    | Type  | Description
+|----------|-------|----------
+| subreddit| String| Subreddit from which to remove the image.
+| imageName| String| The name of the image to delete.
+
+## Reddit.getWikiContributors
+Retrieve a list of approved wiki contributors from the specified subreddit. Must be a mod or approved wiki contributor in subreddit. Using pagination will result in the last item of the previous page appearing as the first item of the next page.
+
+| Field    | Type  | Description
+|----------|-------|----------
+| subreddit| String| Subreddit for which to retrieve approved wiki contributors.
+| user     | String| Jump to a specific user. Will return an empty list if user is not on list.
+| show     | String| One of (given).
+| after    | String| Get items lower on list than this entry. Does not mean chronologically.
+| before   | String| Get items higher on list than this entry. Does not mean chronologically.
+| count    | Number| A positive integer (default: 0).
+| limit    | Number| Upper limit of number of items to retrieve. Maximum is 100.
+| srDetail | String| Expand subreddits (optional).
+
+## Reddit.getContributors
+Retrieve a list of approved submitters from the specified subreddit. Must be a mod or approved submitter in subreddit. Using pagination will result in the last item of the previous page appearing as the first item of the next page.
+
+| Field    | Type  | Description
+|----------|-------|----------
+| subreddit| String| Subreddit for which to retrieve approved wiki contributors.
+| user     | String| Jump to a specific user. Will return an empty list if user is not on list.
+| show     | String| One of (given).
+| after    | String| Get items lower on list than this entry. Does not mean chronologically.
+| before   | String| Get items higher on list than this entry. Does not mean chronologically.
+| count    | Number| A positive integer (default: 0).
+| limit    | Number| Upper limit of number of items to retrieve. Maximum is 100.
+| srDetail | String| Expand subreddits (optional).
+
+## Reddit.getWikiBanned
+Retrieve a list of wiki banned users from the specified subreddit. Must be a mod with access permissions. Using pagination will result in the last item of the previous page appearing as the first item of the next page.
+
+| Field    | Type  | Description
+|----------|-------|----------
+| subreddit| String| Subreddit for which to retrieve wiki banned.
+| user     | String| Jump to a specific user. Will return an empty list if user is not on list.
+| show     | String| One of (given).
+| after    | String| Get items lower on list than this entry. Does not mean chronologically.
+| before   | String| Get items higher on list than this entry. Does not mean chronologically.
+| count    | Number| A positive integer (default: 0).
+| limit    | Number| Upper limit of number of items to retrieve. Maximum is 100.
+| srDetail | String| Expand subreddits (optional).
+
+## Reddit.getModerators
+Retrieve a list of moderators from the specified subreddit. Must have read access to subreddit. This function does not use pagination, but it's here anyway in case that's changed in the future.
+
+| Field    | Type  | Description
+|----------|-------|----------
+| subreddit| String| Subreddit for which to retrieve moderators.
+| user     | String| Jump to a specific user. Will return an empty list if user is not on list.
+| show     | String| One of (given).
+| after    | String| Get items lower on list than this entry. Does not mean chronologically.
+| before   | String| Get items higher on list than this entry. Does not mean chronologically.
+| count    | Number| A positive integer (default: 0).
+| limit    | Number| Upper limit of number of items to retrieve. Maximum is 100.
+| srDetail | String| Expand subreddits (optional).
+
+## Reddit.getMuted
+Retrieve a list of muted users from the specified subreddit. Must be a mod with access permissions. Using pagination will result in the last item of the previous page appearing as the first item of the next page.
+
+| Field    | Type  | Description
+|----------|-------|----------
+| subreddit| String| Subreddit for which to retrieve mute.
+| user     | String| Jump to a specific user. Will return an empty list if user is not on list.
+| show     | String| One of (given).
+| after    | String| Get items lower on list than this entry. Does not mean chronologically.
+| before   | String| Get items higher on list than this entry. Does not mean chronologically.
+| count    | Number| A positive integer (default: 0).
+| limit    | Number| Upper limit of number of items to retrieve. Maximum is 100.
+| srDetail | String| Expand subreddits (optional).
+
+## Reddit.getBanned
+Retrieve a list of banned users from the specified subreddit. Must be a mod with access permissions. Using pagination will result in the last item of the previous page appearing as the first item of the next page.
+
+| Field    | Type  | Description
+|----------|-------|----------
+| subreddit| String| Subreddit for which to retrieve banned.
+| user     | String| Jump to a specific user. Will return an empty list if user is not on list.
+| show     | String| One of (given).
+| after    | String| Get items lower on list than this entry. Does not mean chronologically.
+| before   | String| Get items higher on list than this entry. Does not mean chronologically.
+| count    | Number| A positive integer (default: 0).
+| limit    | Number| Upper limit of number of items to retrieve. Maximum is 100.
+| srDetail | String| Expand subreddits (optional).
+
+## Reddit.aboutSubreddit
+Retrieves information about the specified subreddit, including subreddit ID.
+
+| Field    | Type  | Description
+|----------|-------|----------
+| subreddit| String| Subreddit for which to retrieve information.
+
+## Reddit.deleteSubredditIcon
+Remove the subreddit's custom mobile icon.
+
+| Field    | Type  | Description
+|----------|-------|----------
+| subreddit| String| Subreddit from which to remove the icon.
+
+## Reddit.deleteSubredditHeaderImage
+Remove the subreddit's custom header image.
+
+| Field    | Type  | Description
+|----------|-------|----------
+| subreddit| String| Subreddit from which to remove the header image.
+
+## Reddit.deleteSubredditBanner
+Remove the subreddit's custom mobile banner.
+
+| Field    | Type  | Description
+|----------|-------|----------
+| subreddit| String| Subreddit from which to remove the banner.
+
+## Reddit.unblockUser
+Unblock a user by username.
+
+| Field| Type  | Description
+|-----|-------|----------
+| name| String| Username of user to unblock.
+
+## Reddit.removeFriend
+Removes the specified user as a friend.
+
+| Field    | Type  | Description
+|---|-------|----------
+| id| String| Username of user to remove.
+
+## Reddit.addFriend
+Adds the specified user as a friend.
+
+| Field| Type  | Description
+|-----|-------|----------
+| name| String| Username of friend to add.
+| note| String| Note to add to friend record. Currently only available to those with reddit gold.
+
+## Reddit.search
+Perform a search query. Somewhat untested due to the complexity of and possible combinations to use in the search function.
+
+| Field        | Type   | Description
+|--------------|--------|----------
+| q            | String | Query of which to search.
+| subreddit    | String | Subreddit to which to restrict search.
+| sort         | String | Sort results by one of 'relevance', 'hot', 'top', 'new', 'comments'. Defaults to 'relevance'.
+| t            | String | One of 'hour', 'day', 'week', 'month', 'year', 'all'. Defaults to all.
+| type         | String | Comma-delimited list of result types: 'sr', 'link', or null.
+| includeFacets| Boolean| Include facets.
+| restrictSr   | Boolean| Restrict subreddit.
+| syntax       | String | One of (cloudsearch, lucene, plain).
+| after        | String | Fullname of a thing.
+| before       | String | Fullname of a thing.
+| count        | Number | A positive integer (default: 0).
+| limit        | Number | The maximum number of items desired (default: 25, maximum: 100).
+| srDetail     | String | Expand subreddits (optional).
+
+## Reddit.usernameAvailable
+Presumably checks whether the specified username is available, but endpoint is not working at this time.
+
+| Field| Type  | Description
+|-----|-------|----------
+| user| String| Username to check for availability.
+
+## Reddit.multiGetDescription
+Get a multi's description.
+
+| Field    | Type  | Description
+|----------|-------|----------
+| multipath| String| Multireddit url path.
+
+## Reddit.multiEdit
+Create or update a multireddit.
+
+| Field          | Type   | Description
+|----------------|--------|----------
+| multipath      | String | Multireddit url path.
+| displayName    | String | A string no longer than 50 characters.
+| descriptionMd  | String | Multireddit sidebar text (raw markdown text).
+| iconName       | String | One of('art and design', 'ask', 'books', 'business', 'cars', 'comics', 'cute animals', 'diy', 'entertainment', 'food and drink', 'funny', 'games', 'grooming', 'health', 'life advice', 'military', 'models pinup', 'music', 'news', 'philosophy', 'pictures and gifs', 'science', 'shopping', 'sports', 'style', 'tech', 'travel', 'unusual stories', 'video', '', 'None').
+| keyColor       | String | A 6 - digit rgb hex color, e.g. '#AABBCC'.
+| subredditsName | String | Comma-separated string of subreddits name.
+| visibility     | String | One of 'public', 'private', 'hidden'. Hidden multireddits will not be visible to you except through the API.
+| weightingScheme| String | One of 'classic', 'fresh'.
+| expandSrs      | Boolean| Expand subreddits.
+
+## Reddit.multiAddSubreddit
+Add the specified subreddit to the specified multireddit.
+
+| Field    | Type  | Description
+|----------|-------|----------
+| multipath| String| Multireddit url path.
+| srname   | String| Name of subreddit to add.
+| modelName| String| Name of subreddit.
+
+## Reddit.multiGetSubreddit
+Get information about the specified subreddit in the specified multireddit.
+
+| Field    | Type  | Description
+|----------|-------|----------
+| multipath| String| Name of multireddit.
+| srname   | String| Subreddit for which to obtain information.
+
+## Reddit.multiRemoveSubreddit
+Remove the specified subreddit from the specified multireddit.
+
+| Field    | Type  | Description
+|----------|-------|----------
+| multipath| String| Name of multireddit.
+| srname   | String| Name of subreddit to remove.
+
+## Reddit.multiEditDescription
+Edit the description/sidebar for the specified multireddit.
+
+| Field      | Type  | Description
+|------------|-------|----------
+| multipath  | String| Multireddit url path.
+| modelBodyMd| String| New description (raw markdown text).
+
+## Reddit.getUserOverview
+Obtain posts and comments made by the specified user.
+
+| Field   | Type  | Description
+|---------|-------|----------
+| username| String| Username of user for whom to retrieve records.
+| sort    | String| Sorting method. One of 'hot', 'new', 'top', 'controversial', or null.
+| show    | String| One of (given).
+| t       | String| One of 'hour', 'day', 'week', 'month', 'year', 'all', or null.
+| after   | String| Fullname of a thing.
+| before  | String| Fullname of a thing.
+| count   | Number| A positive integer (default: 0).
+| limit   | Number| Upper limit of number of items to retrieve. Maximum is 100.
+| srDetail| String| Expand subreddits (optional).
+
+## Reddit.getUser
+Retrieve information about the specified user.
+
+| Field   | Type  | Description
+|---------|-------|----------
+| username| String| Username of user to retrieve.
+
+## Reddit.getUserTrophies
+Get a user's trophies.
+
+| Field    | Type  | Description
+|---|-------|----------
+| id| String| Username of user for whom to retrieve trophies.
+
+## Reddit.multiGet
+Fetch a multi's data and subreddit list by name.
+
+| Field    | Type   | Description
+|----------|--------|----------
+| multipath| String | Name of multireddit to retrieve.
+| expandSrs| Boolean| Expand subreddits.
+
+## Reddit.searchSubreddits
+Search for subreddits by title and description.
+
+| Field   | Type  | Description
+|---------|-------|----------
+| q       | String| Query with which to search
+| sort    | String| Sorting method. One of 'relevance', 'activity'
+| after   | String| Fullname of a thing.
+| before  | String| Fullname of a thing.
+| count   | Number| A positive integer (default: 0).
+| limit   | Number| Upper limit of number of items to retrieve. Maximum is 100.
+| srDetail| String| Expand subreddits (optional).
+
+## Reddit.leaveModerator
+Abdicate moderator status in a subreddit.
+
+| Field    | Type  | Description
+|---|-------|----------
+| id| String| Name of subreddit to leave.
+
+## Reddit.getStickies
+Retrieve a subreddit's stickied posts.
+
+| Field    | Type  | Description
+|----------|-------|----------
+| subreddit| String| Subreddit from which to retrieve sticky posts.
+| num      | String| Argument can be used to select a specific sticky (an integer between 1 and 2 (default: 1)).
+
+## Reddit.leaveContributor
+Abdicate approved submitter status in a subreddit.
+
+| Field    | Type  | Description
+|---|-------|----------
+| id| String| Name of subreddit to leave.
+
+## Reddit.multiDelete
+Deletes the specified multireddit.
+
+| Field    | Type  | Description
+|----------|-------|----------
+| multipath| String| Name of multireddit to delete.
+
+## Reddit.multiGetUser
+Retrieves a list of multireddits owned by the specified user.
+
+| Field    | Type   | Description
+|----------|--------|----------
+| username | String | Username of user for which to retrieve owned multireddits.
+| expandSrs| Boolean| Obtain extra details about the subreddits of each multireddit.
+
+## Reddit.ignoreReports
+Ignores reports for the specified thing.
+
+| Field    | Type  | Description
+|---|-------|----------
+| id| String| Thing ID of object to be ignored.
+
+## Reddit.multiRename
+Renames a multireddit.
+
+| Field      | Type  | Description
+|------------|-------|----------
+| displayName| String| A string no longer than 50 characters.
+| from       | String| Name of multireddit to rename.
+| to         | String| Destination name.
+
+## Reddit.unmuteUserByMessage
+Unmute a user from a subreddit based on the thing ID of a message they sent.
+
+| Field    | Type  | Description
+|---|-------|----------
+| id| String| Thing ID of the message author to be unmuted.
+
+## Reddit.getPopularSubreddits
+Retrieves a list of popular subreddits.
+
+| Field   | Type  | Description
+|---------|-------|----------
+| after   | String| Fullname of a thing.
+| before  | String| Fullname of a thing.
+| count   | Number| A positive integer (default: 0).
+| limit   | Number| Upper limit of number of items to retrieve. Maximum is 100.
+| srDetail| String| Expand subreddits (optional).
+
+## Reddit.getMyModeratedSubreddits
+Retrieve a list of the current user's subreddits in which they are a moderator.
+
+| Field   | Type  | Description
+|---------|-------|----------
+| after   | String| Fullname of a thing.
+| before  | String| Fullname of a thing.
+| count   | Number| A positive integer (default: 0).
+| limit   | Number| Upper limit of number of items to retrieve. Maximum is 100.
+| srDetail| String| Expand subreddits (optional).
+
+## Reddit.unignoreReports
+Allow future reports on a thing to cause notifications.
+
+| Field    | Type  | Description
+|---|-------|----------
+| id| String| Thing ID of object to be unignored.
+
+## Reddit.remove
+Remove a link, comment, or modmail message.
+
+| Field| Type   | Description
+|-----|--------|----------
+| id  | String | Thing ID of object to remove.
+| spam| Boolean| Mark as spam.
+
+## Reddit.getMyContributedSubreddits
+Retrieve a list of the current user's subreddits in which they are an approved submitter.
+
+| Field   | Type  | Description
+|---------|-------|----------
+| after   | String| Fullname of a thing.
+| before  | String| Fullname of a thing.
+| count   | Number| A positive integer (default: 0).
+| limit   | Number| Upper limit of number of items to retrieve. Maximum is 100.
+| srDetail| String| Expand subreddits (optional).
+
+## Reddit.getMySubscribedSubreddits
+Retrieve a list of the current user's subscribed subreddits.
+
+| Field   | Type  | Description
+|---------|-------|----------
+| after   | String| Fullname of a thing.
+| before  | String| Fullname of a thing.
+| count   | Number| A positive integer (default: 0).
+| limit   | Number| Upper limit of number of items to retrieve. Maximum is 100.
+| srDetail| String| Expand subreddits (optional).
+
+## Reddit.multiCreate
+Create a multi. Responds with 409 Conflict if it already exists.
+
+| Field          | Type   | Description
+|----------------|--------|----------
+| multipath      | String | Multireddit url path.
+| displayName    | String | A string no longer than 50 characters.
+| descriptionMd  | String | Multireddit sidebar text (raw markdown text).
+| iconName       | String | One of('art and design', 'ask', 'books', 'business', 'cars', 'comics', 'cute animals', 'diy', 'entertainment', 'food and drink', 'funny', 'games', 'grooming', 'health', 'life advice', 'military', 'models pinup', 'music', 'news', 'philosophy', 'pictures and gifs', 'science', 'shopping', 'sports', 'style', 'tech', 'travel', 'unusual stories', 'video', '', 'None').
+| keyColor       | String | A 6 - digit rgb hex color, e.g. '#AABBCC'.
+| subredditsName | String | Comma-separated string of subreddits name.
+| visibility     | String | One of 'public', 'private', 'hidden'. Hidden multireddits will not be visible to you except through the API.
+| weightingScheme| String | One of 'classic', 'fresh'.
+| expandSrs      | Boolean| Expand subreddits.
+
+## Reddit.muteUserByMessage
+Mute a user from a subreddit based on the thing ID of a message they sent.
+
+| Field    | Type  | Description
+|---|-------|----------
+| id| String| Thing ID of the message author to be muted.
+
+## Reddit.multiGetMine
+Retrieves a list of multireddits that are owned by the current user.
+
+| Field    | Type   | Description
+|----------|--------|----------
+| expandSrs| Boolean| Expand subreddits.
+
+## Reddit.multiCopy
+Copy an existing multireddit to your own set.
+
+| Field      | Type  | Description
+|------------|-------|----------
+| displayName| String| A string no longer than 50 characters.
+| from       | String| Name of multireddit to copy.
+| to         | String| Name of destination multireddit.
+
+## Reddit.editSubreddit
+Change a subreddit's configuration.
+
+| Field                  | Type   | Description
+|------------------------|--------|----------
+| name                   | String | Subreddit name.
+| publicDescription      | String | Public description (raw markdown text).
+| description            | String | Raw markdown text.
+| title                  | String | A string no longer than 100 characters.
+| header-title           | String | A string no longer than 500 characters.
+| sr                     | String | Name of subreddit to change.
+| themeSr                | String | Subreddit name.
+| lang                   | String | A valid IETF language tag (underscore separated).
+| commentScoreHideMins   | Number | An integer between 0 and 1440 (default: 0).
+| excludeBannedModqueue  | Boolean| Exclude banned modqueue, boolean value.
+| submitLinkLabel        | String | A string no longer than 60 characters.
+| submitText             | String | Raw markdown text.
+| submitTextLabel        | String | A string no longer than 60 characters.
+| suggestedCommentSort   | String | One of (confidence, top, new, controversial, old, random, qa, live).
+| linkType               | String | One of (any, link, self).
+| spamComments           | String | One of (low, high, all).
+| spamLinks              | String | One of (low, high, all).
+| spamSelfposts          | String | One of (low, high, all).
+| spoilersEnabled        | Boolean| Spoilers enabled, boolean value.
+| type                   | String | One of (gold_restricted, archived, restricted, gold_only, employees_only, private, public).
+| wikiEditAge            | Number | An integer greater than 0 (default: 0).
+| wikiEditKarma          | Number | An integer greater than 0 (default: 0).
+| wikimode               | String | One of (disabled, modonly, anyone).
+| allowImages            | Boolean| Allow images, boolean value.
+| allowTop               | Boolean| Allow top, boolean value.
+| hideAds                | Boolean| Hide ads, boolean value.
+| over_18                | Boolean| Is over 18, boolean value.
+| publicTraffic          | Boolean| Public traffic, boolean value.
+| showMedia              | Boolean| Show media, boolean value.
+| showMediaPreview       | Boolean| Show media preview, boolean value.
+| collapseDeletedComments| Boolean| Collapse deleted comments, boolean value.
+| themeSrUpdate          | Boolean| Theme subreddit update, boolean value.
+| g-recaptcha-response   | String | Recaptcha response.
+
+## Reddit.getDefaultSubreddits
+Retrieves a list of default subreddits.
+
+| Field   | Type  | Description
+|---------|-------|----------
+| after   | String| Fullname of a thing.
+| before  | String| Fullname of a thing.
+| count   | Number| A positive integer (default: 0).
+| limit   | Number| Upper limit of number of items to retrieve. Maximum is 100.
+| srDetail| String| Expand subreddits (optional).
+
+## Reddit.getGoldOnlySubreddits
+Retrieves a list of gold-only subreddits.
+
+| Field   | Type  | Description
+|---------|-------|----------
+| after   | String| Fullname of a thing.
+| before  | String| Fullname of a thing.
+| count   | Number| A positive integer (default: 0).
+| limit   | Number| Upper limit of number of items to retrieve. Maximum is 100.
+| srDetail| String| Expand subreddits (optional).
+
+## Reddit.getNewSubreddits
+Retrieves a list of new subreddits.
+
+| Field   | Type  | Description
+|---------|-------|----------
+| after   | String| Fullname of a thing.
+| before  | String| Fullname of a thing.
+| count   | Number| A positive integer (default: 0).
+| limit   | Number| Upper limit of number of items to retrieve. Maximum is 100.
+| srDetail| String| Expand subreddits (optional).
+
+## Reddit.getSubredditSidebar
+Get a subreddit's sidebar contents.
+
+| Field    | Type  | Description
+|----------|-------|----------
+| subreddit| String| Subreddit of which to retrieve sidebar.
+
+## Reddit.getSubredditSettings
+Retrieve a list of the subreddit's settings. Must be a moderator.
+
+| Field    | Type  | Description
+|----------|-------|----------
+| subreddit| String| The subreddit to retrieve.
+
+## Reddit.getModerationLog
+Retrieves recent entries from the moderation log for the specified subreddit.
+
+| Field    | Type  | Description
+|----------|-------|----------
+| subreddit| String| Subreddit of log to retrieve. All moderated subreddits by default.
+| mod      | String| Filter by moderator.
+| type     | String| Filter by mod action, one of (banuser, unbanuser, removelink, approvelink, removecomment, approvecomment, addmoderator, invitemoderator, uninvitemoderator, acceptmoderatorinvite, removemoderator, addcontributor, removecontributor, editsettings, editflair, distinguish, marknsfw, wikibanned, wikicontributor, wikiunbanned, wikipagelisted, removewikicontributor, wikirevise, wikipermlevel, ignorereports, unignorereports, setpermissions, setsuggestedsort, sticky, unsticky, setcontestmode, unsetcontestmode, lock, unlock, muteuser, unmuteuser, createrule, editrule, deleterule, spoiler, unspoiler, modmail_enrollment).
+| after    | String| Fullname of a thing.
+| before   | String| Fullname of a thing.
+| count    | Number| A positive integer (default: 0).
+| limit    | Number| Upper limit of number of items to retrieve. Maximum is 100.
+| srDetail | String| Expand subreddits (optional).
+
+## Reddit.searchSubredditsByTopic
+Search for subreddits by topic keywords.
+
+| Field| Type  | Description
+|------|-------|----------
+| query| String| Query with which to search.
+
+## Reddit.setSubredditStylesheet
+Set a subreddit's stylesheet.
+
+| Field             | Type  | Description
+|-------------------|-------|----------
+| subreddit         | String| Subreddit of which to set stylesheet.
+| stylesheetContents| String| Contents of stylesheet, probably pretty long.
+| reason            | String| Since the stylesheet is a wiki page, optionally provide a reason for editing.
+
+## Reddit.getSubmitText
+Retrieves the "submitting to /r/&subreddit" text for the selected subreddit.
+
+| Field    | Type  | Description
+|----------|-------|----------
+| subreddit| String| Name of subreddit from which to obtain submit text.
+
+## Reddit.createSubreddit
+Create a new subreddit.
+
+| Field                  | Type   | Description
+|------------------------|--------|----------
+| sr                     | String | Name of subreddit to change.
+| name                   | String | Subreddit name.
+| publicDescription      | String | Public description (raw markdown text).
+| description            | String | Raw markdown text.
+| title                  | String | A string no longer than 100 characters.
+| header-title           | String | A string no longer than 500 characters.
+| themeSr                | String | Subreddit name.
+| lang                   | String | A valid IETF language tag (underscore separated).
+| commentScoreHideMins   | Number | An integer between 0 and 1440 (default: 0).
+| excludeBannedModqueue  | Boolean| Exclude banned modqueue, boolean value.
+| submitLinkLabel        | String | A string no longer than 60 characters.
+| submitText             | String | Raw markdown text.
+| submitTextLabel        | String | A string no longer than 60 characters.
+| suggestedCommentSort   | String | One of (confidence, top, new, controversial, old, random, qa, live).
+| linkType               | String | One of (any, link, self).
+| spamComments           | String | One of (low, high, all).
+| spamLinks              | String | One of (low, high, all).
+| spamSelfposts          | String | One of (low, high, all).
+| spoilersEnabled        | Boolean| Spoilers enabled, boolean value.
+| type                   | String | One of (gold_restricted, archived, restricted, gold_only, employees_only, private, public).
+| wikiEditAge            | Number | An integer greater than 0 (default: 0).
+| wikiEditKarma          | Number | An integer greater than 0 (default: 0).
+| wikimode               | String | One of (disabled, modonly, anyone).
+| allowImages            | Boolean| Allow images, boolean value.
+| allowTop               | Boolean| Allow top, boolean value.
+| hideAds                | Boolean| Hide ads, boolean value.
+| over_18                | Boolean| Is over 18, boolean value.
+| publicTraffic          | Boolean| Public traffic, boolean value.
+| showMedia              | Boolean| Show media, boolean value.
+| showMediaPreview       | Boolean| Show media preview, boolean value.
+| collapseDeletedComments| Boolean| Collapse deleted comments, boolean value.
+| themeSrUpdate          | Boolean| Theme subreddit update, boolean value.
+| g-recaptcha-response   | String | Recaptcha response.
+
+## Reddit.getSubredditStylesheet
+Get a subreddit's stylesheet.
+
+| Field    | Type  | Description
+|----------|-------|----------
+| subreddit| String| Subreddit of which to retrieve stylesheet.
+
+## Reddit.subscribe
+Subscribe to a subreddit. Must have read access to the subreddit.
+
+| Field    | Type  | Description
+|----------|-------|----------
+| subreddit| String| Subreddit to which to subscribe.
+
+## Reddit.unsubscribe
+Unsubscribe from a subreddit.
+
+| Field    | Type  | Description
+|----------|-------|----------
+| subreddit| String| Subreddit from which to unsubscribe.
+
+## Reddit.uploadSubredditImage
+Upload an image to the specified subreddit.
+
+| Field     | Type  | Description
+|-----------|-------|----------
+| subreddit | String| Subreddit to which to upload image.
+| file      | String| Relative or absolute path of file (maximum size of 500 KiB).
+| name      | String| If &upload_type is 'img', assign the image this name. Ignored otherwise.
+| uploadType| String| One of 'img', 'header', 'icon', 'banner'.
+| imageType | String| One of 'png' or 'jpg'.
+
+## Reddit.distinguish
+Mod distinguish a post or comment.
+
+| Field    | Type   | Description
+|----|--------|----------
+| id | String | Thing ID of object to distinguish.
+| how| Boolean| True to set [M] distinguish. False to undistinguish.
+
+## Reddit.approve
+Marks the specified thing as approved.
+
+| Field    | Type  | Description
+|---|-------|----------
+| id| String| Thing ID of object to be approved.
+
+## Reddit.acceptModeratorInvite
+Accepts a moderator invitation for the specified subreddit. You must have a pending invitation for that subreddit.
+
+| Field    | Type  | Description
+|----------|-------|----------
+| subreddit| String| Subreddit to accept invitation.
+
+## Reddit.getUnmoderated
+Retrieves a list of things that have not been moderated in the specified subreddit.
+
+| Field    | Type  | Description
+|----------|-------|----------
+| subreddit| String| Subreddit of items to retrieve. All moderated subreddits by default.
+| only     | String| One of (links, comments).
+| after    | String| Fullname of a thing.
+| before   | String| Fullname of a thing.
+| count    | Number| A positive integer (default: 0).
+| limit    | Number| Upper limit of number of items to retrieve. Maximum is 100.
+| srDetail | String| Expand subreddits (optional).
+
+## Reddit.wikiAllowEditor
+Allow the specified user to edit the specified wiki page.
+
+| Field    | Type  | Description
+|----------|-------|----------
+| subreddit| String| Subreddit of the wiki page.
+| username | String| Username of user to allow.
+| page     | String| Name of page to allow user to edit.
+
+## Reddit.wikiDisallowEditor
+Remove the specified user from the allowed editors list of the specified wiki page.
+
+| Field    | Type  | Description
+|----------|-------|----------
+| subreddit| String| Subreddit of the wiki page.
+| username | String| Username of user to allow.
+| page     | String| Name of page to disallow user to edit.
+
+## Reddit.wikiGetPages
+Retrieves a list of all pages of the specified subreddit's wiki.
+
+| Field    | Type  | Description
+|----------|-------|----------
+| subreddit| String| Subreddit for which to retrieve pages.
+
+## Reddit.wikiGetPage
+Retrieves the specified wiki page, optionally at a specific revision or a comparison between revisions.
+
+| Field    | Type  | Description
+|----------|-------|----------
+| subreddit| String| Subreddit in which to retrieve page.
+| page     | String| Page to retrieve.
+| v        | String| Specific revision ID to retrieve (optional).
+| v2       | String| ID of revision with which to compare &v (optional2).
+
+## Reddit.wikiGetRevisions
+Retrieves a listing of wiki revisions for all pages within the specified subreddit.
+
+| Field    | Type  | Description
+|----------|-------|----------
+| subreddit| String| Subreddit for which to retrieve revisions.
+| after    | String| Fullname of a thing.
+| before   | String| Fullname of a thing.
+| count    | Number| A positive integer (default: 0).
+| limit    | Number| Upper limit of number of items to retrieve. Maximum is 100.
+| srDetail | String| Expand subreddits (optional).
+
+## Reddit.wikiGetPageRevisions
+Retrieves a listing of wiki revisions for the specified page within the specified subreddit.
+
+| Field    | Type  | Description
+|----------|-------|----------
+| subreddit| String| Subreddit for which to retrieve revisions.
+| page     | String| Page for which to retrieve revisions.
+| after    | String| Fullname of a thing.
+| before   | String| Fullname of a thing.
+| count    | Number| A positive integer (default: 0).
+| limit    | Number| Upper limit of number of items to retrieve. Maximum is 100.
+| srDetail | String| Expand subreddits (optional).
+
+## Reddit.wikiEditPage
+Edit a wiki page.
+
+| Field    | Type  | Description
+|----------|-------|----------
+| subreddit| String| Subreddit in which to edit page.
+| page     | String| Page to edit.
+| content  | String| Content with which to overwrite page.
+| reason   | String| Reason for revision (up to 256 characters long).
+| previous | String| Revision ID on which to base this edit.
+
+## Reddit.wikiToggleHideRevision
+Toggle a revision's status of hidden.
+
+| Field    | Type  | Description
+|----------|-------|----------
+| subreddit| String| Subreddit of revision.
+| page     | String| Pagename of revision.
+| revision | String| ID of revision to toggle hidden status.
+
+## Reddit.wikiRevertToRevision
+Revert a wiki page to a previous revision.
+
+| Field    | Type  | Description
+|----------|-------|----------
+| subreddit| String| Subreddit of revision.
+| page     | String| Pagename of revision.
+| revision | String| ID of revision to which to revert.
+
+## Reddit.wikiGetPageDiscussions
+Retrieves a listing of discussions about a certain wiki page.
+
+| Field    | Type  | Description
+|----------|-------|----------
+| subreddit| String| Subreddit of page.
+| page     | String| Page for which to retrieve discussions.
+| after    | String| Fullname of a thing.
+| before   | String| Fullname of a thing.
+| count    | Number| A positive integer (default: 0).
+| limit    | Number| Upper limit of number of items to retrieve. Maximum is 100.
+| srDetail | String| Expand subreddits (optional).
+
+## Reddit.wikiGetPageSettings
+Get the specified page's settings in the specified subreddit.
+
+| Field    | Type  | Description
+|----------|-------|----------
+| subreddit| String| Subreddit of page.
+| page     | String| Name of page.
+
+## Reddit.wikiUpdatePageSettings
+Update the specified page's settings in the specified subreddit.
+
+| Field    | Type   | Description
+|----------|--------|----------
+| subreddit| String | Subreddit of page.
+| page     | String | Name of page.
+| permlevel| Number | Permissions level for page. 0 for use subreddit wiki permissions, 1 for only approved editors, 2 for only mods, null to not update.
+| listed   | Boolean| Show this page on the list of wiki pages. True to show, false to hide, null to not update.
+

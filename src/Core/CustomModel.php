@@ -134,31 +134,58 @@ class CustomModel
 
     public static function multiEditDescription($param, $blockCustom, $vendorUrl)
     {
-        return json_encode($param);
-    }
+        $result['multipath'] = $param['multipath'];
+        if(isset($param['model_body_md'])&&strlen($param['model_body_md'])>0){
+            $result['model'] = json_encode(['body_md' => $param['model_body_md']]);
+        }
 
-    public static function searchSubreddits($param, $blockCustom, $vendorUrl)
-    {
         return json_encode($param);
     }
 
     public static function multiCreate($param, $blockCustom, $vendorUrl)
     {
+        $result['multipath'] = $param['multipath'];
+        if(isset($param['expand_srs'])&&strlen($param['expand_srs'])>0) {
+            $result['expand_srs'] = $param['expand_srs'];
+        }
+        $paramList = ['display_name', 'description_md', 'icon_name', 'key_color', 'visibility', 'weighting_scheme'];
+        foreach($paramList as $oneParam){
+            if(isset($param[$oneParam])&&strlen($param[$oneParam])>0) {
+                $result['model'][$oneParam] = intval($param[$oneParam]);
+            } }
+        if(isset($param['subreddits_name'])&&strlen($param['subreddits_name'])>0) {
+            $subredditsName = explode(',', $param['subreddits_name']);
+            $subredditsNameObj = [];
+            foreach($subredditsName as $oneName){
+                $subredditsNameObj[] = ['name' => trim($oneName)];
+            }
+            $result['model']['subreddits'] = json_encode($subredditsNameObj);
+        }
+        if(isset($result['model'])){
+            $result['model'] = json_encode($result['model']);
+        }
+
         return json_encode($param);
     }
 
     public static function setSubredditStylesheet($param, $blockCustom, $vendorUrl)
     {
+        $param['op'] = 'save';
+
         return json_encode($param);
     }
 
     public static function subscribe($param, $blockCustom, $vendorUrl)
     {
+        $param['action'] = 'sub';
+
         return json_encode($param);
     }
 
     public static function unsubscribe($param, $blockCustom, $vendorUrl)
     {
+        $param['action'] = 'unsub';
+
         return json_encode($param);
     }
 }

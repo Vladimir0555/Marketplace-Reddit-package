@@ -1204,7 +1204,7 @@ return array (
         ),
         array (
             'name' => 'getCommentChildren',
-            'description' => 'Get comments in a tree that are hidden by "load more comments". NOTE: Only make one request for this at a time. Higher concurrency will result in an error.',
+            'description' => 'Get comments in a tree that are hidden by \"load more comments\". NOTE: Only make one request for this at a time. Higher concurrency will result in an error.',
             'args'=> array (
                 array (
                     'name' => 'appClientId',
@@ -6548,7 +6548,7 @@ return array (
         ),
         array (
             'name' => 'getSubmitText',
-            'description' => 'Retrieves the "submitting to /r/&subreddit" text for the selected subreddit.',
+            'description' => 'Retrieves the \"submitting to /r/&subreddit\" text for the selected subreddit.',
             'args' => array (
                 array (
                     'name' => 'subreddit',
@@ -8937,7 +8937,6 @@ return array (
             'vendorUrl' => 'https://oauth.reddit.com/subreddits/search',
             'method' => 'GET',
             'showApiType' => false,
-            'custom' => true,
         ),
         'leaveModerator' => array (
             'dictionary' => array (
@@ -9299,7 +9298,7 @@ return array (
         ),
         'subscribe' => array (
             'dictionary' => array (
-                'subreddit' => 'subreddit',
+                'subreddit' => 'sr_name',
             ),
             'vendorUrl' => 'https://oauth.reddit.com/api/subscribe',
             'method' => 'POST',
@@ -9308,7 +9307,7 @@ return array (
         ),
         'unsubscribe' => array (
             'dictionary' => array (
-                'subreddit' => 'subreddit',
+                'subreddit' => 'sr_name',
             ),
             'vendorUrl' => 'https://oauth.reddit.com/api/subscribe',
             'method' => 'POST',
